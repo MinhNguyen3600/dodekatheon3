@@ -1,0 +1,24 @@
+[12-11-2025]
+PLANNED TASKS:
+- None
+
+COMPLETED TASKS:
+- Finished establishing data struct for datasheets & operative selection limit
+- Completed data loader function inside /army.py
+    + Successfully tested and confirmed functionality via calling it in /run.py
+
+[13-11-2025]
+PLANNED TASKS:
+- Complete operative selection screen 
+- Complete army building screen
+- Successfully allow users to select and build their kill team based on existing operative selection limits and available operatives
+
+COMPLETED TASKS:
+- Completed operative selection screen 
+- Complete army building screen
+
+TODO:
+- Screen works, but KT list building still needs to be properly implemented sot that the screen returns a list of operatives
+    + Check operative limit logic, implement it if not working yet
+    + Check loop logic when building army
+

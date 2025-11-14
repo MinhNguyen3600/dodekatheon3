@@ -1,0 +1,101 @@
+40k Kill Team Operates Similar to Chess:
+--------- GAME LOOP ------------
+--- Pre - Gmae ---
+- (40k) Games are played in turning points, these are the ROUNDS of each game 
+- (Chess) Each turning, players take turn & moves one of their operatives each, until all their operatives have been used up 
+	+ IF a teams operative has more bodies than another, then when the one with more can continue as usual, while the team with less operative continues to make "reactive" moves worth 1 APL each turn, cannot repeat an action when they were activated, and only has a maximum of 3 inches of movement 
+
+- When set on the board, all operatives are set as CONCEALED (Conceal token) by default
+	+ While a model is concealed, the operative cannot perform Shoot and Charge actions, and it cannot counteract. However, it’s not a valid target while in cover.
+	
+- During their turn, an operative who engages in either fighting (shooting, throwing, melee combat, etc.) MUST be activated (Engage token) unless said otherwise on the operative's datasheet
+	+ While engaged, the operative loses the save buff if they would've otherwised stayed concealed
+	
+- (DnD) Once all their operatives are placed on the board in their deployment zones (usually up to 6 inches from their side of the board, but may vary depending on which map), both players roll for initiative.
+	+ This happens during the start of every 
+	+ Player rolls higher goes first
+	+ Both players then recive Command Points (CP), because the player that goes first gets the intiative advantage, they recive 1 CP, while the player that goes second recives 2 CP
+	
+--- Action ---
+- Player with initiative goes first
+- Each operative will have a specified number of APLs (Action Point Limits), which dictate how much the operative can act during its turn
+	+ The actions and how many AP they take up per use is determined by the Action chart, these are a few basic actions and their AP cost:
+		+ Reposition (1AP): operative makes normal move, up to the movement stat that is dictated on their datasheet		
+			-> Moving over light cover/terrain takes up an addtional 1" of movement
+			-> Moving less than 0.5" is free, but once moved 0.5", it is rounded up to 1"
+			-> Moving up to a platform will cost an additional height of the platform you reach, rounded up
+			-> MUST be able to move to the area directly BELOW the platform's edge AND to go up its full height to be eligible to move up
+			
+		+ Dash (1AP): Same as reposition, but don't use the Movement stat of your Operative
+			-> Can move up to 3 inches
+			-> Cannot climb
+			-> Can Drop & Jump
+			
+		+ Fall back (2AP):  Same as reposition, but only while within engagement range of enemy operative
+		+ Charge (1AP): Same as reposition, but activated operative can move and additional 2"
+			-> Must move into control range/engagement range of enemy/target operative
+			-> Cannot do so while Concealed
+			
+		+ Pickup Marker (1AP): Remove a marker the active operative controls that the Pick Up Marker action can be performed upon, That operative is now carrying, contesting and controlling that marker.
+			-> Cannot perform this action while within control range of an enemy operative, or while it’s already carrying a marker.
+			
+		+ Place Marker (1AP): Place a marker the active operative is carrying within its control range.
+			-> If incapacitated, must perform this action before being removed from the killzone, but does so for 0AP. This takes precedence over all rules that prevent it from doing so
+			-> Cannot perform this action during the same activation in which it already performed the Pick Up Marker action (unless incapacitated).
+
+		+ Shoot (1AP): Shoot with the activated operative by following the "SHOOTING" sequence below. The active operative’s player is the attacker. The selected enemy operative’s player is the defender.
+			-> Cannot perform this action while it has a Conceal order, or while within control range of an enemy operative.
+			
+--- SHOOTING ---
+- Select a weapon from the operative's weapon list
+- Select Valid target 
+	+ If target has an Engage order, it’s a valid target if it’s visible to the active operative.
+	+ If target has a Conceal order, it’s a valid target if it’s visible to the active operative and not in cover.
+	+ NOTE: An operative is visible if the active operative can see it. An operative is in cover if there’s intervening terrain within its control range. 
+			However, it cannot be in cover while within 2" of the active operative. An operative cannot be in cover from and obscured by the same terrain feature. 
+			If it would be, the defender must select one of them (cover or obscured) for that sequence when their operative is selected as the valid target.
+
+- Roll Attack Dice: roll the number of D6 dice according to the number of attacks that weapon can fire in the datasheet
+	+ If the rolled result is equal to or over the success condition (usually denoted with a number and a "+" sign like "2+" , "3+") of the same weapon, it counts a hit, and fails otherwise
+	+ A roll of 6 is an automatic critcial hit, a roll of 1 is an automatic failure
+	
+- Roll Defence dice: Opponent rolls 3x D6's for save rolls
+	+ If the roll results in a number equals to or higher than their save stat (denoted similarly to success condition for save rolls), they succeed in saving the hit
+	+ A roll of 6 is an automatic critcial hit, a roll of 1 is an automatic failure
+	+ Cover save: If the target is behind cover, it automatically retains a success of 1/3 save rolls and rolls the remaining 2/3 rolls
+	+ Resolve defense dice: The defender allocates all their successful defence dice to block successful attack dice.
+		-> A normal success can block a normal success.
+		-> Two normal successes can block a critical success.
+		-> Acritical success can block a normal success or a critical success.
+	+ Any operatives that were incapacitated are removed after the active operative has finished the action.
+
+Current Implementation
+- 2D maps
+- Terrain:
+	+ Light cover: │ and ─ 
+	+ Heavy cover: ║ and ═
+
+
+Future Implementation (Ordered by priority:
+1. Add an AI for automated play
+N. 3D maps
+
+
+
+-------------- PLANNING FOR MOM ----------------------
+Requirements:
+- For accounting purposes, database is currently in a spreadsheet format
+- a tool to sync all the spreadsheets together
+	+ Each spreadsheet's row or column is connected to another spreadsheet, e.g.:
+		2 Spreadsheets:
+			1 - to store monthly expenditures or investments (includes paying debt)
+			2 - to store transactions from Bank A quarterly
+		Spread sheet 1 is connected to 2 via one row outlining the transactions from Bank A each month, connecting to a cell/row in spreadsheet 2 which calculates the total transactions (both + and - change) of each quarter from the monthly expenses/balance changes from the specific row from spreadsheet 2
+		
+		
+PROGRAMMING LANGUAGE: Python
+LIBRARIES: 
+MAIN DB METHOD: Sqlite:
+	+ 	"SQLite is for when it makes sense to store application data in a SQL-like table format locally, rather than an over-complicated JSON file. 
+		The per-user DB concept is its bread and butter, what libSQL does is it lets you query across those databases. 
+		So it's effectively something between MongoDB, where all data is stored in a document for every user but on the server side, and regular SQLite."

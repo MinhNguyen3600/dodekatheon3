@@ -1,0 +1,195 @@
+{
+    "Angels of Death": { 
+        "Operative Datasheets":[
+            {
+                "Op Name": "Space Marine Captain", 
+                "Op Data Sheet": {
+                    "APL": 3, 
+                    "Move": 6, 
+                    "Save": 3, 
+                    "Wounds": 15
+                }, 
+                "Weapon Options":{
+                    "Free Selection":{},
+                    "Hard Selection":{
+                        "Shoot":{
+                            "Plasma Pistol (Standard)": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 5], 
+                                "Weapon Keyword": ["Range 8", "Piercing 1"]
+                            },
+                            "Plasma Pistol (Overcharged)": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[4, 5], 
+                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
+                            }
+                        },
+                        "Melee": {
+                            "Power Fist": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[5, 7], 
+                                "Weapon Keyword": ["Brutal"]
+                            }
+                        }
+                    }
+                },
+                "Op Skills":{},
+                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Space Marine Captain"]
+            },
+            {
+                "Op Name": "Assault Intercessor Sargent", 
+                "Op Data Sheet": {
+                    "APL": 3, 
+                    "Move": 6, 
+                    "Save": 3, 
+                    "Wounds": 15
+                }, 
+                "Weapon Options": {
+                    "Free Selection":{
+                        "Melee":{
+                            "Power Fist": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[5, 7], 
+                                "Weapon Keyword": ["Brutal"]
+                            },
+                            "Chainsword": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[4, 5], 
+                                "Weapon Keyword": []
+                            },
+
+                            "Power Weapon": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[4, 6], 
+                                "Weapon Keyword": ["Lethal 5"]
+                            },
+                            
+                            "Thunder hammer": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 4, 
+                                "dmg":[5, 6], 
+                                "Weapon Keyword": ["Shock", "Stun"]
+                            }
+                        },
+                        "Shoot":{
+                            "Hand Flamer": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 2, 
+                                "dmg":[3, 3], 
+                                "Weapon Keyword": ["Brutal"]
+                            },
+                            "Heavy Bolt Pistol":{
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 4], 
+                                "Weapon Keyword": ["Range 8", "Piercing 1"]
+                            }
+                        }
+                    },
+                    "Hard Selection":{
+                        "Shoot":{
+                            
+                            "Plasma Pistol (Standard)": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 5], 
+                                "Weapon Keyword": ["Range 8", "Piercing 1"]
+                            },
+                            "Plasma Pistol (Overcharged)": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[4, 5], 
+                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
+                            }
+                        },
+                        "Melee": {
+                            "Chainsword": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[4, 5], 
+                                "Weapon Keyword": []
+                            }
+                        }
+                    }
+                },
+                "Op Skills":{},
+                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Space Marine Captain"]
+            },
+            {
+                "Op Name": "Assault Intercessor Grenadier", 
+                "Op Data Sheet": {
+                    "APL": 3, 
+                    "Move": 6, 
+                    "Save": 3, 
+                    "Wounds": 14
+                }, 
+                "Weapon Options": {
+                    "Free Selection":{},
+                    "Hard Selection":{
+                        "Shoot":{
+                            "Heavy Bolt Pistol": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 4], 
+                                "Weapon Keyword": ["Range 8", "Piercing 1"]
+                            }
+                        },
+                        "Melee":{
+                            "Chainsword": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[4, 5], 
+                                "Weapon Keyword": []
+                            }
+                        }
+                    }
+                },
+                "Op Skills":{},
+                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Assault Intercessor", "Grenadier"]
+            }
+        ],
+        "Operative Selection":[
+            {
+                "Leaders":{
+                    "options": ["Space Marine Captain", "Assault Intercessor Sargent", "Intercessor Sargent"],
+                    "limit": 1
+                },
+                "Warriors":{
+                    "options": ["Assault Intercessor Warrior", "Intercessor Warrior", "Intercessor Gunner"],
+                    "limit": 0
+                },
+                "Grenadier":{
+                    "options": ["Assault Intercessor Grenadier"],
+                    "limit": 1
+                },
+                "Special ops":{
+                    "options":["Eliminator Sniper", "Heavy Intercessor Gunner"],
+                    "limit": 1
+                }
+            }
+        ]
+
+    },
+    "Plague Marines":{}
+    
+}

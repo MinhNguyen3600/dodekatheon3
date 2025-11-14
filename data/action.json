@@ -1,0 +1,6 @@
+{
+    "Reposition":{"Type":"M", "Cost (AP)": 1, "Stat_Mod": "Move" , "Moddifier":"Move"},
+    "Dash":{"Type":"M", "Cost (AP)": 1, "Stat_Mod":0, "Moddifier": 3},
+    "Charge":{"Type":"M", "Cost (AP)": 1, "Stat_Mod": "Move" , "Moddifier": 2},
+    "Shoot":{"Type":"S", "Cost (AP)": 1, "Stat_Mod": "Shoot" , "Moddifier": "Shoot"}
+}
