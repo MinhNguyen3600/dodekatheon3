@@ -1,6 +1,8 @@
 import json
 import string
 
+import utils
+
 # player = {
 #     "Operative Selection":[]
 # }
@@ -62,46 +64,69 @@ def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
     select = ktSelection[0]
     alphabet =  string.ascii_uppercase # for all caps alphabet like "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     roleMatch = {}
-    roleIndex = 0
-
-    print(f"Your chosen Kill Team [{currentKT}] has the following selectable operatives:")
-
-    for roles, roleOptions in select.items():
-        opt = roleOptions.get("options", [])
-        opIndex = 1
-        matches = []
-
-        # Loop for loading list of options for matching later
-        for ops in selectableOperatives:
-            if ops in opt:
-                matches.append(ops)
-
-        # Only printing items out if it matches the options 
-        if matches: 
-            letter = alphabet[roleIndex]
-            limit = roleOptions.get("limit", 0)
-
-            print(f"{letter}. Selectable [{roles}] (Limit: {limit}):")
-
-            for opIndex, op in enumerate(matches, 1):
-                print(f"    {opIndex}. {op}")
-
-            roleMatch[letter] = matches
-            roleIndex += 1
-
-    choice = input(">>> ").upper()
+    
+    ktBuild = True
     opSelection = []
-    # while len(opSelection) <= 6 # asdasdsd
-    if len(choice) >= 2 and choice[0] in roleMatch and isinstance(int(choice[1:]), int):
-        letter = choice[0]
-        num = int(choice[1:]) - 1
-        matches = roleMatch[letter]
+    
+    while ktBuild:
+        utils.clear()
+        print(f"Your chosen Kill Team [{currentKT}] has the following selectable operatives:")
+        opIndex = 1
+        roleIndex = 0
+        for roles, roleOptions in select.items():
+            opt = roleOptions.get("options", [])
+            matches = []
 
-        if 0 <= num < len(matches):
-            selectedOp = matches[num]
-            opSelection.append("selectedOp")
-            print(f"Selected: {selectedOp}")
+            # Loop for loading list of options for matching later
+            for ops in selectableOperatives:
+                if ops in opt:
+                    matches.append(ops)
+
+            # Only printing items out if it matches the options 
+            if matches: 
+                letter = alphabet[roleIndex]
+                limit = roleOptions.get("limit", 0)
+
+                print(f"{letter}. Selectable [{roles}] (Limit: {limit}):")
+
+                for opIndex, op in enumerate(matches, 1):
+                    print(f"    {opIndex}. {op}")
+
+                roleMatch[letter] = (matches, limit)
+                roleIndex += 1
+
+        choice = input(">>> ").upper()
+
+        if len(opSelection) == 6:
+            break
+        elif len(choice) >= 2 and choice[0] in roleMatch and isinstance(int(choice[1:]), int):
+            letter = choice[0]
+            try:
+                num = int(choice[1:]) - 1
+            except ValueError:
+                print("Invalid number!")
+                continue
+            matches, limit = roleMatch[letter]
+            if 0 <= num < len(matches):
+                selectedOp = matches[num]
+                opCount = 0
+                for sel in opSelection:
+                    if sel in matches:
+                        opCount += 1
+                if limit == 0:
+                    opSelection.append(selectedOp)
+                    print(f"Selected: {selectedOp}")
+                    input("Press Enter to continue...")
+                elif opCount >= limit:
+                    print(f"Cannot select more than {limit} operatives for the role [{roles}]!")
+                    input("Press Enter to continue...")
+                    continue
+                else:
+                    opSelection.append(selectedOp)
+                    print(f"Selected: {selectedOp}")
+                    input("Press Enter to continue...")
+            else:
+                print("Invalid number!")
         else:
-            print("Invalid number!")
-    else:
-        print("Invalid input!")
+            print("Invalid input!")
+    return opSelection  # Now returns the final list for main game loop

@@ -1,45 +1,48 @@
-import army 
 import os
+
+import army
+import utils
 
 game = True
 
 
-# --------- Utilities ----------
-def draw():
-    print("Xx----------------------xX")
 
-def clear():
-    os.system("cls")
 
 
 while game:
     killTeams = army.ktLoader()
-
-    draw()
+    
+    utils.clear()
+    utils.draw()
     print("SELECT YOUR KILL TEAM:")
     for kt in killTeams:
         print(kt)
-    draw()
+    print("0. Exit Game")
+    utils.draw()
 
     choice = input(">>> ")
-
-    for chosen in range(len(killTeams)):
-        chosenKT = killTeams[chosen]
-        if choice == chosenKT[0]:
-            currentKT = killTeams[chosen][3:]
-
-    draw()
-    print(currentKT)
+    if choice == "0":
+        quit()
+    else:
+        for chosen in range(len(killTeams)):
+            chosenKT = killTeams[chosen]
+            if choice == chosenKT[0]:
+                currentKT = killTeams[chosen][3:]
+    utils.draw()
     input(f"You've chosen the [{currentKT}] Kill Team!")
 
-    clear()
-
+    utils.clear()
     dataLoad = army.dataLoader(currentKT)
     # for i in dumbass:
     #     print(dumbass[i])
     eligibleOps = army.legalOps(currentKT, dataLoad)
-    army.ktBuild(currentKT, eligibleOps[0], eligibleOps[1])
-
+    operatorSelection = army.ktBuild(currentKT, eligibleOps[0], eligibleOps[1])
+ 
+    utils.clear()
+    print(f"Player A started [{currentKT}] with the following army list:")
+    for i in range(len(operatorSelection)):
+        print(f"- {operatorSelection[i]}")
+    input(">>> ")
 
 
 
