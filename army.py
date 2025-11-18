@@ -116,17 +116,17 @@ def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
                 if limit == 0:
                     opSelection.append(selectedOp)
                     print(f"Selected: {selectedOp}")
-                    input("Press Enter to continue...")
+                    input(">>> ")
                 elif opCount >= limit:
                     print(f"Cannot select more than {limit} operatives for the role [{roles}]!")
-                    input("Press Enter to continue...")
+                    input(">>> ")
                     continue
                 else:
                     opSelection.append(selectedOp)
                     print(f"Selected: {selectedOp}")
-                    input("Press Enter to continue...")
+                    input(">>> ")
             else:
                 print("Invalid number!")
         else:
             print("Invalid input!")
-    return opSelection  # Now returns the final list for main game loop
+    return opSelection  

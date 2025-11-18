@@ -6,3 +6,9 @@ def draw():
 
 def clear():
     os.system("cls")
+
+def stripper(xLen: int, yLen: int, mapWTerrain: list):
+    for ry in range(yLen):
+        for rx in range(xLen):
+            if mapWTerrain[ry][rx].strip() == "[ ]":
+                mapWTerrain[ry][rx] = "   "
