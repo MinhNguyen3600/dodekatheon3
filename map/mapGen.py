@@ -65,10 +65,13 @@ def killZone(dataList: list):
     currMapCol = dataList[2]
 
     vertTerrainPos = {
-        (5, 5): " | ",
-        (5, 6): " | ",
-        (10, 10): " - ",
-        (11, 10): " - "
+        (5, 5): " │ ",
+        (6, 5): " │ ",
+        (7, 5):" ┘ ",
+        (7, 4):" ─ ",
+        (7, 3):" ─ ",
+        (10, 10): " ─ ",
+        (11, 10): " ─ "
     }
 
     # oh wow, so you can define both x, y positions as the key in the dict,
@@ -120,16 +123,7 @@ def printCircle(mapData: list, rowLabel, colLabel):
         print(f"{rowLabel[i]:>2}" + "".join(row))
 
 
-# currMapData, currMapRow, currMapCol = dfMatrix()
 
-# currX = 10
-# currY = 7
-
-# radius = int(input(">>> "))
-
-# drawRad = drawRadius(currX, currY, radius, currMapData)
-# printCircle(currMapData, currMapRow, currMapCol)
-# print(drawRad)
 
 # --------- Tests before implementation --------- 
 # listSth = [[1, 2, 3],[4, 5, 6],[7,8,9]]
@@ -142,6 +136,18 @@ def printCircle(mapData: list, rowLabel, colLabel):
 #     if listSth[centerNum] in listSth and listSth[centerNum][centerNum]:
 #         print(f"The center of the row list is {centerRow} at position {centerNum}")
 #         print(f"The center of the column list is {centerVal} at position [{centerNum}][{centerNum}]")
+#  ---------  --------- 
+# currMapData, currMapRow, currMapCol = dfMatrix()
+
+# currX = 10
+# currY = 7
+
+# radius = int(input(">>> "))
+
+# drawRad = drawRadius(currX, currY, radius, currMapData)
+# printCircle(currMapData, currMapRow, currMapCol)
+# print(drawRad)
+
 # ---------  ---------  ---------  ---------  --------- 
 
 # --------- Miscelaneous Tests --------- 

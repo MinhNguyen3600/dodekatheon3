@@ -130,3 +130,62 @@ def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
         else:
             print("Invalid input!")
     return opSelection  
+
+def ktDataLoader(currKT: str, opSelect: list):
+    loadedData = dataLoader(currKT)
+    opData = loadedData[currKT]["operatives"]
+    selectedData = []
+
+    for opName in opSelect:
+        if opName in opData:
+            operative = opData[opName]
+            selectedData.append(operative)
+
+            #Entire section written by Grok
+            # START --->/
+            # Data Sheet
+            datasheet = operative['Op Data Sheet']
+
+            # Print operative card
+            print("\n" + "-" * 100)
+            print(f"| [ {operative['Op Name']:<20} ]                                | APL: {datasheet['APL']}  Move: {datasheet['Move']}  Save: {datasheet['Save']}  Wounds: {datasheet['Wounds']:<5} |")
+            print("-" * 100)
+            
+            # Weapon Options
+            weapons = operative['Weapon Options']
+            for category in ['Free Selection', 'Hard Selection']:
+                if category in weapons and weapons[category]:
+                    print(f"| {category}:                                                                                   |")
+                    for action_type in ['Shoot', 'Melee']:
+                        if action_type in weapons[category]:
+                            print(f"|   {action_type}:                                                                                         |")
+                            print("|     Weapon Name                      | A |Hit| Dmg   | Keywords                                   |")
+                            print("-" * 100)
+                            for weapon_name, details in weapons[category][action_type].items():
+                                dmg = f"{details['dmg'][0]}/{details['dmg'][1]}" if isinstance(details['dmg'], list) else details['dmg']
+                                keywords = ", ".join(details['Weapon Keyword']) if 'Weapon Keyword' in details else ""
+                                print(f"|     {weapon_name:<30}   | {details['atk']} | {details['hit']} | {dmg:<5} | [{keywords:<40}] |")
+            
+            print("-" * 100)
+            # Op Skills (if any)
+            skills = operative.get('Op Skills', {})
+            if skills:
+                print("| Skills:                                                              |")
+                for skill_name, desc in skills.items():
+                    print(f"|   {skill_name}: {desc:<58} |")
+            else:
+                pass
+
+            print("-" * 100)
+            # Op Keywords
+            keywords = ", ".join(operative['Op Keyword'])
+            print(f"| [{keywords:<64}]                             |")
+            print("-" * 100)
+        # /---> END
+
+        else:
+            print(f"Waning: Operative [{opName}] not found in datasheets for {currKT}")
+
+    return selectedData
+
+

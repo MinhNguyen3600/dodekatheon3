@@ -42,6 +42,8 @@ while menu:
     elif choice == "N" or choice == "n":
         currentKT = "Angels of Death"
         operatorSelection = ["Space Marine Captain", "Elimnator Sniper", "Assault Intercessor Grenadier","Intercessor Gunner", "Intercessor Warrior", "Intercessor Warrior"]
+        opData = army.ktDataLoader(currentKT, operatorSelection)
+
         utils.draw()
         input(f"You've chosen the [{currentKT}] Kill Team!")
     else:
@@ -53,14 +55,18 @@ while menu:
         input(f"You've chosen the [{currentKT}] Kill Team!")
 
         utils.clear()
-        dataLoad = army.dataLoader(currentKT)
+        dataLoad = army.ktDataLoader(currentKT)
         eligibleOps = army.legalOps(currentKT, dataLoad)
         operatorSelection = army.ktBuild(currentKT, eligibleOps[0], eligibleOps[1])
+        opData = army.dataLoader(currentKT, operatorSelection)
+    
     
     utils.clear()
     print(f"Player A started [{currentKT}] with the following army list:")
     for i in range(len(operatorSelection)):
         print(f"- {operatorSelection[i]}")
+    
+    utils.draw()
     input(">>> ")
 
     menu = False
