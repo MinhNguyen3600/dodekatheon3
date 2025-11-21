@@ -65,13 +65,13 @@ def killZone(dataList: list):
     currMapCol = dataList[2]
 
     vertTerrainPos = {
-        (5, 5): " │ ",
-        (6, 5): " │ ",
-        (7, 5):" ┘ ",
-        (7, 4):" ─ ",
-        (7, 3):" ─ ",
-        (10, 10): " ─ ",
-        (11, 10): " ─ "
+        (5, 5): " □ ",
+        (6, 5): " □ ",
+        (7, 5):" □ ",
+        (7, 4):" □ ",
+        (7, 3):" □ ",
+        (10, 10): " □ ",
+        (11, 10): " □ "
     }
 
     # oh wow, so you can define both x, y positions as the key in the dict,

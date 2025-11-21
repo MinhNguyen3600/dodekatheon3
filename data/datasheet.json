@@ -10,8 +10,7 @@
                     "Wounds": 15
                 }, 
                 "Weapon Options":{
-                    "Free Selection":{},
-                    "Hard Selection":{
+                    "Free Selection":{
                         "Shoot":{
                             "Plasma Pistol (Standard)": {
                                 "type": "Shoot",
@@ -37,7 +36,9 @@
                                 "Weapon Keyword": ["Brutal"]
                             }
                         }
-                    }
+                    },
+                    "Hard Selection":{},
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Space Marine Captain"]
@@ -52,38 +53,34 @@
                 }, 
                 "Weapon Options": {
                     "Free Selection":{
-                        "Melee":{
-                            "Power Fist": {
-                                "type": "Melee",
-                                "atk": 5, 
+                        "Shoot":{
+                            "Plasma Pistol (Standard)": {
+                                "type": "Shoot",
+                                "atk": 4, 
                                 "hit": 3, 
-                                "dmg":[5, 7], 
-                                "Weapon Keyword": ["Brutal"]
+                                "dmg":[3, 5], 
+                                "Weapon Keyword": ["Range 8", "Piercing 1"]
                             },
+                            "Plasma Pistol (Overcharged)": {
+                                "type": "Shoot",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[4, 5], 
+                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
+                            }
+                        },
+                        "Melee": {
                             "Chainsword": {
                                 "type": "Melee",
                                 "atk": 5, 
                                 "hit": 3, 
                                 "dmg":[4, 5], 
                                 "Weapon Keyword": []
-                            },
-
-                            "Power Weapon": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 6], 
-                                "Weapon Keyword": ["Lethal 5"]
-                            },
-                            
-                            "Thunder hammer": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 4, 
-                                "dmg":[5, 6], 
-                                "Weapon Keyword": ["Shock", "Stun"]
                             }
                         },
+                        "Fixed": {}
+                    },
+                    "Hard Selection":{
                         "Shoot":{
                             "Hand Flamer": {
                                 "type": "Shoot",
@@ -99,36 +96,41 @@
                                 "dmg":[3, 4], 
                                 "Weapon Keyword": ["Range 8", "Piercing 1"]
                             }
-                        }
-                    },
-                    "Hard Selection":{
-                        "Shoot":{
-                            
-                            "Plasma Pistol (Standard)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            },
-                            "Plasma Pistol (Overcharged)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
-                            }
                         },
-                        "Melee": {
+                        "Melee":{
+                            "Power Fist": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[5, 7], 
+                                "Weapon Keyword": ["Brutal"]
+                            },
                             "Chainsword": {
                                 "type": "Melee",
                                 "atk": 5, 
                                 "hit": 3, 
                                 "dmg":[4, 5], 
                                 "Weapon Keyword": []
+                            },
+
+                            "Power Weapon": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 3, 
+                                "dmg":[4, 6], 
+                                "Weapon Keyword": ["Lethal 5"]
+                            },
+                            
+                            "Thunder hammer": {
+                                "type": "Melee",
+                                "atk": 5, 
+                                "hit": 4, 
+                                "dmg":[5, 6], 
+                                "Weapon Keyword": ["Shock", "Stun"]
                             }
                         }
-                    }
+                    },
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Assault Intercessor", "Sargeant"]
@@ -142,7 +144,8 @@
                     "Wounds": 15
                 }, 
                 "Weapon Options": {
-                    "Free Selection":{
+                    "Free Selection":{},
+                    "Hard Selection":{
                         "Melee":{
                             "Power Fist": {
                                 "type": "Melee",
@@ -213,34 +216,7 @@
                             }
                         }
                     },
-                    "Hard Selection":{
-                        "Shoot":{
-                            
-                            "Plasma Pistol (Standard)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            },
-                            "Plasma Pistol (Overcharged)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
-                            }
-                        },
-                        "Melee": {
-                            "Chainsword": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": []
-                            }
-                        }
-                    }
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Intercessor", "Sargeant"]
@@ -254,8 +230,7 @@
                     "Wounds": 14
                 }, 
                 "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
+                    "Free Selection":{
                         "Shoot":{
                             "Heavy Bolt Pistol": {
                                 "type": "Shoot",
@@ -274,7 +249,9 @@
                                 "Weapon Keyword": []
                             }
                         }
-                    }
+                    },
+                    "Hard Selection":{},
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Assault Intercessor", "Grenadier"]
@@ -288,8 +265,7 @@
                     "Wounds": 14
                 }, 
                 "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
+                    "Free Selection":{
                         "Shoot":{
                             "Heavy Bolt Pistol": {
                                 "type": "Shoot",
@@ -308,7 +284,9 @@
                                 "Weapon Keyword": []
                             }
                         }
-                    }
+                    },
+                    "Hard Selection":{},
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Assault Intercessor", "Warrior"]
@@ -324,15 +302,6 @@
                 "Weapon Options": {
                     "Free Selection":{},
                     "Hard Selection":{
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        },
                         "Shoot":{
                             "Bolt rifle": {
                                 "type": "Shoot",
@@ -362,8 +331,19 @@
                                 "dmg":[3, 4], 
                                 "Weapon Keyword": ["Torrent 1"]
                             }
+                        },
+                        
+                        "Melee":{
+                            "Fists": {
+                                "type": "Melee",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 4], 
+                                "Weapon Keyword": []
+                            }
                         }
-                    }
+                    },
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Intercessor", "Warrior"]
@@ -379,15 +359,6 @@
                 "Weapon Options": {
                     "Free Selection":{},
                     "Hard Selection":{
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        },
                         "Shoot":{
                             "Bolt rifle": {
                                 "type": "Shoot",
@@ -416,21 +387,33 @@
                                 "hit": 3, 
                                 "dmg":[3, 4], 
                                 "Weapon Keyword": ["Torrent 1"]
-                            },
-                            "Auxillary Grenade Launcher (frag)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[2, 4], 
-                                "Weapon Keyword": ["Blast 2"]
-                            },
-                            "Auxillary Grenade Launcher (krak)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": ["Piercing 1"]
                             }
+                        },
+                            
+                        "Melee":{
+                            "Fists": {
+                                "type": "Melee",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 4], 
+                                "Weapon Keyword": []
+                            }
+                        }
+                    },
+                    "Fixed": {
+                        "Auxillary Grenade Launcher (frag)":{
+                            "type": "Shoot",
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[2, 4], 
+                            "Weapon Keyword": ["Blast 2"]
+                        },
+                        "Auxillary Grenade Launcher (krak)":{
+                            "type": "Shoot",
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[4, 5], 
+                            "Weapon Keyword": ["Piercing 1"]
                         }
                     }
                 },
@@ -446,17 +429,7 @@
                     "Wounds": 12
                 }, 
                 "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        },
+                    "Free Selection":{
                         "Shoot":{
                             "Bolt pistol": {
                                 "type": "Shoot",
@@ -486,8 +459,20 @@
                                 "dmg":[3, 3], 
                                 "Weapon Keyword": ["Devastating 3", "Heavy (Dash Only)", "Piercing 1", "Silent"]
                             }
+                        },
+                        
+                        "Melee":{
+                            "Fists": {
+                                "type": "Melee",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 4], 
+                                "Weapon Keyword": []
+                            }
                         }
-                    }
+                    },
+                    "Hard Selection":{},
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Elimator", "Sniper", "Special ops"]
@@ -501,17 +486,7 @@
                     "Wounds": 18
                 }, 
                 "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        },
+                    "Free Selection":{
                         "Shoot":{
                             "Heavy bolter (focused)":{
                                 "type": "Shoot",
@@ -527,8 +502,20 @@
                                 "dmg":[3, 4], 
                                 "Weapon Keyword": ["Piercing Crits 1", "Torrent 1"]
                             }
+                        },
+                        
+                        "Melee":{
+                            "Fists": {
+                                "type": "Melee",
+                                "atk": 4, 
+                                "hit": 3, 
+                                "dmg":[3, 4], 
+                                "Weapon Keyword": []
+                            }
                         }
-                    }
+                    },
+                    "Hard Selection":{},
+                    "Fixed": {}
                 },
                 "Op Skills":{},
                 "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Heavy Intercessor", "Gunner", "Special ops"]

@@ -75,10 +75,38 @@ Current Implementation
 	+ Light cover: │ and ─ 
 	+ Heavy cover: ║ and ═
 
+----- MAIN PROGRAM -----
+- creates board, columns & rows then loads them into variables via dfMatrix() (returns list)
+- intialize initial payer position 
 
-Future Implementation (Ordered by priority:
+MAIN MENU
+- first screen when running
+- Pick KT to start building
+- OR pick existing KT for testing
+- Ability to exit the game 
+- Once completed move to game loop, which loads
+
+WEAPON LOADOUT SELECTION SCREEN:
+- "Free Selection" means:
+	+ all weapons in this dict is able to be selected in the game, with no restrictions
+	+ all weapons from this dict is loaded
+- "Hard selection" means:
+	+ player must select one weapon from each weapon category (shoot & melee)
+	+ loads these weapons as the selected weapon loadouts into the game, and cannot pick other weapons outside of selected ones during the game.
+	+ If the weapon category only has 1 entry/option, then it becomes the default option, no need for the player to select, just load that in as default.
+- "Default":
+
+GAME LOOP
+-
+
+
+
+
+Future Implementation (Ordered by priority):
 1. Add an AI for automated play
 N. 3D maps
+
+
 
 
 
