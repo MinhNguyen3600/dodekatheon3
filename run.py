@@ -28,7 +28,6 @@ mapWTerrain[y][x] = "[P]"  # Place initial player
 while menuScreen:
     selectedKT, loaded = menu.ktSelectScreen()
     selectedOps = menu.opSelectScreen(selectedKT, loaded)
-    selectedOpLoadout = menu.opLoadoutScreen(selectedOps)
     menu.armyDisplayScreen(selectedKT, selectedOps)
 
     menuScreen = False

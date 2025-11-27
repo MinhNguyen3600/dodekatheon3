@@ -3,12 +3,16 @@ import string
 
 import utils
 
-# player = {
-#     "Operative Selection":[]
-# }
 
-AllKillTeams = ["Angels of Death", "Plague Marines"]
-def loadData():
+
+
+
+
+AllKillTeams = ["angels-of-death", "plague-marines"]
+
+# Post-data/datasheet.json restructuring:
+# ✅Works!
+def loadData() -> dict:
     try:       
         with open("data/datasheet.json", "r") as f:
             loadedData = json.load(f) # load json data objects   
@@ -16,9 +20,11 @@ def loadData():
     except OSError:
         print("!!!No loadable save file found!!!")
 
-    return loadedData    
+    return loadedData  
     
-def ktLoader():
+# Post-data/datasheet.json restructuring:
+# ✅Works! (after modifying AllKillTeams list to include dict keys that matches ones in datasheet)
+def ktLoader() -> list:
     loadedData = loadData()
     eligibleKT = list(loadedData.keys())
     killTeamList = []
@@ -27,40 +33,36 @@ def ktLoader():
         for j in range(len(eligibleKT)):
             if AllKillTeams[i] == eligibleKT[j]:
                 counter += 1
-                exportString = str(counter) + ". " + eligibleKT[j]
+                exportString = str(counter) + ". " + loadedData[eligibleKT[j]]["killteam-name"]
                 killTeamList.append(exportString)
+
     return killTeamList
 
-def dataLoader(currentKT: str):
-    loadedData = {}
+# Post-data/datasheet.json restructuring:
+# ✅Works! (updated to load operatives sequentially depending on currently selected KT)
+def opDataLoader(currentKT: str) -> dict:
     ktDict = loadData()
-    for ktName, ktInfo in ktDict.items():
-        datasheets = ktInfo.get("Operative Datasheets", [])
 
-        operatives = {}
-        for ops in datasheets:  # ops is dict
-            name = ops["Op Name"]
-            operatives[name] = ops
-        
-        selection_rules = ktInfo.get("Operative Selection", [])
-
-        loadedData[ktName] = {
-            "operatives": operatives,
-            "selection_rules": selection_rules
-        }
-        return loadedData
+    ktInfo = ktDict[currentKT]
+    datasheets = ktInfo.get("operative-datasheets", {})
+    operatives = {}
+    for opKey, opData in datasheets.items():  # ops is dict
+        opName = opData["op-name"]
+        operatives[opName] = opData
     
-def legalOps(currentKT: str, loadedData: dict): #data taken from chosen kill team, passed through dataLoader()
-    # for operator in ktData["operatives"]:
-    selectableOperatives = []
-    ktOperatives = loadedData[currentKT]["operatives"]
-    ktSelection = loadedData[currentKT]["selection_rules"]
-    for operatives in ktOperatives:
-        selectableOperatives.append(operatives)
+    selection_rules = ktInfo.get("operative-selection", {})
 
-    return ktSelection, ktOperatives
+    ktLoadedData = {
+        "operatives": operatives,
+        "weapons": ktInfo.get("weapons", {}),
+        "killteam-name": ktInfo.get("killteam-name", currentKT.replace("-", " ").title()),   # replaces dashes with spaces, and capitalizes first character of each word.
+        "selection_rules": selection_rules
+    }
+    return ktLoadedData
 
-def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
+# legalOps() func removed for being a redundant operative data loader & never called    
+
+def ktBuild(currentKT: str, ktSelection: list, ktLoadedOps: list):
     select = ktSelection[0]
     alphabet =  string.ascii_uppercase # for all caps alphabet like "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     roleMatch = {}
@@ -70,7 +72,7 @@ def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
     
     while ktBuild:
         utils.clear()
-        print(f"Your chosen Kill Team [{currentKT}] has the following selectable operatives:")
+        print(f"Your chosen Kill Team [{currentKT.replace("-", " ").title()}] has the following selectable operatives:")
         opIndex = 1
         roleIndex = 0
         for roles, roleOptions in select.items():
@@ -78,7 +80,7 @@ def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
             matches = []
 
             # Loop for loading list of options for matching later
-            for ops in selectableOperatives:
+            for ops in ktLoadedOps["op-name"]:
                 if ops in opt:
                     matches.append(ops)
 
@@ -131,20 +133,38 @@ def ktBuild(currentKT: str, ktSelection: list, selectableOperatives: list):
             print("Invalid input!")
     return opSelection  
 
-def ktDataLoader(currKT: str, opSelect: list):
-    loadedData = dataLoader(currKT)
-    opData = loadedData[currKT]["operatives"]
-    selectedData = []
+# FORMER ktDataLoader is split into 2 of the following functions:
+def getOpData(currKT: str, opSelect: list):
+    if opSelect and isinstance(opSelect[0], dict):
+        return opSelect
+
+    ktData = opDataLoader(currKT)
+    opDict = ktData[currKT]["operatives"]
+    selectedOp = []
 
     for opName in opSelect:
-        if opName in opData:
-            operative = opData[opName]
-            selectedData.append(operative)
-
+        if opName in opDict:
+            selectedOp.append(opDict[opName])
         else:
-            print(f"Waning: Operative [{opName}] not found in datasheets for {currKT}")
+            print(f"Warning: Operative [{opName}] not found in {currKT}")
+        
+    return selectedOp
 
-    return selectedData # Tuple: (raw_list, processed_list)
+def finalizeOp(currKT: str, opSelect: list, loadouts: dict):
+    ktData = opDataLoader(currKT)
+    opDictFinal = ktData[currKT]["operatives"]
+    finalOps = []
+
+    for opName in opSelect:
+        if opName not in opDictFinal:
+            print(f"Warning: Operative [{opName}] missing!")
+            continue
+
+        op = opDictFinal[opName].copy()
+        op["loadout"] = loadouts.get(opName, [])
+        finalOps.append(op)
+        
+    return finalOps
 
 def opDatasheet(selectedData: list):
     for operative in selectedData:
@@ -161,10 +181,10 @@ def opDatasheet(selectedData: list):
         # Weapon Options
         weapons = operative['Weapon Options']
         hasWeapons = False
-        for category in ['Free Selection', 'Hard Selection']:
+        for category in ['Free Selection', 'Hard Selection', 'Fixed']:
             if category in weapons and weapons[category]:
                 print(f"| {category:<98}:                                                                                   |")
-                for actionType in ['Shoot', 'Melee', 'Fixed']:
+                for actionType in ['Shoot', 'Melee']:
                     if actionType in weapons[category]and weapons[category][actionType]:
                         hasWeapons = True
                         print(f"|   {actionType}:                                                                                         |")
@@ -236,3 +256,43 @@ def processForGamePhases(selectedData: list):
     # /---> END
 
 
+#-----------------------------------
+# NOTE: 'None' object that serves as a placeholder when you need to specify that 
+# a variable doesn't hold any valid data or when a function doesn't return any value.
+# def ktDataLoader(currKT: str, opSelect: list, loadouts: dict = None):
+#     if loadouts is None:
+#         loadouts = {}
+
+#     loadedData = dataLoader(currKT)[currKT]["operatives"]
+#     finalOpData = []
+
+#     # for opName in opSelect:
+#     #     if opName in opData:
+#     #         operative = opData[opName].copy()  # Copy to avoid modifying original
+#     #         if loadouts and opName in loadouts:
+#     #             operative['loadout'] = loadouts[opName]  # Attach loadout
+#     #         selectedData.append(operative)
+
+
+#     for opName in opSelect:
+#         if opName not in loadedData:
+#             print(f"Warning: Operative [{opName} not found in {currKT}]")    
+#             continue
+
+#         op = loadedData[opName].copy()
+#         op["loadout"] = loadouts.get(opName, [])
+#         finalOpData.append(op)
+
+#     return finalOpData
+#-----------------------------------
+currentKT = "angels-of-death"
+opDataLoader = opDataLoader(currentKT)
+
+
+print("===---------------------------------------===")
+print(ktLoader())
+print("----------------------")
+# print(opDataLoader)
+# print("===---------------------------------------===")
+print(ktBuild(currentKT, ktLoader(), opDataLoader["operatives"]))
+print("===---------------------------------------===")

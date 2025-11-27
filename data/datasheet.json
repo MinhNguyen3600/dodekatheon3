@@ -1,552 +1,409 @@
 {
-    "Angels of Death": { 
-        "Operative Datasheets":[
-            {
-                "Op Name": "Space Marine Captain", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 15
-                }, 
-                "Weapon Options":{
-                    "Free Selection":{
-                        "Shoot":{
-                            "Plasma Pistol (Standard)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            },
-                            "Plasma Pistol (Overcharged)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
-                            }
-                        },
-                        "Melee": {
-                            "Power Fist": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[5, 7], 
-                                "Weapon Keyword": ["Brutal"]
-                            }
-                        }
-                    },
-                    "Hard Selection":{},
-                    "Fixed": {}
-                },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Space Marine Captain"]
-            },
-            {
-                "Op Name": "Assault Intercessor Sargeant", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 15
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{
-                        "Shoot":{
-                            "Plasma Pistol (Standard)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            },
-                            "Plasma Pistol (Overcharged)": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
-                            }
-                        },
-                        "Melee": {
-                            "Chainsword": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": []
-                            }
-                        },
-                        "Fixed": {}
-                    },
-                    "Hard Selection":{
-                        "Shoot":{
-                            "Hand Flamer": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 2, 
-                                "dmg":[3, 3], 
-                                "Weapon Keyword": ["Brutal"]
-                            },
-                            "Heavy Bolt Pistol":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            }
-                        },
-                        "Melee":{
-                            "Power Fist": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[5, 7], 
-                                "Weapon Keyword": ["Brutal"]
-                            },
-                            "Chainsword": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": []
-                            },
-
-                            "Power Weapon": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 6], 
-                                "Weapon Keyword": ["Lethal 5"]
-                            },
-                            
-                            "Thunder hammer": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 4, 
-                                "dmg":[5, 6], 
-                                "Weapon Keyword": ["Shock", "Stun"]
-                            }
-                        }
-                    },
-                    "Fixed": {}
-                },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Assault Intercessor", "Sargeant"]
-            },
-            {
-                "Op Name": "Intercessor Sargeant", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 15
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
-                        "Melee":{
-                            "Power Fist": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[5, 7], 
-                                "Weapon Keyword": ["Brutal"]
-                            },
-                            "Chainsword": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": []
-                            },
-
-                            "Power Weapon": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 6], 
-                                "Weapon Keyword": ["Lethal 5"]
-                            },
-                            
-                            "Thunder hammer": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 4, 
-                                "dmg":[5, 6], 
-                                "Weapon Keyword": ["Shock", "Stun"]
-                            },
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        },
-                        "Shoot":{
-                            "Bolt rifle": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Piercing Crits 1"]
-                            },
-                            "Stalker Bolt Rifle (heavy)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Heavy (Dash Only)", "Lethal 5", "Piercing Crits 1"]
-                            },
-                            "Stalker Bolt Rifle (mobile)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            },
-                            "Auto Bolt Rifle":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Torrent 1"]
-                            }
-                        }
-                    },
-                    "Fixed": {}
-                },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Leader", "Intercessor", "Sargeant"]
-            },
-            {
-                "Op Name": "Assault Intercessor Grenadier", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 14
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{
-                        "Shoot":{
-                            "Heavy Bolt Pistol": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            }
-                        },
-                        "Melee":{
-                            "Chainsword": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": []
-                            }
-                        }
-                    },
-                    "Hard Selection":{},
-                    "Fixed": {}
-                },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Assault Intercessor", "Grenadier"]
-            },
-            {
-                "Op Name": "Assault Intercessor Warrior", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 14
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{
-                        "Shoot":{
-                            "Heavy Bolt Pistol": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Range 8", "Piercing 1"]
-                            }
-                        },
-                        "Melee":{
-                            "Chainsword": {
-                                "type": "Melee",
-                                "atk": 5, 
-                                "hit": 3, 
-                                "dmg":[4, 5], 
-                                "Weapon Keyword": []
-                            }
-                        }
-                    },
-                    "Hard Selection":{},
-                    "Fixed": {}
-                },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Assault Intercessor", "Warrior"]
-            },
-            {
-                "Op Name": "Intercessor Warrior", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 15
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
-                        "Shoot":{
-                            "Bolt rifle": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Piercing Crits 1"]
-                            },
-                            "Stalker Bolt Rifle (heavy)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Heavy (Dash Only)", "Lethal 5", "Piercing Crits 1"]
-                            },
-                            "Stalker Bolt Rifle (mobile)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            },
-                            "Auto Bolt Rifle":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Torrent 1"]
-                            }
-                        },
-                        
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        }
-                    },
-                    "Fixed": {}
-                },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Intercessor", "Warrior"]
-            },
-            {
-                "Op Name": "Intercessor Gunner", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 6, 
-                    "Save": 3, 
-                    "Wounds": 15
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{},
-                    "Hard Selection":{
-                        "Shoot":{
-                            "Bolt rifle": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Piercing Crits 1"]
-                            },
-                            "Stalker Bolt Rifle (heavy)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Heavy (Dash Only)", "Lethal 5", "Piercing Crits 1"]
-                            },
-                            "Stalker Bolt Rifle (mobile)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            },
-                            "Auto Bolt Rifle":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Torrent 1"]
-                            }
-                        },
-                            
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
-                        }
-                    },
-                    "Fixed": {
-                        "Auxillary Grenade Launcher (frag)":{
-                            "type": "Shoot",
+    "angels-of-death": { 
+        "killteam-name": "Angels of Death",
+        "faction": "Imperium",
+        "subfaction": "Adeptus Astartes",
+        "weapons":{
+            "shoot":{
+                "bolt-rifle": {
+                    "weapon-name": "Bolt Rifle",
+                    "profiles": {
+                        "default":{
                             "atk": 4, 
                             "hit": 3, 
-                            "dmg":[2, 4], 
-                            "Weapon Keyword": ["Blast 2"]
-                        },
-                        "Auxillary Grenade Launcher (krak)":{
-                            "type": "Shoot",
-                            "atk": 4, 
-                            "hit": 3, 
-                            "dmg":[4, 5], 
-                            "Weapon Keyword": ["Piercing 1"]
+                            "dmg":[3, 4], 
+                            "weapon-keyword": ["piercing-crits 1"]
                         }
                     }
                 },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Intercessor", "Gunner"]
-            },
-            {
-                "Op Name": "Elimnator Sniper", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 7, 
-                    "Save": 3, 
-                    "Wounds": 12
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{
-                        "Shoot":{
-                            "Bolt pistol": {
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Range 8"]
-                            },
-                            "Stalker Bolt Rifle (executioner)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 2, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Heavy (Dash Only)", "Saturate", "Seek Light", "Silent"]
-                            },
-                            "Bolt sniper rifle (hyperfrag)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 2, 
-                                "dmg":[2, 4], 
-                                "Weapon Keyword": ["Blast 1", "Heavy (Dash Only)", "Silent"]
-                            },
-                            "Bolt sniper rifle (mortis)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 2, 
-                                "dmg":[3, 3], 
-                                "Weapon Keyword": ["Devastating 3", "Heavy (Dash Only)", "Piercing 1", "Silent"]
-                            }
+                "stalker-bolt-rifle": {   
+                    "weapon-name": "Stalker Bolt Rifle",
+                    "profiles": {
+                        "heavy":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 5], 
+                            "weapon-keyword": ["heavy", "lethal 5", "piercing-crits 1"]
                         },
-                        
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
+                        "mobile":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 4], 
+                            "weapon-keyword": []
                         }
-                    },
-                    "Hard Selection":{},
-                    "Fixed": {}
+                    }
+                },   
+                "auto-bolt-rifle": {   
+                    "weapon-name": "Auto Bolt Rifle",
+                    "profiles": {
+                        "default":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 4], 
+                            "weapon-keyword": ["torrent 1"]
+                        }
+                    }
                 },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Elimator", "Sniper", "Special ops"]
-            },
-            {
-                "Op Name": "Heavy Intercessor Gunner", 
-                "Op Data Sheet": {
-                    "APL": 3, 
-                    "Move": 5, 
-                    "Save": 3, 
-                    "Wounds": 18
-                }, 
-                "Weapon Options": {
-                    "Free Selection":{
-                        "Shoot":{
-                            "Heavy bolter (focused)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 5], 
-                                "Weapon Keyword": ["Piercing Crits 1"]
-                            },
-                            "Heavy bolter (sweeping)":{
-                                "type": "Shoot",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": ["Piercing Crits 1", "Torrent 1"]
-                            }
+
+                
+                "auxiliary-grenade-launcher": {
+                    "weapon-name": "Auxillary Grenade Launcher",
+                    "profiles": {
+                        "frag":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[2, 4], 
+                            "weapon-keyword": ["blast 2"]
                         },
-                        
-                        "Melee":{
-                            "Fists": {
-                                "type": "Melee",
-                                "atk": 4, 
-                                "hit": 3, 
-                                "dmg":[3, 4], 
-                                "Weapon Keyword": []
-                            }
+                        "krak":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[4, 5], 
+                            "weapon-keyword": ["piercing 1"]
                         }
-                    },
-                    "Hard Selection":{},
-                    "Fixed": {}
+                    }
                 },
-                "Op Skills":{},
-                "Op Keyword": ["Angels of Death", "Imperium", "Adeptus Astartes", "Heavy Intercessor", "Gunner", "Special ops"]
-            }
-        ],
-        "Operative Selection":[
-            {
-                "Leaders":{
-                    "options": ["Space Marine Captain", "Assault Intercessor Sargeant", "Intercessor Sargeant"],
-                    "limit": 1
+                "heavy-bolter": {
+                    "weapon-name": "Heavy Bolter",
+                    "profiles": {
+                        "focused":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 5], 
+                            "weapon-keyword": ["piercing-crits 1"]
+                        },
+                        "sweeping":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 4], 
+                            "weapon-keyword": ["piercing-crits 1", "torrent 1"]
+                        }
+                    }
                 },
-                "Warriors":{
-                    "options": ["Assault Intercessor Warrior", "Intercessor Warrior"],
-                    "limit": 0
+                "bolt-sniper-rifle": {
+                    "weapon-name": "Bolt Sniper Rifle",
+                    "profiles": {    
+                        "executioner":{
+                            "atk": 4, 
+                            "hit": 2, 
+                            "dmg":[3, 4], 
+                            "weapon-keyword": ["heavy", "saturate", "seek-light", "silent"]
+                        },
+                        "hyperfrag":{
+                            "atk": 4, 
+                            "hit": 2, 
+                            "dmg":[2, 4], 
+                            "weapon-keyword": ["blast 1", "heavy", "silent"]
+                        },
+                        "mortis":{
+                            "atk": 4, 
+                            "hit": 2, 
+                            "dmg":[3, 3], 
+                            "weapon-keyword": ["devastating 3", "heavy", "piercing 1", "silent"]
+                        }
+                    }
                 },
-                "Grenadier":{
-                    "options": ["Assault Intercessor Grenadier"],
-                    "limit": 1
+
+
+                "plasma-pistol": { 
+                    "weapon-name": "Plasma Pistol",
+                    "profiles": {
+                        "standard":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 5], 
+                            "weapon-keyword": ["range 8", "piercing 1"]
+                        },
+                        "overcharged": {
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[4, 5], 
+                            "weapon-keyword": ["range 8", "hot", "lethal 5", "piercing 1"]
+                        }
+                    }
                 },
-                "Gunner":{
-                    "options": ["Intercessor Gunner"],
-                    "limit": 1
+                "heavy-bolt-pistol": {
+                    "weapon-name": "Heavy Bolt Pistol",
+                    "profiles": {
+                        "default":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 4], 
+                            "weapon-keyword": ["range 8", "piercing 1"]
+                        }
+                    }
                 },
-                "Special ops":{
-                    "options":["Elimnator Sniper", "Heavy Intercessor Gunner"],
-                    "limit": 1
+                "bolt-pistol": {
+                    "weapon-name": "Bolt Pistol",
+                    "profiles": {
+                        "default":{
+                            "atk": 4, 
+                            "hit": 3, 
+                            "dmg":[3, 4], 
+                            "weapon-keyword": ["range 8"]
+                        }
+                    }
+                },
+                "hand-flamer": {
+                    "weapon-name": "Hand Flamer",
+                    "profiles": {
+                        "default":{   
+                            "atk": 4, 
+                            "hit": 2, 
+                            "dmg":[3, 3], 
+                            "weapon-keyword": ["brutal"]
+                        }
+                    }
+                }
+            },
+
+            "melee": {
+                "power-fist": {
+                    "weapon-name": "Power Fist",
+                    "atk": 5, 
+                    "hit": 3, 
+                    "dmg":[5, 7], 
+                    "weapon-keyword": ["brutal"]
+                },
+                "chainsword": {
+                    "weapon-name": "Chainsword",
+                    "atk": 5, 
+                    "hit": 3, 
+                    "dmg":[4, 5], 
+                    "weapon-keyword": []
+                },
+                "power-weapon" : {
+                    "weapon-name": "Power Weapon",
+                    "atk": 5, 
+                    "hit": 3, 
+                    "dmg":[4, 6], 
+                    "weapon-keyword": ["lethal 5"]
+                },
+                "thunder-hammer": {
+                    "weapon-name": "Thunder hammer",
+                    "atk": 5, 
+                    "hit": 4, 
+                    "dmg":[5, 6], 
+                    "weapon-keyword": ["shock", "stun"]
+                },
+                
+                "fists": {   
+                    "weapon-name": "Fists",
+                    "atk": 4, 
+                    "hit": 3, 
+                    "dmg":[3, 4], 
+                    "weapon-keyword": []
                 }
             }
-        ]
 
-    },
-    "Plague Marines":{}
-    
+        },
+
+        "operative-datasheets":{
+            "space-marine-captain": {
+                "op-name": "Space Marine Captain", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 15
+                }, 
+                "weapon-opts":{
+                    "free-selection":{
+                        "shoot":["plasma-pistol"],
+                        "melee":["power-fist"]
+                    },
+                    "hard-selection":{},
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "leader", "space-marine-captain"]
+            },
+
+            "assault-intercessor-sargeant": {
+                "op-name": "Assault Intercessor Sargeant", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 15
+                }, 
+                "weapon-opts": {
+                    "free-selection":{
+                        "shoot":["plasma-pistol", "hand-flamer", "heavy-bolt-pistol"],
+                        "melee":["chainsword", "power-fist", "power-weapon", "thunder-hammer"]
+                    },
+                    "hard-selection":{
+                        "shoot":["plasma-pistol"],
+                        "melee":["chainsword"]
+                    },
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "leader", "assault-intercessor", "sargeant"]
+            },
+
+            "intercessor-sargent": {
+                "op-name": "Intercessor Sargeant", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 15
+                }, 
+                "weapon-opts": {
+                    "free-selection":{},
+                    "hard-selection":{
+                        "shoot":["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
+                        "melee":["chainsword", "power-fist", "power-weapon", "thunder-hammer"]
+                    },
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "leader", "intercessor", "sargeant"]
+            },
+
+            "assault-intercessor-grenadier": {
+                "op-name": "Assault Intercessor Grenadier", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 14
+                }, 
+                "weapon-opts": {
+                    "free-selection":{
+                        "shoot":["heavy-bolt-pistol"],
+                        "melee": ["chainsword"]
+                    },
+                    "hard-selection":{},
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "assault-intercessor", "grenadier"]
+            },
+
+            "assault-intercessor-warrior": {
+                "op-name": "Assault Intercessor Warrior", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 14
+                }, 
+                "weapon-opts": {
+                    "free-selection":{
+                        "shoot":["heavy-bolt-pistol"],
+                        "melee":["chainsword"]
+                    },
+                    "hard-selection":{},
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "assault-intercessor", "warrior"]
+            },
+
+            "intercessor-warrior": {
+                "op-name": "Intercessor Warrior", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 15
+                }, 
+                "weapon-opts": {
+                    "free-selection":{},
+                    "hard-selection":{
+                        "shoot": ["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
+                        "melee": ["fists"]
+                    },
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "intercessor", "warrior"]
+            },
+
+            "intercessor-gunner": {
+                "op-name": "Intercessor Gunner", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 6, 
+                    "sv": 3, 
+                    "wounds": 15
+                }, 
+                "weapon-opts": {
+                    "free-selection":{},
+                    "hard-selection":{
+                        "shoot":["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
+                        "melee":["fists"]
+                    },
+                    "fixed": {
+                        "shoot":["auxiliary-grenade-launcher"]
+                    }
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "intercessor", "gunner"]
+            },
+            "elimnator-sniper": {
+                "op-name": "Elimnator Sniper", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 7, 
+                    "sv": 3, 
+                    "wounds": 12
+                }, 
+                "weapon-opts": {
+                    "free-selection":{
+                        "shoot":["bolt-pistol", "bolt-sniper-rifle"],
+                        "melee":["fists"]
+                    },
+                    "hard-selection":{},
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "elimnator", "sniper", "special-op"]
+            },
+            "heavy-intercessor-gunner": {
+                "op-name": "Heavy Intercessor Gunner", 
+                "op-datasheet": {
+                    "apl": 3, 
+                    "mv": 5, 
+                    "sv": 3, 
+                    "wounds": 18
+                }, 
+                "weapon-opts": {
+                    "free-selection":{
+                        "shoot":["heavy-bolter"],
+                        "melee":["fists"]
+                    },
+                    "hard-selection":{},
+                    "fixed": {}
+                },
+                "op-skills":{},
+                "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "heavy-intercessor", "gunner", "special-op"]
+            }
+        },
+        "operative-selection":{
+                "leader":{
+                    "options": ["space-marine-captain", "assault-intercessor-sargeant", "intercessor-sargeant"],
+                    "limit": 1
+                },
+                "warrior":{
+                    "options": ["assault-intercessor-warrior", "intercessor-warrior"],
+                    "limit": null
+                },
+                "grenadier":{
+                    "options": ["assault-intercessor-grenadier"],
+                    "limit": 1
+                },
+                "gunner":{
+                    "options": ["intercessor-gunner"],
+                    "limit": 1
+                },
+                "special-op":{
+                    "options":["elimnator-sniper", "heavy-intercessor-gunner"],
+                    "limit": 1
+                }
+        }
+
+    }
 }

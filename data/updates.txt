@@ -22,3 +22,87 @@ TODO:
     + Check operative limit logic, implement it if not working yet
     + Check loop logic when building army
 
+
+
+26-11-2025 Changes:
+- moved all weapon profiles, including special & operative specific weapons, up to the common-weapons{} dict, now renamed to "weapons{}" dict since it contains the dictionary of all operative's weapons
+- updated the operatives' weapon-options{} dicts' lists to include the keyword of their weapon, referred from the weapons{} dist
+    + Initially a operative keyword specifier was added to the special/operative-specific weapon's profiles, but it was abandoned to 1. avoid re-complicating the data structure, and 2. those weapon profiles will only be referred if their weapon keyword is included within the operative, making those operative keyword redundant and could cause a loading-data error
+    + "weapon-name" dict is moved to the parent-level of the dict, same level as the "profiles:{}" dict.
+- weapons with only 1 profile in the shoot{} dict inside weapon{} dict have been added indo a profile:{ default: {} } nested dictionary, to conform to shooting{}weapon profiles with multiple profiles' structure. 
+- melee weapons remain the same as before as none have more than 1 profile
+- operative keywords have been changed to the same format as weapon keywords, with all lowercase and space between reduced with the "-" dashes
+    + operative-selection{} dict's nested dictionary also has the keywords for operative selection limits changed so that it fits the keyword inside the listed operative's keyword list (for cross-checking limit and validity once loaded it)
+    + operatives with no limits have had its value changed from 0 --> 99 --> null
+- Weapon keyword have similarly been changed to conform to the datasheet's keyword structure as well.
+    + Keywords remain the same structure as "this-keyword-here", but a space in between the keyword and number/integer is to display its modifier value
+    + These keywords will be defined in a separate python file, which the game will use as reference and check for the weapon keyword, and modifier to apply it appropriately according to game rules.
+    + Heavy (Dash Only) --> heavy-(dash-only) --> heavy 
+
+Level 1:
+	- Killteam{}
+level 2:
+		1a killteam name
+		2a faction
+		3a subfaction
+		4a weapons{}
+		5a operative-datasheet{}
+		6a operative-selection()
+level 3:
+			4b weapon type{} (shoot{} or melee{})
+			5b operative{}
+			6b role{}
+level 4: 
+				4c weapon datasheet{}
+				
+				5c op name
+				5c op datasheet{}
+				5c weapon opts{}
+				5c op skills{}
+				5c op keyword[]
+				
+				6c operative options[]
+				6c operative limit: int
+level 5:
+					4d weapon name
+					4d profile(s){}
+				
+					5d weapon selection (free-selection, hard-selection, fixed)
+					
+level 6:
+						4e weapon profile{} (if many, keyword is the name of that specific profile; if only 1, keyword is "default")
+						
+						5e weapon opt catagory{} (shoot[] and melee[])
+
+27-11-2025 TO-DOs:
+- Update ALL data loaders including BOTH army.py & menu.py to adhere to the new data structure
+	+ Total of 9 functions inside army.py
+	+ Total of 4 functions inside menu.py
+
+27-11-2025 changes:
+- Verified and modified the data loading and maniputlation/operation functionalities of the following functions:
+	- army.py (4.5/9):
+		+ loadData()
+		+ ktLoader()
+		+ dataLoader()
+		+ legalOps() ---> removed, redunant operative loader, never called
+		+ ktBuild() (WIP)
+28-11-2025 plan:
+- Update the remaining unverified & untested functions post-datasheet data restructuring
+	- army.py (3.5/9):
+		+ ktBuild() --> Complete
+		+ getOpData()
+		+ finalizeOps()
+		+ opDatasheet() #aigen
+		+ rocessForGamePhases() #aigen
+
+	- menu.py (3/9):
+		+ ktSelectScreen()
+		+ opSelectScreen()
+		+ opLoadoutScreen()
+		+ armyDisplayScreen()
+		
+- The current project's data structure (using .json) to store data is inline with the noSQL's data struct
+=> Start implementing it onto mongodb for optimized data-management due to increasingly complex datasheet data struct
+
+- Later native sqlite data-struct can be considered.
