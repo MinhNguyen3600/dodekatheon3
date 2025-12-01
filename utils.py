@@ -12,3 +12,6 @@ def stripper(xLen: int, yLen: int, mapWTerrain: list):
         for rx in range(xLen):
             if mapWTerrain[ry][rx].strip() == "[ ]":
                 mapWTerrain[ry][rx] = "   "
+
+def nameToKey(name: str):
+    str(name).replace(" ", "-").lower()

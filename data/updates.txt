@@ -87,16 +87,19 @@ level 6:
 		+ dataLoader()
 		+ legalOps() ---> removed, redunant operative loader, never called
 		+ ktBuild() (WIP)
+
+----------------------------------------------
+
 28-11-2025 plan:
 - Update the remaining unverified & untested functions post-datasheet data restructuring
-	- army.py (3.5/9):
+	- army.py (4.5 remain):
 		+ ktBuild() --> Complete
 		+ getOpData()
 		+ finalizeOps()
 		+ opDatasheet() #aigen
-		+ rocessForGamePhases() #aigen
+		+ processForGamePhases() #aigen
 
-	- menu.py (3/9):
+	- menu.py (4 remain):
 		+ ktSelectScreen()
 		+ opSelectScreen()
 		+ opLoadoutScreen()
@@ -106,3 +109,34 @@ level 6:
 => Start implementing it onto mongodb for optimized data-management due to increasingly complex datasheet data struct
 
 - Later native sqlite data-struct can be considered.
+
+28-11-2025 changes:
+- Updated the following unverified &  untested functions post-datasheet data restructuring
+	- army.py (1.5/4.5):
+		+ ktBuild()
+		+ getOpData()
+
+----------------------------------------------
+
+29-11-2025 plan:
+- Update the remaining unverified & untested functions post-datasheet data restructuring
+	- army.py (3 remain):
+		+ finalizeOps()
+		+ opDatasheet() #aigen
+		+ processForGamePhases() #aigen
+
+	- menu.py (4 remain):
+		+ ktSelectScreen()
+		+ opSelectScreen()
+		+ opLoadoutScreen()
+		+ armyDisplayScreen()
+	
+29-11-2025 changes:
+- Updated the following unverified &  untested functions post-datasheet data restructuring:
+	- army.py (1.5/3):
+			+ finalizeOps()
+			+ opDatasheet() --> [WIP] #aigen
+
+		- menu.py (1/4 + 1):
+			+ [NEW] getWeaponData() # Used to load weapon datasheet via weapon keyword stored as reference in operative datasheet
+			+ opLoadoutScreen()

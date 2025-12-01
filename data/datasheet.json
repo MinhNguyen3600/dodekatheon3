@@ -213,12 +213,14 @@
                         "melee":["power-fist"]
                     },
                     "hard-selection":{},
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "leader", "space-marine-captain"]
             },
-
             "assault-intercessor-sargeant": {
                 "op-name": "Assault Intercessor Sargeant", 
                 "op-datasheet": {
@@ -236,13 +238,15 @@
                         "shoot":["plasma-pistol"],
                         "melee":["chainsword"]
                     },
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "leader", "assault-intercessor", "sargeant"]
             },
-
-            "intercessor-sargent": {
+            "intercessor-sargeant": {
                 "op-name": "Intercessor Sargeant", 
                 "op-datasheet": {
                     "apl": 3, 
@@ -256,11 +260,15 @@
                         "shoot":["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
                         "melee":["chainsword", "power-fist", "power-weapon", "thunder-hammer"]
                     },
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "leader", "intercessor", "sargeant"]
             },
+
 
             "assault-intercessor-grenadier": {
                 "op-name": "Assault Intercessor Grenadier", 
@@ -276,12 +284,14 @@
                         "melee": ["chainsword"]
                     },
                     "hard-selection":{},
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "assault-intercessor", "grenadier"]
             },
-
             "assault-intercessor-warrior": {
                 "op-name": "Assault Intercessor Warrior", 
                 "op-datasheet": {
@@ -296,12 +306,14 @@
                         "melee":["chainsword"]
                     },
                     "hard-selection":{},
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "assault-intercessor", "warrior"]
             },
-
             "intercessor-warrior": {
                 "op-name": "Intercessor Warrior", 
                 "op-datasheet": {
@@ -316,11 +328,15 @@
                         "shoot": ["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
                         "melee": ["fists"]
                     },
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "intercessor", "warrior"]
             },
+
 
             "intercessor-gunner": {
                 "op-name": "Intercessor Gunner", 
@@ -337,7 +353,8 @@
                         "melee":["fists"]
                     },
                     "fixed": {
-                        "shoot":["auxiliary-grenade-launcher"]
+                        "shoot":["auxiliary-grenade-launcher"],
+                        "melee":[]
                     }
                 },
                 "op-skills":{},
@@ -357,7 +374,10 @@
                         "melee":["fists"]
                     },
                     "hard-selection":{},
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "elimnator", "sniper", "special-op"]
@@ -376,34 +396,37 @@
                         "melee":["fists"]
                     },
                     "hard-selection":{},
-                    "fixed": {}
+                    "fixed": {
+                        "shoot":[],
+                        "melee":[]
+                    }
                 },
                 "op-skills":{},
                 "op-keyword": ["angels-of-death", "imperium", "adeptus-astartes", "heavy-intercessor", "gunner", "special-op"]
             }
         },
-        "operative-selection":{
-                "leader":{
-                    "options": ["space-marine-captain", "assault-intercessor-sargeant", "intercessor-sargeant"],
-                    "limit": 1
-                },
-                "warrior":{
-                    "options": ["assault-intercessor-warrior", "intercessor-warrior"],
-                    "limit": null
-                },
-                "grenadier":{
-                    "options": ["assault-intercessor-grenadier"],
-                    "limit": 1
-                },
-                "gunner":{
-                    "options": ["intercessor-gunner"],
-                    "limit": 1
-                },
-                "special-op":{
-                    "options":["elimnator-sniper", "heavy-intercessor-gunner"],
-                    "limit": 1
-                }
+        
+        "operative-selection": {
+            "leader": {
+                "options": ["space-marine-captain", "assault-intercessor-sargeant", "intercessor-sargeant"],
+                "limit": 1
+            },
+            "warrior": {
+                "options": ["assault-intercessor-warrior", "intercessor-warrior"],
+                "limit": null
+            },
+            "grenadier": {
+                "options": ["assault-intercessor-grenadier"],
+                "limit": 1
+            },
+            "gunner": {
+                "options": ["intercessor-gunner"],
+                "limit": 1
+            },
+            "special-op": {
+                "options": ["elimnator-sniper", "heavy-intercessor-gunner"],
+                "limit": 1
+            }
         }
-
     }
 }

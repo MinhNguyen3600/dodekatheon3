@@ -94,7 +94,7 @@ WEAPON LOADOUT SELECTION SCREEN:
 	+ player must select one weapon from each weapon category (shoot & melee)
 	+ loads these weapons as the selected weapon loadouts into the game, and cannot pick other weapons outside of selected ones during the game.
 	+ If the weapon category only has 1 entry/option, then it becomes the default option, no need for the player to select, just load that in as default.
-- "Default":
+
 
 GAME LOOP
 -

@@ -45,7 +45,10 @@ def ktSelectScreen():
     return currentKT, loaded
 
 
-def opSelectScreen(currentKT: str, loaded: bool):
+def opSelectScreen(
+    currentKT: str, 
+    loaded: bool
+) -> list[str]:
     if loaded:
         operatorSelection = ["Space Marine Captain", "Elimnator Sniper", "Assault Intercessor Grenadier","Intercessor Gunner", "Intercessor Warrior", "Intercessor Warrior"]
     
@@ -57,61 +60,79 @@ def opSelectScreen(currentKT: str, loaded: bool):
         
     return operatorSelection
 
-
-
-def opLoadoutScreen(operatorSelection: list, currentKT: str):
+# handwritten code
+# simplification provided by gpt
+def getWeaponData(
+    currKT: str,
+    weaponType: str, 
+    weaponNameRef: str,
+) -> dict:
+    ktData = army.opDataLoader(currKT)
+    weaponDict = ktData.get("weapons",{})
+    typeDict = weaponDict.get(weaponType, {})
+    return typeDict.get(weaponNameRef)
+        
+# GenAI
+# -> Later heavily modified by me after data/datasheet.json restructure
+def opLoadoutScreen(
+    currentKT: str,
+    selectedData: list
+) -> dict: # returns a list of weapon dictionaries
+    ktData = army.opDataLoader(currentKT)
     loadouts = {}
-    selectedData = army.getOpData(currentKT, operatorSelection)  # Get full operative data
 
     for operative in selectedData:
-        opName = operative["Op Name"]
-        weapons = operative["Weapon Options"]
+        opSelectName = operative["op-name"]
+        realOpName = opSelectName.replace(" ", "-").lower()
+        opName = ktData["operatives"][realOpName]["op-name"]
+        weapons = ktData["operatives"][realOpName]["weapon-opts"]
         loadout = []
 
         #Auto add default (fixed) weapon opt
-        if "Fixed" in weapons:
-            for actionType in weapons["Fixed"]:
-                for name, details in weapons["Fixed"][actionType].items():
-
+        if "fixed" in weapons:
+            for actionType in list(weapons["fixed"].keys()):
+                for weaponRef in weapons["fixed"][actionType]:
+                    currWeaponData = getWeaponData(currentKT, actionType, weaponRef)
                     #Create a seperate copy of "weapon" dictionary inside the "fixed" dictionary
-                    weapon = details.copy()  
-                    
-                    #load weapon details
-                    weapon["name"] = name
-                    weapon["Action Type"] = actionType
+                    weapon = currWeaponData.copy()  
+                    if not currWeaponData:
+                        print(f"Warning: weapon [{weaponRef}] not found for {opName} (fixed)")
+                        continue
                     loadout.append(weapon) #add weapon dicts (from fixed dict) into loadout weapon list
   
         #Hard Selection (user input)
-        if "Hard Selection" in weapons:
-            for actionType in ["Shoot", "Melee"]:
-                if actionType in weapons ["Hard Selection"]:
-                    options = weapons["Hard Selection"][actionType]
+        if "hard-selection" in weapons:
+            for actionType in ["shoot", "melee"]:
+                if actionType in weapons["hard-selection"]:
+                    options = weapons["hard-selection"][actionType] # options is a List
 
                     # empty hard selection list skips this option
                     if len(options) == 0: 
                         continue    
 
                     # only 1 hard selection results in it being the default selection
+                    # modified by hand
+                    # fix provided by gpt
                     elif len(options) == 1: 
                         #next() loops through the iter() function which loops through each name-detail keypair inside options list using .items()
-                        name, details = next(iter(options.items())) 
-
-                        weapon = details.copy() 
-                        
-                        #load weapon details
-                        weapon["name"] = name
-                        weapon["Action Type"] = actionType
-                        loadout.append(weapon)
+                        selectedName = options[0]
+                        currWeaponData = getWeaponData(currentKT, actionType, selectedName)
+                        if currWeaponData:
+                            loadout.append(currWeaponData.copy())
+                        else:
+                            #load weapon details
+                            print(f"Warning: weapon [{selectedName}] not found for {opName}")
 
                     # for lists with multiple Hard Selection options, prompts user input
                     else: 
                         utils.clear()
-                        print(f"Select {actionType} weapon for {opName} (Hard Selection):")
+                        print(f"Select {actionType} weapon for {realOpName} (Hard Selection):")
 
                         #prints a list of all selectable weap options
                         #takes the weapon names in the options list, get its index, then loop through the entire list 
                         for i, name in enumerate(options, 1):
-                            print(f"{i}. {name}")
+                            displayName = name.replace("-", " ").title()
+                            print(f"{i}. {displayName}")
                         
                         while True:
                             choice = int(input(">>> ")) - 1 #reduce for index starts at 0
@@ -121,15 +142,15 @@ def opLoadoutScreen(operatorSelection: list, currentKT: str):
                                     # 1. Find if the player's selected weapon name (which is the key dict) is inside options dict list
                                     # 2. Loads selected name of weap in
                                     # 3. loads its details in via the selectedName key from the details dict
-                                    selectedName = list(options.keys())[choice]
-                                    details = options[selectedName]
-                                    
+                                    selectedName = list(options)[choice]
+                                    currWeaponData = getWeaponData(currentKT, actionType, selectedName)
+                                    if not currWeaponData:
+                                        print(f"Warning: weapon [{selectedName}] not found for {opName}")
+                                        break
                                     # 4. Create a copy of the details dict as the weapon dict, same loop as other options
-                                    weapon = details.copy()
+                                    weapon = currWeaponData.copy()
 
                                     #load weapon details
-                                    weapon["name"] = name
-                                    weapon["Action Type"] = actionType
                                     loadout.append(weapon)
                                     
                                     break #exit the "while True" loop
@@ -139,25 +160,32 @@ def opLoadoutScreen(operatorSelection: list, currentKT: str):
                                 print("Incorrect input! Please input a number!")
                         
         # Free Selection is added by default:
-        if "Free Selection" in weapons:
-            for actionType in weapons["Free Selection"]:
-                for name, details in weapons["Free Selection"][actionType].items():
-                    weapon = details.copy()
+        if "free-selection" in weapons:
+            for actionType in list(weapons["free-selection"].keys()):
+                for weaponRef in weapons["free-selection"][actionType]:
+                    currWeaponData = getWeaponData(currentKT, actionType, weaponRef)
+                    if not currWeaponData:
+                        print(f"Warning: weapon [{weaponRef}] not found for {opName} (free-selection)")
+                        continue
+                    weapon = currWeaponData.copy()
 
                     #load weapon details
-                    weapon["name"] = name
-                    weapon["Action Type"] = actionType
                     loadout.append(weapon)
 
+        loadouts[realOpName] = loadout
         loadouts[opName] = loadout
-        print(f"Loadout for {opName} completed! Selected loadout:")
+
+        print(f"Loadout for {realOpName} completed! Selected loadout:")
         for i, name in enumerate(loadout, 1):
             print(f"{i}. {name}")
         input(">>> ")
 
     return loadouts
 
-def armyDisplayScreen(currentKT: str, operatorSelection: list):
+def armyDisplayScreen(
+        currentKT: str, 
+        operatorSelection: list
+):
     # if operatorSelection already finalized
     if operatorSelection and isinstance(operatorSelection[0], dict):
         opData = operatorSelection
@@ -181,3 +209,5 @@ def armyDisplayScreen(currentKT: str, operatorSelection: list):
     utils.draw()
     input(">>> ")
 
+# for info in ktSelectScreen():
+#     print(info)

@@ -6,7 +6,7 @@ from numpy import random
 
 import army
 import utils
-import menu
+import gMenu
 import map.mapGen as mapGen
 
 # -------- Initialize game data & condition -------- 
@@ -26,9 +26,9 @@ mapWTerrain[y][x] = "[P]"  # Place initial player
 
 # -------- MENU -------- 
 while menuScreen:
-    selectedKT, loaded = menu.ktSelectScreen()
-    selectedOps = menu.opSelectScreen(selectedKT, loaded)
-    menu.armyDisplayScreen(selectedKT, selectedOps)
+    selectedKT, loaded = gMenu.ktSelectScreen()
+    selectedOps = gMenu.opSelectScreen(selectedKT, loaded)
+    gMenu.armyDisplayScreen(selectedKT, selectedOps)
 
     menuScreen = False
     game = True
