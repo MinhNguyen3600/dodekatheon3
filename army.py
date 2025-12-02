@@ -28,15 +28,20 @@ def ktLoader() -> list:
     loadedData = loadData()
     eligibleKT = list(loadedData.keys())
     killTeamList = []
+    killTeamNames = []
     counter = 0
     for i in range(len(AllKillTeams)):
         for j in range(len(eligibleKT)):
             if AllKillTeams[i] == eligibleKT[j]:
+                ktNameStr = loadedData[eligibleKT[j]]["killteam-name"]
+                killTeamNames.append(ktNameStr)
+
                 counter += 1
-                exportString = str(counter) + ". " + loadedData[eligibleKT[j]]["killteam-name"]
+                
+                exportString = str(counter) + ". " + ktNameStr
                 killTeamList.append(exportString)
 
-    return killTeamList
+    return killTeamList, killTeamNames
 
 # Post-data/datasheet.json restructuring:
 # ✅Works! (updated to load operatives sequentially depending on currently selected KT)
@@ -226,22 +231,26 @@ def getOpData(currKT: str, opSelect: list):
         return opSelect
 
     ktData = opDataLoader(currKT)
+
+    print("BUILDING OP LIST!")
     opList = []
-
     for opName in opSelect:
-        realOpName = opName.replace(" ", "-").lower()
-        if opName in ktData["operatives"][realOpName]["op-name"]:
-            opList.append(ktData["operatives"][realOpName])
+        realOpName = opName.replace("-", " ").title()
+        if realOpName in ktData["operatives"][opName]["op-name"]:
+            opList.append(ktData["operatives"][opName])
+    print(f"OP LIST FINISHED! Result: {opList}")
 
+    print("BUILDING SELECTED OP LIST!")
     selectedOp = []
     for opName in opSelect:
-        realOpName = opName.replace(" ", "-").lower()
+        realOpName = opName.replace("-", " ").title()
         for i in range(len(opList)):
-            if opName in opList[i]["op-name"]:
+            if realOpName in opList[i]["op-name"]:
                 selectedOp.append(opList[i])
             # else:
             #     print(f"Warning: Operative [{opName}] not found in {currKT}")
-        
+    print(f"SELECTED OP LIST FINISHED! Result: {selectedOp}")
+
     return selectedOp
 
 # Post-data/datasheet.json restructuring:

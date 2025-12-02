@@ -8,10 +8,15 @@ import utils
 
 
 def ktSelectScreen():
-    killTeams = army.ktLoader()
+    # killTeams and ktNames are essentially the same lists
+    # kts loaded via ktLoader are the same, the only difference is:
+    # - the first element of ktLoader returns a numbered list, with a numbered "{number}. {ktName}"
+    # - the second element of the ktloader returns the same lists, with the same positions, but only the ktNames
+    killTeams = army.ktLoader()[0]
+    ktNames = army.ktLoader()[1]
     
     while True:
-        utils.clear()
+        # utils.clear()
         utils.draw()
         print("SELECT YOUR KILL TEAM:")
         for kt in killTeams:
@@ -31,14 +36,16 @@ def ktSelectScreen():
             for chosen in range(len(killTeams)):
                 chosenKT = killTeams[chosen]
                 if choice == chosenKT[0]:
-                    currentKT = killTeams[chosen][3:]
+                    currentKT = utils.nameToKey(ktNames[chosen])
+                    print(currentKT)
                     loaded = False
                     break
-            else:
-                print("Invalid choice! Please try again.")
-                input("Press Enter...")
-                continue  # Retry
 
+                else:
+                    print("Invalid choice! Please try again.")
+                    input("Press Enter...")
+                    continue  # Retry
+            break
     utils.draw()
     input(f"You've chosen the [{currentKT}] Kill Team!")
 
@@ -49,15 +56,16 @@ def opSelectScreen(
     currentKT: str, 
     loaded: bool
 ) -> list[str]:
-    if loaded:
+    if loaded is True:
         operatorSelection = ["Space Marine Captain", "Elimnator Sniper", "Assault Intercessor Grenadier","Intercessor Gunner", "Intercessor Warrior", "Intercessor Warrior"]
     
-    else:
+    elif loaded is False:
         utils.clear()
-        dataLoad = army.dataLoader(currentKT)
-        eligibleOps = army.legalOps(currentKT, dataLoad)
-        operatorSelection = army.ktBuild(currentKT, eligibleOps[0], eligibleOps[1])
+        dataLoad = army.opDataLoader(currentKT)
+        operatorSelection = army.ktBuild(currentKT, dataLoad)
         
+    else:
+        print("Error loading ktData: army.opSelectScreen()-related error")
     return operatorSelection
 
 # handwritten code
@@ -175,9 +183,9 @@ def opLoadoutScreen(
         loadouts[realOpName] = loadout
         loadouts[opName] = loadout
 
-        print(f"Loadout for {realOpName} completed! Selected loadout:")
-        for i, name in enumerate(loadout, 1):
-            print(f"{i}. {name}")
+        print(f"Loadout for [{opName}] completed! Selected loadout:")
+        for i, loadoutDetail in enumerate(loadout, 1):
+            print(f"{i}. {loadoutDetail['weapon-name']}")
         input(">>> ")
 
     return loadouts

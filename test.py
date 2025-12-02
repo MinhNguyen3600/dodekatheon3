@@ -2,30 +2,21 @@ import menu
 import utils
 import army
 
-currentKT = "angels-of-death"
-currentKT = "angels-of-death"
-opDataLoad = army.opDataLoader(currentKT)
-
 
 print("===---------------------------------------===")
-# print(army.ktLoader())
+currentKT, loaded = menu.ktSelectScreen()
 print("----------------------")
-# print(opDataLoad)
-# print("===---------------------------------------===")
-# ktOpSelect = ktBuild(currentKT, opDataLoad)
-ktOpSelect = ["Space Marine Captain", "Elimnator Sniper", "Assault Intercessor Grenadier","Intercessor Gunner", "Intercessor Warrior", "Intercessor Warrior"]
-selectedOps = army.getOpData(currentKT, ktOpSelect)
+selectedOps = menu.opSelectScreen(currentKT, loaded)
+print(f"Test.py Output: {selectedOps}")
 print("----------------------")
-# for i in range(len(selectedOps)):
-#     print(selectedOps[i])
-opLoad = menu.opLoadoutScreen(currentKT, selectedOps)
+opData = army.getOpData(currentKT, selectedOps)
+print(f"Test.py Output: {opData}")
 print("----------------------")
-finalSelecOps = army.finalizeOp(currentKT, selectedOps, opLoad)
-# print(finalSelecOps)
-# for i in range(len(finalSelecOps)):
-#     print(finalSelecOps[i]['loadout'])
-
+opLoadouts = menu.opLoadoutScreen(currentKT, opData)
+print(f"Test.py Output: {opLoadouts}")
 print("----------------------")
-# print(army.opDataLoader(currentKT)["operatives"])
-print(army.opDatasheet(finalSelecOps))
+finalOpData = army.finalizeOp(currentKT, opData, opLoadouts)
+print(f"Test.py Output: {finalOpData}")
+print("----------------------")
+army.opDatasheet(finalOpData)
 print("===---------------------------------------===")

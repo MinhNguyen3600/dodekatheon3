@@ -140,3 +140,61 @@ level 6:
 		- menu.py (1/4 + 1):
 			+ [NEW] getWeaponData() # Used to load weapon datasheet via weapon keyword stored as reference in operative datasheet
 			+ opLoadoutScreen()
+
+----------------------------------------------
+
+30-11-2025 plan:
+- Update the remaining unverified & untested functions post-datasheet data restructuring
+	- army.py (3 remain):
+		+ opDatasheet() #aigen ---> complete
+		+ processForGamePhases() #aigen 
+
+	- menu.py (3 remain):
+		+ ktSelectScreen()
+		+ opLoadoutScreen()
+		+ armyDisplayScreen()
+
+30-11-2025 changes:
+- WIP in updating the following file's functions:
+	- army.py:
+		+ opDatasheet()	--> error loading in weapon profiles 
+
+----------------------------------------------
+
+1-12-2025 plan:
+- fix the army's opDatasheet() functions
+- update the rest of the listed functions in menu.py
+
+1-12-2025 changes:
+- Updated the remaining unverified & untested functions post-datasheet data restructuring inside
+	- army.py (3 remain):
+		+ opDatasheet() #aigen ---> completed, solution was to load the keys and data from the new loadout dict structure  one by one
+		+ processForGamePhases() #aigen ---> commented out, unecessary at the current development stage 
+	=>>> army.py IS COMPLETED!
+----------------------------------------------
+
+2-12-2025 plan: 
+- Technically, all of the remianing functions in menu.py operate without issues:
+	+ ktSelectScreen()
+	+ opLoadoutScreen()
+	+ armyDisplayScreen()
+But this only occurs for the built-in already selected operatives list
+=>>> TEST AND VERIFY IT OPERATES PROPERLY UNDER MANUAL OPERATIVE SELECTION
+
+2-12-2025 changes:
+- All remaining functions inside menu.py:
+	+ ktSelectScreen()
+	+ opLoadoutScreen()
+Except for armyDisplayScreen() have been tested and updated (for testing, see test.py) to accomodate new 
+datastruture.
+- Fixed a minor bug inside utils.nameToKey() function which didn't return the exported the new name (didn't before this)
+- Updated army.getOpData() function in order to use the names of the input selectedList instead of converting it,
+since the selectedList only stores actual ktOp names now.
+
+----------------------------------------------
+
+3-12-2025 plan:
+- There seems to be a bit of an issue with the menu.opLoadoutScreen() printing out and not allowing user 
+to select their weapon of choice for each category, instead printing all of them out and forcing the
+user to only select 1 weapon from BOTH categories
+=> FIX IT!
