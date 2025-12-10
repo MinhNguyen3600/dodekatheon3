@@ -1,0 +1,653 @@
+#-------------------------------------
+import random
+random.seed(42)  # for reproducibility
+lion_roll = random.randint(1,6)
+angron_roll = random.randint(1,6)
+rolls = [(lion_roll, angron_roll)]
+while lion_roll == angron_roll:
+    lion_roll = random.randint(1,6)
+    angron_roll = random.randint(1,6)
+    rolls.append((lion_roll, angron_roll))
+print(f"Rolls: {rolls}")
+print(f"Final - Lion: {lion_roll}, Angron: {angron_roll}")
+if lion_roll > angron_roll:
+    print("Lion has initiative")
+else:
+    print("Angron has initiative")
+
+#------------------------------------------
+
+import random
+random.seed(123)  # reproducible
+blessings_roll = sorted([random.randint(1,6) for _ in range(8)])
+print(f"Blessings roll: {blessings_roll}")
+
+#------------------------------------------
+
+import random
+random.seed(456)
+angron_advance = random.randint(1,6)
+print(f"Angron Advance roll: {angron_advance} (total move 14 + {angron_advance} = {14 + angron_advance})")
+
+#------------------------------------------
+100 SIMULATED DATA
+# ------- LION VS ANGRON  ------------
+
+import numpy as np
+
+# Dice roller
+def roll_dice(sides, num):
+    return np.random.randint(1, sides + 1, num)
+
+# Lion stats
+LION_W = 10
+LION_T = 9
+LION_INV = 3  # ++ fail on 1-2 (P_fail = 2/6)
+LION_LD = 5  # +
+LION_M = 8
+LION_PISTOL_RANGE = 12
+LION_PISTOL_A = 4
+LION_PISTOL_BS = 2
+LION_PISTOL_S = 4
+LION_PISTOL_AP = -1
+LION_PISTOL_D = 2
+LION_STRIKE_A = 8
+LION_STRIKE_WS = 2
+LION_STRIKE_S = 12
+LION_STRIKE_AP = -4
+LION_STRIKE_D = 4  # variable D4
+LION_OATH_BONUS = 1  # +1 wound
+
+# Angron stats
+ANGRON_W = 16
+ANGRON_T = 11
+ANGRON_INV = 4  # ++ fail on 1-3 (P_fail = 3/6)
+ANGRON_LD = 6  # +
+ANGRON_M = 14
+ANGRON_STRIKE_A = 8
+ANGRON_STRIKE_WS = 2
+ANGRON_STRIKE_S = 14
+ANGRON_STRIKE_AP = -3
+ANGRON_STRIKE_D_MIN = 2  # D6+2
+ANGRON_SWEEP_A = 16  # assume Strike primary
+
+# Blessings patterns (simplified greedy: prioritize Lethal > Sust > Reroll Charge > Pile6 > FightDeath)
+BLESSINGS = {
+    'Warp Blades': {'pattern': [2,2,2], 'effect': 'lethal'},  # triple 2+
+    'Martial Excellence': {'pattern': [4,4], 'effect': 'sust1'},  # double 4+
+    'Unbridled Bloodlust': {'pattern': [2,2], 'effect': 'reroll_charge'},
+    'Rage Fueled': {'pattern': [3,3], 'effect': 'pile6'},
+    'Total Carnage': {'pattern': [4,4], 'effect': 'fight_death'}  # double 4+
+}
+
+def blessings_roll():
+    roll = roll_dice(6, 8)
+    roll.sort(reverse=True)
+    active = {}
+    used_dice = []
+    # Greedy: Warp Blades first, then Martial, Bloodlust, etc.
+    priorities = ['Warp Blades', 'Martial Excellence', 'Unbridled Bloodlust', 'Rage Fueled', 'Total Carnage']
+    for b in priorities:
+        pat = sorted(BLESSINGS[b]['pattern'], reverse=True)
+        if len(roll) >= len(pat):
+            match = True
+            idx = 0
+            for i in range(len(roll)):
+                if idx < len(pat) and roll[i] >= pat[idx]:
+                    idx += 1
+                if idx == len(pat):
+                    break
+            if idx == len(pat):
+                active[b] = BLESSINGS[b]['effect']
+                # Remove used dice (simplified: remove matching)
+                for p in pat:
+                    for j in range(len(roll)):
+                        if roll[j] >= p:
+                            roll = np.delete(roll, j)
+                            break
+                break  # up to 2, but greedy one-by-one
+        if len(active) == 2:
+            break
+    return active
+
+def hit_rolls(a, bs, crit_on=6):
+    rolls = roll_dice(6, a)
+    crits = np.sum(rolls == crit_on)
+    normals = np.sum(rolls >= bs)
+    return normals + crits, crits
+
+def wound_rolls(h, s, t, oath_bonus=0, reroll1=False):
+    wound_req = 4 + (t > s) - (s > 2*t) + oath_bonus  # std 40k: 4 if =, 3 >, 2 double
+    wound_req = max(2, min(6, wound_req))
+    rolls = roll_dice(6, h)
+    if reroll1:
+        rolls[rolls == 1] = roll_dice(6, np.sum(rolls == 1))
+    wounds = np.sum(rolls >= wound_req)
+    return wounds
+
+def save_rolls(w, ap, armour_save, invuln):
+    save_req = max(2, armour_save + ap)
+    p_save = 7 - save_req  # P success
+    # Use invuln if better
+    inv_req = invuln
+    effective_req = min(save_req, inv_req)
+    rolls = roll_dice(6, w)
+    failed = np.sum(rolls < effective_req)
+    return failed
+
+def damage_rolls(failed, d_type):
+    if d_type == 'fixed':
+        return failed * 2  # D2 etc
+    elif d_type == 'd4':
+        return np.sum(roll_dice(4, failed))
+    elif d_type == 'd6p2':
+        return np.sum(roll_dice(6, failed) + 2)
+
+def lion_pistol_damage(angron_w_left):
+    if angron_w_left <= 0:
+        return 0
+    hits, crits = hit_rolls(LION_PISTOL_A, LION_PISTOL_BS)
+    wounds = wound_rolls(hits, LION_PISTOL_S, ANGRON_T)
+    failed = save_rolls(wounds, LION_PISTOL_AP, 2+? , ANGRON_INV)  # Angron armour 2+ Sv
+    dmg = damage_rolls(failed, 'fixed')
+    return min(dmg, angron_w_left)
+
+def lion_strike_damage(angron_w_left, oath_bonus):
+    hits, crits = hit_rolls(LION_STRIKE_A, LION_STRIKE_WS, crit_on=6)  # Lethal crit auto wound
+    lethal_wounds = crits
+    normal_wounds = wound_rolls(hits - crits, LION_STRIKE_S, ANGRON_T, oath_bonus)
+    total_w = lethal_wounds + normal_wounds
+    failed = save_rolls(total_w, LION_STRIKE_AP, 2, ANGRON_INV)
+    dmg = damage_rolls(failed, 'd4')
+    return min(dmg, angron_w_left)
+
+def angron_strike_damage(lion_w_left, shield_active=True, lethal=False, sust=False):
+    hits, crits = hit_rolls(ANGRON_STRIKE_A, ANGRON_STRIKE_WS)
+    if lethal:
+        lethal_wounds = crits
+        normal_hits = hits - crits
+    else:
+        lethal_wounds = 0
+        normal_hits = hits
+    if sust:
+        normal_hits += crits  # Sust1 crit = extra hit
+    wound_bonus = 0
+    if shield_active:
+        wound_req_adjust = 1  # -1 to wound roll
+    normal_wounds = wound_rolls(normal_hits, ANGRON_STRIKE_S, LION_T, wound_bonus, reroll1=False)
+    total_w = lethal_wounds + normal_wounds
+    failed = save_rolls(total_w, ANGRON_STRIKE_AP, 3, LION_INV)  # Lion armour 3+
+    dmg = damage_rolls(failed, 'd6p2')
+    return min(dmg, lion_w_left)
+
+# Sim single run
+def simulate_run():
+    lion_w = LION_W
+    angron_w = ANGRON_W
+    distance = 48
+    engaged = False
+    round_num = 0
+    lion_dmg_total = 0
+    angron_dmg_total = 0
+    reborn_used = False
+    while lion_w > 0 and angron_w > 0 and round_num < 20:  # cap
+        round_num += 1
+        # Lion turn
+        # Command Oath
+        oath = True
+        # Movement: strategy - advance if gap >20, else hold for charge bait
+        if distance > 20:
+            lion_move = LION_M
+        else:
+            lion_move = 0
+        distance -= lion_move
+        # Shooting if <12
+        if distance <= LION_PISTOL_RANGE and not engaged:
+            angron_w -= lion_pistol_damage(angron_w)
+            lion_dmg_total += LION_PISTOL_D * save_rolls(...)  # approx
+        # Charge if not engaged and close
+        if not engaged and distance <= 12:  # approx 2D6+8
+            charge_roll = roll_dice(6,2).sum()
+            if charge_roll >= distance:
+                engaged = True
+                distance = 0
+        # Fight if engaged
+        if engaged:
+            # Lion Fights First
+            dmg = lion_strike_damage(angron_w, 1 if oath else 0)
+            lion_dmg_total += dmg
+            angron_w -= dmg
+            if angron_w <= 0:
+                break
+            # Angron fights
+            blessings = blessings_roll()
+            lethal = 'Warp Blades' in blessings
+            sust = 'Martial Excellence' in blessings
+            dmg = angron_strike_damage(lion_w, True, lethal, sust)
+            angron_dmg_total += dmg
+            lion_w -= dmg
+            if lion_w <= 0:
+                break
+        # Angron turn
+        if lion_w <= 0 or angron_w <= 0:
+            break
+        # Blessings
+        blessings = blessings_roll()
+        bloodlust = 'Unbridled Bloodlust' in blessings
+        # Movement advance
+        adv = roll_dice(6,1)
+        angron_move = ANGRON_M + adv
+        distance -= angron_move
+        distance = max(0, distance)
+        # Charge if not engaged
+        if not engaged and distance > 0:
+            charge_roll = roll_dice(6,2).sum()
+            if bloodlust and charge_roll < distance:
+                charge_roll = roll_dice(6,2).sum()  # reroll
+            if charge_roll >= distance:
+                engaged = True
+                distance = 0
+        # Fight if engaged (but Lion already did Fights First)
+        # ... skip since Lion turn fight covers
+    if lion_w > 0:
+        winner = 'Lion'
+    else:
+        winner = 'Angron'
+    rounds = round_num
+    return winner, rounds, lion_dmg_total, angron_dmg_total, lion_w, angron_w
+
+# Run 100 sims
+np.random.seed(42)  # reproducible
+results = [simulate_run() for _ in range(100)]
+lions_wins = sum(1 for r in results if r[0] == 'Lion')
+angron_wins = 100 - lions_wins
+avg_rounds = np.mean([r[1] for r in results])
+avg_lion_dmg = np.mean([r[2] for r in results])
+avg_angron_dmg = np.mean([r[3] for r in results])
+lion_survival = np.mean([r[4] for r in results if r[0] == 'Lion'])
+angron_survival = np.mean([r[5] for r in results if r[0] == 'Angron'])
+
+print(f"Lion wins: {lions_wins}%")
+print(f"Angron wins: {angron_wins}%")
+print(f"Avg rounds: {avg_rounds:.1f}")
+print(f"Avg Lion dmg: {avg_lion_dmg:.1f}")
+print(f"Avg Angron dmg: {avg_angron_dmg:.1f}")
+print(f"Lion avg survival W: {lion_survival:.1f}")
+print(f"Angron avg survival W: {angron_survival:.1f}")
+print("Detailed wins:", {k: results.count((k,0,0,0,0,0)) for k in ['Lion', 'Angron']})  # dummy
+
+# ------- LION vs TRAJANN & CUSTODIAN GUARD SQUAD ---------
+# ----- File 1 --------
+import numpy as np
+np.random.seed(42)
+
+def roll_d6(n=1):
+    return np.random.randint(1, 7, n)
+
+def lion_strike_damage(guards_w, traj_w):
+    # Lion Fealty-Strike: A8 WS2+ S12 -4 D4 Lethal Hits vs T6 4++
+    hits_raw = roll_d6(8)
+    crit_hits = np.sum(hits_raw == 6)
+    normal_hits = np.sum((hits_raw >= 2) & (hits_raw < 6))
+    total_hits = normal_hits + crit_hits
+    lethal_wounds = crit_hits  # auto-wound
+    normal_wounds_roll = roll_d6(normal_hits)
+    normal_wounds = np.sum(normal_wounds_roll >= 2)  # 2+
+    total_wounds = lethal_wounds + normal_wounds
+    save_fails = roll_d6(total_wounds)
+    unsaved = np.sum(save_fails <= 3)  # 4++ fail 1-3
+    dmg_rolls = roll_d6(unsaved)  # D4 as D6/1.75 approx but use D6 mean adjust? Wait D4: 1-4
+    dmg = np.sum(np.clip(dmg_rolls, 1, 4))  # D4
+    # Allocate to guards first
+    dmg_dealt = 0
+    for i in range(4):
+        if guards_w[i] > 0:
+            alloc = min(dmg, guards_w[i])
+            guards_w[i] -= alloc
+            dmg -= alloc
+            dmg_dealt += alloc
+            if dmg == 0:
+                break
+    if dmg > 0 and traj_w > 0:
+        alloc = min(dmg, traj_w)
+        traj_w -= alloc
+        dmg_dealt += alloc
+    return dmg_dealt, guards_w, traj_w
+
+def cust_fight_damage(lion_w):
+    # 4 Guards Spear Melee A5 WS2+ S7 -2 D2 Stand Vigil reroll wound 1s; T9 Shield -> wound 5+ reroll1 ~3+/6
+    # Trajann Axe A6 WS2+ S10 -2 D3; wound 4+ Shield
+    # Assume Moment Shackle A12 on Turn2+ for fair
+    guard_att = 5 * np.sum([g > 0 for g in guards_w])
+    traj_att = 12 if moment_used else 6  # placeholder
+    # Simplified EV but full dice
+    # Guards
+    guard_hits = np.sum(roll_d6(guard_att) >=2)
+    guard_wounds_raw = roll_d6(guard_hits)
+    guard_wounds_reroll = guard_wounds_raw[guard_wounds_raw ==1]
+    if len(guard_wounds_reroll):
+        rerolls = roll_d6(len(guard_wounds_reroll))
+        guard_wounds = np.sum(guard_wounds_raw >=5) + np.sum(rerolls >=5)
+    else:
+        guard_wounds = np.sum(guard_wounds_raw >=5)
+    guard_unsaved = np.sum(roll_d6(guard_wounds) <=3)  # 3++ fail 1-3
+    guard_dmg = 2 * guard_unsaved  # D2
+    # Trajann
+    traj_hits = np.sum(roll_d6(traj_att) >=2)
+    traj_wounds_raw = roll_d6(traj_hits)
+    traj_wounds = np.sum(traj_wounds_raw >=4)  # 4+
+    traj_unsaved = np.sum(roll_d6(traj_wounds) <=3)
+    traj_dmg = np.sum(roll_d6(traj_unsaved) +1)  # D3 avg 2 but roll D6/2 +1 approx D3 2-4 -> D6//2 +2? Use np.random.choice([2,3,4])
+    traj_dmg = sum(np.random.choice([2,3,4], traj_unsaved))
+    total_dmg = guard_dmg + traj_dmg
+    lion_w -= total_dmg
+    return lion_w
+
+# Full battle sim
+def run_battle():
+    lion_w = 10
+    traj_w = 7
+    guards_w = [3.0] * 4  # float for sub
+    gap = 36.0
+    rounds = 0
+    engaged = False
+    moment_used = False
+    lion_wins = 0
+    while lion_w > 0 and (traj_w > 0 or any(g > 0 for g in guards_w)) and rounds <20:
+        rounds +=1
+        # Lion turn
+        # Move
+        gap -= 8
+        if gap < 0:
+            gap = 0
+        # Shoot if <=12 (Pistol A4 BS2+ S4 -1 D2 vs T6 4++)
+        if gap <=12:
+            hits = np.sum(roll_d6(4) >=2)
+            wounds = np.sum(roll_d6(hits) >=4)  # 4+
+            unsaved = np.sum(roll_d6(wounds) <=3)  # 4++
+            dmg = 2 * unsaved
+            # Alloc
+            for i in range(4):
+                if guards_w[i] > 0:
+                    alloc = min(dmg, guards_w[i])
+                    guards_w[i] -= alloc
+                    dmg -= alloc
+                    if dmg == 0:
+                        break
+            if dmg > 0 and traj_w > 0:
+                traj_w -= min(dmg, traj_w)
+        # Charge if not engaged and gap <=12
+        if not engaged and gap <=12:
+            charge = roll_d6(2).sum()
+            if gap <= charge:
+                engaged = True
+                # Fight Strike Fights First
+                dmg_dealt, guards_w, traj_w = lion_strike_damage(guards_w, traj_w)
+        # Cust turn
+        # Advance if not engaged
+        if not engaged:
+            adv = roll_d6() +6
+            gap -= adv
+            if gap <0:
+                gap = 0
+        # Shoot if <=24 and not engaged
+        if not engaged and gap <=24:
+            # 4 Guards A2 BS2+ S4 -1 D2 Stand Vigil? No for ranged
+            guard_hits = np.sum(roll_d6(8) >=2)
+            guard_wounds = np.sum(roll_d6(guard_hits) >=6)  # S4 vs T9 6+
+            guard_reroll1 = roll_d6(np.sum(guard_wounds_raw ==1)) if 'guard_wounds_raw' else 0  # approx np.sum >=6 ~16.7%
+            guard_unsaved = np.sum(roll_d6(guard_wounds) <=3)  # 3++
+            guard_dmg = 2 * guard_unsaved
+            # Trajann Eagle A2 BS2+ S5 -2 D3 vs T9 6+
+            traj_hits = np.sum(roll_d6(2) >=2)
+            traj_wounds = np.sum(roll_d6(traj_hits) >=6)
+            traj_unsaved = np.sum(roll_d6(traj_wounds) <=3)
+            traj_dmg_rolls = np.random.choice([2,3,4], traj_unsaved)
+            traj_dmg = sum(traj_dmg_rolls)
+            total_dmg = guard_dmg + traj_dmg
+            lion_w -= total_dmg
+        # Charge if not engaged
+        if not engaged and gap <=12:
+            charge = roll_d6(2).sum()
+            if gap <= charge:
+                engaged = True
+        # Fight if engaged
+        if engaged:
+            # Lion Fights First Strike
+            dmg_dealt, guards_w, traj_w = lion_strike_damage(guards_w, traj_w)
+            if traj_w <=0 and all(g <=0 for g in guards_w):
+                break
+            # Cust fight
+            if moment_used == False and rounds >=2:
+                traj_att = 12
+                moment_used = True
+            else:
+                traj_att = 6
+            # Guards Spear
+            num_alive = sum(1 for g in guards_w if g >0)
+            guard_att = 5 * num_alive
+            guard_hits = np.sum(roll_d6(int(guard_att)) >=2)
+            guard_wounds_raw = roll_d6(guard_hits)
+            guard_wounds1 = np.sum(guard_wounds_raw >=5)  # 5+
+            num1s = np.sum(guard_wounds_raw ==1)
+            if num1s >0:
+                rerolls = roll_d6(int(num1s))
+                guard_wounds1 += np.sum(rerolls >=5)
+            guard_unsaved = np.sum(roll_d6(int(guard_wounds1)) <=3)  # 3++
+            guard_dmg = 2 * guard_unsaved
+            # Trajann Axe
+            traj_hits = np.sum(roll_d6(traj_att) >=2)
+            traj_wounds_raw = roll_d6(traj_hits)
+            traj_wounds = np.sum(traj_wounds_raw >=4)  # 4+
+            traj_unsaved = np.sum(roll_d6(int(traj_wounds)) <=3)
+            traj_dmg_rolls = np.random.choice([2,3,4], int(traj_unsaved))
+            traj_dmg = sum(traj_dmg_rolls)
+            total_cust_dmg = guard_dmg + traj_dmg
+            lion_w -= total_cust_dmg
+            if lion_w <=0:
+                break
+    if lion_w >0:
+        return 'Lion', rounds, 10 - lion_w  # dmg taken
+    else:
+        return 'Cust', rounds, 16 - (sum(guards_w) + traj_w)  # total Cust W 7+12=19? Guards 12W, Traj7 =19
+
+# Run 100
+np.random.seed(42)
+results = []
+lion_wins = 0
+cust_wins = 0
+avg_rounds_lion = []
+avg_rounds_cust = []
+avg_dmg_lion = []
+avg_dmg_cust = []
+for i in range(100):
+    winner, rounds, dmg_dealt = run_battle()
+    results.append((winner, rounds, dmg_dealt))
+    if winner == 'Lion':
+        lion_wins +=1
+        avg_rounds_lion.append(rounds)
+        avg_dmg_lion.append(dmg_dealt)
+    else:
+        cust_wins +=1
+        avg_rounds_cust.append(rounds)
+        avg_dmg_cust.append(dmg_dealt)
+
+print(f"Lion Win Rate: {lion_wins/100*100:.1f}% ({lion_wins}/100)")
+print(f"Cust Win Rate: {cust_wins/100*100:.1f}% ({cust_wins}/100)")
+print(f"Avg Rounds Lion Win: {np.mean(avg_rounds_lion):.1f}")
+print(f"Avg Rounds Cust Win: {np.mean(avg_rounds_cust):.1f}")
+print(f"Avg Dmg Dealt Lion Wins: {np.mean(avg_dmg_lion):.1f}")
+print(f"Avg Dmg Dealt Cust Wins: {np.mean(avg_dmg_cust):.1f}")
+print("Sample 10 runs winners:", [r[0] for r in results[:10]])
+
+# ------ File 2 -------
+import numpy as np
+np.random.seed(42)
+
+def roll_dice(sides, n):
+    return np.random.randint(1, sides + 1, n)
+
+def d4_damage(n):
+    return np.random.choice([1,2,3,4], n).sum()
+
+def d3_damage(n):
+    return np.random.choice([2,3,4], n).sum()
+
+def lion_pistol_damage(guards_w, traj_w):
+    hits = np.sum(roll_dice(6,4) >=2)  # BS2+
+    wounds = np.sum(roll_dice(6,hits) >=4)  # S4 vs T6 4+
+    unsaved = np.sum(roll_dice(6,wounds) <=3)  # 4++ fail 1-3
+    dmg = 2 * unsaved
+    dmg_left = dmg
+    for i in range(4):
+        if guards_w[i] > 0 and dmg_left > 0:
+            alloc = min(dmg_left, guards_w[i])
+            guards_w[i] -= alloc
+            dmg_left -= alloc
+    if dmg_left > 0 and traj_w > 0:
+        alloc = min(dmg_left, traj_w)
+        traj_w -= alloc
+    return guards_w, traj_w
+
+def lion_strike(guards_w, traj_w):
+    hits_raw = roll_dice(6,8)
+    crits = np.sum(hits_raw ==6)
+    normals = np.sum((hits_raw >=2) & (hits_raw <6))
+    lethal_wounds = crits
+    normal_wounds = np.sum(roll_dice(6, normals) >=2)
+    total_wounds = lethal_wounds + normal_wounds
+    unsaved = np.sum(roll_dice(6, total_wounds) <=3)  # 4++
+    dmg = d4_damage(unsaved)
+    dmg_left = dmg
+    for i in range(4):
+        if guards_w[i] > 0 and dmg_left > 0:
+            alloc = min(dmg_left, guards_w[i])
+            guards_w[i] -= alloc
+            dmg_left -= alloc
+    if dmg_left > 0 and traj_w > 0:
+        traj_w -= min(dmg_left, traj_w)
+    return guards_w, traj_w, dmg
+
+def cust_ranged_shoot(lion_w):
+    # 4 Guards Spear ranged A2 BS2+ S4 -1 D2 vs T9 6+ no Vigil
+    guard_hits = np.sum(roll_dice(6,8) >=2)
+    guard_wounds_raw = roll_dice(6, guard_hits)
+    guard_wounds = np.sum(guard_wounds_raw >=6)
+    num1s = np.sum(guard_wounds_raw ==1)
+    if num1s >0:
+        rerolls = roll_dice(6, int(num1s))
+        guard_wounds += np.sum(rerolls >=6)
+    guard_unsaved = np.sum(roll_dice(6, guard_wounds) <=3)  # 3++
+    guard_dmg = 2 * guard_unsaved
+    # Traj Eagle A2 BS2+ S5 -2 D3 6+
+    traj_hits = np.sum(roll_dice(6,2) >=2)
+    traj_wounds = np.sum(roll_dice(6, traj_hits) >=6)
+    traj_unsaved = np.sum(roll_dice(6, traj_wounds) <=3)
+    traj_dmg = d3_damage(traj_unsaved)
+    total_dmg = guard_dmg + traj_dmg
+    lion_w -= total_dmg
+    return lion_w
+
+def cust_melee_fight(lion_w, guards_w, traj_w, moment_used):
+    # Guards alive
+    num_guards = sum(1 for g in guards_w if g >0)
+    guard_att = 5 * num_guards
+    guard_hits = np.sum(roll_dice(6, int(guard_att)) >=2)
+    guard_wounds_raw = roll_dice(6, guard_hits)
+    guard_wounds = np.sum(guard_wounds_raw >=5)  # 5+
+    num1s = np.sum(guard_wounds_raw ==1)
+    if num1s >0:
+        rerolls = roll_dice(6, int(num1s))
+        guard_wounds += np.sum(rerolls >=5)
+    guard_unsaved = np.sum(roll_dice(6, guard_wounds) <=3)  # 3++
+    guard_dmg = 2 * guard_unsaved
+    # Traj Axe
+    traj_att = 12 if moment_used[0] else 6
+    traj_hits = np.sum(roll_dice(6, traj_att) >=2)
+    traj_wounds = np.sum(roll_dice(6, traj_hits) >=4)  # 4+
+    traj_unsaved = np.sum(roll_dice(6, traj_wounds) <=3)
+    traj_dmg = d3_damage(traj_unsaved)
+    total_dmg = guard_dmg + traj_dmg
+    lion_w -= total_dmg
+    moment_used[0] = True
+    return lion_w
+
+def run_single_battle():
+    lion_w = 10.0
+    traj_w = 7.0
+    guards_w = np.array([3.0]*4)
+    gap = 36.0
+    rounds = 0
+    engaged = False
+    moment_used = [False]
+    cust_total_initial = 19.0  # 12+7
+    while lion_w > 0 and np.any(guards_w >0) or traj_w >0 and rounds <20:
+        rounds +=1
+        # Lion turn
+        gap = max(0, gap - 8)
+        if gap <=12:
+            guards_w, traj_w = lion_pistol_damage(guards_w.copy(), traj_w)
+        if not engaged and gap <=12:
+            charge_roll = roll_dice(6,2).sum()
+            if gap <= charge_roll:
+                engaged = True
+                # Fights First Strike
+                guards_w, traj_w, _ = lion_strike(guards_w.copy(), traj_w)
+        # Cust turn
+        if not engaged:
+            adv = 6 + roll_dice(6)
+            gap = max(0, gap - adv)
+            if gap <=24:
+                lion_w = cust_ranged_shoot(lion_w)
+            if gap <=12:
+                charge_roll = roll_dice(6,2).sum()
+                if gap <= charge_roll:
+                    engaged = True
+        if engaged:
+            # Lion Fights First
+            guards_w, traj_w, _ = lion_strike(guards_w.copy(), traj_w)
+            if traj_w <=0 and np.all(guards_w <=0):
+                break
+            # Cust fight
+            lion_w = cust_melee_fight(lion_w, guards_w, traj_w, moment_used)
+            if lion_w <=0:
+                break
+    cust_remaining = np.sum(guards_w) + traj_w
+    lion_dmg_dealt = cust_total_initial - cust_remaining
+    cust_dmg_dealt = 10 - lion_w if lion_w <0 else 10 - lion_w
+    if lion_w >0:
+        return 'Lion', rounds, lion_dmg_dealt, cust_dmg_dealt
+    else:
+        return 'Cust', rounds, lion_dmg_dealt, cust_dmg_dealt
+
+# Run 100
+results = []
+lion_wins = 0
+cust_wins = 0
+lion_rounds = []
+cust_rounds = []
+lion_dmg_dealt_list = []
+cust_dmg_dealt_list = []
+for _ in range(100):
+    winner, rounds, lion_dmg, cust_dmg = run_single_battle()
+    results.append((winner, rounds, lion_dmg, cust_dmg))
+    if winner == 'Lion':
+        lion_wins +=1
+        lion_rounds.append(rounds)
+        lion_dmg_dealt_list.append(lion_dmg)
+        cust_dmg_dealt_list.append(cust_dmg)
+    else:
+        cust_wins +=1
+        cust_rounds.append(rounds)
+        lion_dmg_dealt_list.append(lion_dmg)
+        cust_dmg_dealt_list.append(cust_dmg)
+
+print(f"Lion Win Rate: {lion_wins/100*100:.1f}% ({lion_wins}/100)")
+print(f"Cust Win Rate: {cust_wins/100*100:.1f}% ({cust_wins}/100)")
+print(f"Avg Rounds Lion Win: {np.mean(lion_rounds):.1f}")
+print(f"Avg Rounds Cust Win: {np.mean(cust_rounds):.1f}")
+print(f"Avg Lion Dmg Dealt (all): {np.mean(lion_dmg_dealt_list):.1f}")
+print(f"Avg Cust Dmg Dealt (all): {np.mean(cust_dmg_dealt_list):.1f}")
+print(f"Avg Final W Lion Wins: {np.mean([10 - d for d in cust_dmg_dealt_list[:lion_wins]]):.1f}/10")  # approx
+print(f"Avg Final W Cust Wins: {19 - np.mean(lion_dmg_dealt_list[lion_wins:]):.1f}/19")
+print("First 10 winners:", [r[0] for r in results[:10]])

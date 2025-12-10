@@ -231,12 +231,12 @@
                 }, 
                 "weapon-opts": {
                     "free-selection":{
-                        "shoot":["plasma-pistol", "hand-flamer", "heavy-bolt-pistol"],
-                        "melee":["chainsword", "power-fist", "power-weapon", "thunder-hammer"]
-                    },
-                    "hard-selection":{
                         "shoot":["plasma-pistol"],
                         "melee":["chainsword"]
+                    },
+                    "hard-selection":{
+                        "shoot":["plasma-pistol", "hand-flamer", "heavy-bolt-pistol"],
+                        "melee":["chainsword", "power-fist", "power-weapon", "thunder-hammer"]
                     },
                     "fixed": {
                         "shoot":[],
@@ -255,7 +255,10 @@
                     "wounds": 15
                 }, 
                 "weapon-opts": {
-                    "free-selection":{},
+                    "free-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "hard-selection":{
                         "shoot":["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
                         "melee":["chainsword", "power-fist", "power-weapon", "thunder-hammer"]
@@ -283,7 +286,10 @@
                         "shoot":["heavy-bolt-pistol"],
                         "melee": ["chainsword"]
                     },
-                    "hard-selection":{},
+                    "hard-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "fixed": {
                         "shoot":[],
                         "melee":[]
@@ -305,7 +311,10 @@
                         "shoot":["heavy-bolt-pistol"],
                         "melee":["chainsword"]
                     },
-                    "hard-selection":{},
+                    "hard-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "fixed": {
                         "shoot":[],
                         "melee":[]
@@ -323,7 +332,10 @@
                     "wounds": 15
                 }, 
                 "weapon-opts": {
-                    "free-selection":{},
+                    "free-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "hard-selection":{
                         "shoot": ["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
                         "melee": ["fists"]
@@ -347,7 +359,10 @@
                     "wounds": 15
                 }, 
                 "weapon-opts": {
-                    "free-selection":{},
+                    "free-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "hard-selection":{
                         "shoot":["auto-bolt-rifle", "bolt-rifle", "stalker-bolt-rifle"],
                         "melee":["fists"]
@@ -373,7 +388,10 @@
                         "shoot":["bolt-pistol", "bolt-sniper-rifle"],
                         "melee":["fists"]
                     },
-                    "hard-selection":{},
+                    "hard-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "fixed": {
                         "shoot":[],
                         "melee":[]
@@ -395,7 +413,10 @@
                         "shoot":["heavy-bolter"],
                         "melee":["fists"]
                     },
-                    "hard-selection":{},
+                    "hard-selection":{
+                        "shoot":[],
+                        "melee":[]
+                    },
                     "fixed": {
                         "shoot":[],
                         "melee":[]

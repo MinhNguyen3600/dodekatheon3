@@ -149,8 +149,9 @@ level 6:
 		+ opDatasheet() #aigen ---> complete
 		+ processForGamePhases() #aigen 
 
-	- menu.py (3 remain):
+	- menu.py (4 remain):
 		+ ktSelectScreen()
+		+ opSelectScreen()
 		+ opLoadoutScreen()
 		+ armyDisplayScreen()
 
@@ -176,6 +177,7 @@ level 6:
 2-12-2025 plan: 
 - Technically, all of the remianing functions in menu.py operate without issues:
 	+ ktSelectScreen()
+	+ opSelectScreen()
 	+ opLoadoutScreen()
 	+ armyDisplayScreen()
 But this only occurs for the built-in already selected operatives list
@@ -184,9 +186,11 @@ But this only occurs for the built-in already selected operatives list
 2-12-2025 changes:
 - All remaining functions inside menu.py:
 	+ ktSelectScreen()
+	+ opSelectScreen()
 	+ opLoadoutScreen()
 Except for armyDisplayScreen() have been tested and updated (for testing, see test.py) to accomodate new 
 datastruture.
+
 - Fixed a minor bug inside utils.nameToKey() function which didn't return the exported the new name (didn't before this)
 - Updated army.getOpData() function in order to use the names of the input selectedList instead of converting it,
 since the selectedList only stores actual ktOp names now.
@@ -198,3 +202,17 @@ since the selectedList only stores actual ktOp names now.
 to select their weapon of choice for each category, instead printing all of them out and forcing the
 user to only select 1 weapon from BOTH categories
 => FIX IT!
+
+		+++++++++++++++++++++++++++++++++
+
+8-12-2025 changes:
+- Updated ktSelectScreen() and opSelectScreen() army.py to allow players to select exiting KT selections (for new players and expedited debugging)
+- Updated getOpData(), opDatasheet() in army.py
+- ALL with assistance from Claude AI
+
+9-12-2025 plan:
+- Start implementing game mechanics from operative data, start with operative interaction.
+
+9-12-2025 changes:
+- added gameOBJ folder to contain game-related classes, functions, etc. for the game loop, basically the utils of the gameloop
+- added /gameOBJ/dicebox.py to contain functions for hit rolls, defense rolls (and wound rolls for later 40k implementation)
