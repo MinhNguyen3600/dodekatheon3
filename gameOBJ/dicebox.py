@@ -51,6 +51,16 @@ def wRoll(
     return resWoundDiceBox, wSuccessCtr, wCritCtr, finalSuccessRolls, successCond
 #-----------------------------------------------------------------------
 
+def rollBox(rollNum: int):
+    diceBox = [i for i in range(rollNum)]
+
+    #Roll Dices into dice box
+    for rollPos in range(rollNum):
+        currRoll = rand.randint(1, 7)
+        diceBox[rollPos] = currRoll 
+
+    return diceBox
+
 # Definition for rolling hit rolls
 def hRoll(
     rollNum: int,
@@ -114,46 +124,4 @@ def saveRoll(
 
     return saveDiceBox, svSuccessCtr, svCritCtr, failedSvs
     
-# ---------- THIS SHOULD BE IN THE GAME PHASES, PRE-DEFINED HERE FOR TESTING hitRoll() & svRoll() -----------
-def defenseScreen(
-    svSuccessCtr: int,
-    svCritCtr: int,
-    failedSvs: int,
-    opponentHits: int,
-    opponentCrits: int,
-    opponentSuccess: int
-):
-    print(f"THE OPPONENT SCORED [{opponentSuccess}] HITS ON YOUR OPERATIVE! OF WHICH:")
-    if opponentHits != 0:
-        print(f"    [{opponentHits}] WERE NORMAL SUCCESSFUL HITS!")
-    if opponentCrits != 0:
-        print(f"    [{opponentCrits}] WERE SUCCESSFUL CRITIAL HITS!")
 
-    print("===--------------------------===")
-
-    print(f"YOU'VE SUCCESFULLY ROLLED: ")
-    if svSuccessCtr != 0:
-        print(f"    [{svSuccessCtr}] NORMAL SAVES!" )
-
-    if svCritCtr != 0:
-        print(f"    [{svCritCtr}] CRITICAL SAVES!" )
-
-    if opponentHits != 0 and opponentCrits != 0 and svCritCtr == 0 and svSuccessCtr == 0 and failedSvs == 3:
-        print(f"!!!YOU'VE FAILLED ALL 3 SAVES! NO ACTION CAN BE TAKEN!!! \n >>> YOUR OPPONENT HITS YOU WITH [{opponentHits}] NORMAL HIT AND [{opponentCrits}] CRITICAL HITS! <<<")    
-    else:
-        print("YOU CAN:")
-        # if both player and opponent only have normal saves and hit rolls respectively
-        if opponentHits != 0 and svSuccessCtr != 0:
-            print(f" - USE YOUR [{svSuccessCtr}] NORMAL SAVES TO SAVE THAT NUMBER OF OPPONENT'S [{opponentHits}] SUCCESSFUL HITS")
-        
-        # if both player and opponent have crit saves and crit hit respectively 
-        if opponentCrits != 0  and svCritCtr != 0:
-            print(f" -  USE YOUR [{svCritCtr}] CRIT SAVES TO SAVE THAT NUMBER OF OPPONENT'S [{opponentCrits}] CRITICAL HITS")
-        
-        # if player does not have any crit saves to save opponent crit hits
-        if opponentCrits != 0 and svCritCtr == 0 and svSuccessCtr != 0 and svSuccessCtr >= 2:
-            critSave = math.floor(svSuccessCtr/2) # Rounded down result
-            print(f" -  USE 2 OF YOUR [{svSuccessCtr}] NORMAL SAVES TO SAVE [{critSave}] NUMBER OF OPPONENT'S [{opponentCrits}] CRITICAL HITS")
-        
-
-    input(">>> ")

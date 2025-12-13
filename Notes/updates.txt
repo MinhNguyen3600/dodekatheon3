@@ -210,9 +210,29 @@ user to only select 1 weapon from BOTH categories
 - Updated getOpData(), opDatasheet() in army.py
 - ALL with assistance from Claude AI
 
+----------------------------------------------
+
 9-12-2025 plan:
 - Start implementing game mechanics from operative data, start with operative interaction.
 
 9-12-2025 changes:
 - added gameOBJ folder to contain game-related classes, functions, etc. for the game loop, basically the utils of the gameloop
 - added /gameOBJ/dicebox.py to contain functions for hit rolls, defense rolls (and wound rolls for later 40k implementation)
+
+-----------------------------------------------
+13-12-2025 changes:
+- Successfully implemented defenseScreen()
+	+ Migrated defenseScreen() from /gameOBJ/dicebox.py to /phases/movement.py
+	+ /phases/movement.py has been renamed to /phases/testphases.py
+
+- Created a temp damageAllocation() function inside /phases/testPhases.py to test operative damage allocation after defenseScreen() has been ran
+	+ Successfully tested with pre-defined values
+	=> Future implementation requires implementation of inputting both player's operatives (opponent's attacking and current player's defending operative datasheet dicts) to gathe a copy of:
+		- opponents atk & crit atk
+		- current player's wounds
+	
+	!!! NOTE !!! 
+	Player Profile and datasheets MUST BE A COPY OF THE ONE STORED INSIDE /data/datasheets.json, TO PREVENT INITIAL OPERATIVE INFORMATION FROM BEING LOST/MODIFIED
+
+
+

@@ -1,0 +1,63 @@
+,3 Normals,"2 Normals, 1 Crit","1 Normal, 2 Crits","3 Crits (more likely than opponent all crits, still unlikley)
+(NOTE: CRITS DOD NOT SAVE 2 NORMAL HITS, IT CAN ONLY SAVE 1 NORMAL HIT)"
+All Successes,"[NEITHER CRITS = NO OPTIONS]
+
+remainingHits = opponentSuccess - svSuccessCtr
+remainingCrits = 0 
+","remainingHits = opponentSuccess
+remainingCrits = 0 ","remainingHits = opponentSuccess - 3
+remainingCrits = 0 
+","[ALL CRITS = NO OPTIONS] 
+
+remainingHits = opponentSuccess - 3
+remainingCrits = 0 
+"
+"Some successes, some crits","remainingHits =  opponentSuccess - svSuccessCtr
+remainingSuccess = 0
+remainingCrits  = opponentCrits
+remainingSucessCrits = 0
+OR
+remainingCrits = opponentCrits - 2
+reaminingSuccess = svSuccessCtr - 2
+remaining Hits = opponentSuccess - remainingSuccess
+remainingSucessCrits = 0","remainingHits =  opponentSuccess - 2
+remainingSuccess = svSuccessCtr - 2
+remainingCrits  = opponentCrits - 1
+remainingSucessCrits = 0
+OR
+remainingCrits = opponent Crits - 2 (1 crit save, 2 normal saves = 2 critsaves overall)
+reaminingSuccess = svSuccessCtr - 2
+remainingSucessCrits = 0
+remainingHits = opponentSuccess ","[PLAYER DOESN'T HAVE ENOUGH NORMALS TO SAVE CRITS = NO OPTIONS]
+
+remainingHits =  opponentSuccess - 1
+remainingSuccess = 0
+remainingCrits  = opponentCrits - 2
+remainingSucessCrits = 0","[ALL CRITS = NO OPTIONS] 
+
+remainingCrits = opponentCrits - 3
+
+if remainingCrits == 0: remainingHits = opponentSuccess; svCritCtr = 0
+if remainingCrits > 0: remainingHits = opponentSuccess; svCritCtr = 0
+if remainingCrits < 0: remainingHits = opponentSuccess + remainingCrits (deducting remaining svCritCtr); svCritCtr = -remainingCrits
+
+remainingSuccessCrits = 0
+remainingSuccess = 0"
+All Crits (albeit very unlikely),"[PLAYER DOESN'T HAVE ENOUGH NORMALS TO SAVE MORE THAN 1 CRITS = NO OPTIONS] 
+remainingHits = 0
+remainingSuccess = 1
+remainingCrits = opponentCrits - 1
+remainingSuccessCrits = 0","[PLAYER ONLY HAS ENOUGH NORMALS & CRITS TO SAVE 2 CRITS = NO OPTIONS] 
+remainingHits = 0
+remainingSuccess = svSuccessCtr - 2
+remainingCrits = opponentCrits - 2
+remainingSuccessCrits = svCritCtr - 1","[PLAYER ONLY HAS ENOUGH CRITS TO SAVE 2 CRITS = NO OPTIONS] 
+remainingHits = 0
+remainingSuccess = svSuccessCtr
+remainingCrits = opponentCrits - 2
+remainingSuccessCrits = svCritCtr - 2","[ALL CRITS = NO OPTIONS] 
+
+remainingHits = 0
+remainingSuccess = 0
+remainingCrits = opponentCrits - 3
+remainingSuccessCrits = 0"

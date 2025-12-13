@@ -1,0 +1,113 @@
+Updated weapon datasheet structure of weapons which have more than 1 profiles:
+- Stalker Bolt Rifle (inside all Operatives with the "Intercessor" keyword):
+```
+"Stalker Bolt Rifle": {
+	"(heavy)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[3, 5], 
+		"Weapon Keyword": ["Heavy (Dash Only)", "Lethal 5", "Piercing Crits 1"]
+	},
+	"(mobile)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[3, 4], 
+		"Weapon Keyword": []
+	}
+},       
+"Auto Bolt Rifle":{
+	"type": "Shoot",
+	"atk": 4, 
+	"hit": 3, 
+	"dmg":[3, 4], 
+	"Weapon Keyword": ["Torrent 1"]
+}
+```
+
+- Bolt Sniper Rifle (Elimnator sniper only):
+```
+"Bolt Sniper Rifle:{
+	"(executioner)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 2, 
+		"dmg":[3, 4], 
+		"Weapon Keyword": ["Heavy (Dash Only)", "Saturate", "Seek Light", "Silent"]
+	},
+	"(hyperfrag)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 2, 
+		"dmg":[2, 4], 
+		"Weapon Keyword": ["Blast 1", "Heavy (Dash Only)", "Silent"]
+	},
+	"(mortis)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 2, 
+		"dmg":[3, 3], 
+		"Weapon Keyword": ["Devastating 3", "Heavy (Dash Only)", "Piercing 1", "Silent"]
+	}
+}
+```
+
+- Heavy Bolter (Heavy Intercessor Gunner only):
+```
+"Heavy bolter":{
+	"(focused)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[3, 5], 
+		"Weapon Keyword": ["Piercing Crits 1"]
+	},
+	"(sweeping)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[3, 4], 
+		"Weapon Keyword": ["Piercing Crits 1", "Torrent 1"]
+	}
+}
+```
+
+- Auxillary grenade launcher (Intercessor gunner only):
+```
+"Auxillary Grenade Launcher":{
+	"(frag)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[2, 4], 
+		"Weapon Keyword": ["Blast 2"]
+	},
+	"(krak)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[4, 5], 
+		"Weapon Keyword": ["Piercing 1"]
+	}
+}
+```
+
+- Plasma Pistol (Space Marine Captain and Assault Intercessor sargent only):
+```
+"Plasma Pistol": {
+	"(Standard)":{
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[3, 5], 
+		"Weapon Keyword": ["Range 8", "Piercing 1"]
+	},
+	"(Overcharged)": {
+		"type": "Shoot",
+		"atk": 4, 
+		"hit": 3, 
+		"dmg":[4, 5], 
+		"Weapon Keyword": ["Range 8", "Hot", "Lethal 5", "Piercing 1"]
+	}
+}
