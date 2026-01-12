@@ -1,0 +1,80 @@
+# ============================================
+# ABILITY SCHEMA DEFINITIONS
+# ============================================
+
+"""
+ABILITY TEMPLATE STRUCTURE:
+
+{
+    "name": str,                    # Ability name
+    "trigger": str,                 # When it activates (see VALID_TRIGGERS)
+    "condition": str,               # What must be true (see CONDITIONS)
+    "effects": list[dict],          # What it does (see EFFECT_TYPES)
+    "duration": str,                # How long it lasts (see DURATIONS)
+    "uses": int,                    # Optional: limited uses (1 = once per battle)
+    "player_choice": bool,          # Optional: requires player input
+    "description": str              # Human-readable description
+}
+
+VALID TRIGGERS:
+- "always"                  : Active at all times
+- "start_of_command"        : Command phase start
+- "end_of_command"          : Command phase end
+- "start_of_movement"       : Movement phase start
+- "start_of_shooting"       : Shooting phase start
+- "on_attack"               : When making attacks
+- "on_defense"              : When being attacked
+- "on_hit_roll"             : Modifies hit rolls
+- "on_wound_roll"           : Modifies wound rolls
+- "on_save_roll"            : Modifies save rolls
+- "on_damage"               : When taking damage
+- "start_of_fight"          : Fight phase start
+- "before_fight"            : Before making fight attacks
+- "on_destruction"          : When unit is destroyed
+- "on_destruction_melee"    : When destroyed by melee
+- "after_shooting"          : After shooting attacks complete
+- "after_fighting"          : After fight attacks complete
+
+CONDITIONS:
+- "always"                          : No condition
+- "isStationary"                    : Unit remained stationary
+- "didAdvance"                      : Unit advanced
+- "didCharge"                       : Unit charged
+- "isOathTarget"                    : Target is oath target
+- "attackerWithin18"                : Attacker within 18"
+- "targetBelowHalfStrength"         : Target is below half strength
+- "hasNotFoughtThisPhase"           : Unit hasn't fought yet            OR      Once Per Battle, if this unit has not fought yet
+- "notUsedThisBattle"               : Ability not used yet              OR      Once Per Battle
+- "isMeleeAttack"                   : Attack is melee
+- "targetHasKeyword:X"              : Target has keyword X
+- "distance <= X"                   : Within distance X
+- "weaponRange / 2"                 : Within half weapon range
+
+EFFECT TYPES:
+- "modifyHit"           : Modify hit rolls (+/- value)
+- "modifyWound"         : Modify wound rolls (+/- value)
+- "modifySave"          : Modify save rolls (+/- value)
+- "modifyDamage"        : Modify damage (+/- value)
+- "modifyAttacks"       : Modify attack count (+/- value)
+- "addWeaponAbility"    : Add weapon ability (LETHAL HITS, etc.)
+- "rerollHits"          : Re-roll hit rolls (value: "1s", "failed", "all")
+- "rerollWounds"        : Re-roll wound rolls (value: "1s", "failed", "all")
+- "rerollSaves"         : Re-roll save rolls (value: "1s", "failed", "all")
+- "autoHit"             : Attacks automatically hit
+- "autoWound"           : Attacks automatically wound
+- "mortalWounds"        : Deal mortal wounds (value: dice notation)
+- "healWounds"          : Heal wounds (value: dice notation)
+- "returnModel"         : Return destroyed model
+- "changeInvuln"        : Change invuln save (value: new save)
+- "fightBack"           : Fight after being destroyed
+- "shootAgain"          : Shoot again immediately
+- "chooseStance"        : Select from multiple options
+
+DURATIONS:
+- "permanent"           : Lasts entire battle
+- "this_turn"           : Until end of turn
+- "this_phase"          : Until end of phase
+- "until_end_of_phase"  : Same as this_phase
+- "next_attack"         : Only next attack
+- "instant"             : Resolves immediately
+"""

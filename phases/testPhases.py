@@ -1,4 +1,90 @@
 # ---------- OPPONENT'S TURN PHASES -----------
+def actSelectScreen(
+    opAPL: int    
+):   
+    currAPL = opAPL
+    allActions = [
+        {"action": "Move", "ap": 1},
+        {"action": "Charge", "ap": 1},
+        {"action": "Dash", "ap": 1},
+        {"action": "Shoot", "ap": 1},
+        {"action": "Fight", "ap": 1},
+        {"action": "Fall Back", "ap": 2}
+    ]
+    actionsTaken = []
+
+    while currAPL > 0:
+        # eligible Actions list
+        legalActs = []
+        for act in allActions:
+            if act["ap"] <= currAPL:
+                legalActs.append(act)
+
+        if not legalActs:
+            print("NO ACTIONS AVAILABLE WITH REMAINING AP!")
+            break
+
+        print("===--------------------------===")
+        print(f"You have {currAPL}/{opAPL} AP(s) remaining")
+        print("Please select an action:")
+        for i, actDict in enumerate(legalActs, 1):
+            print(f"{i}. {actDict["action"]} (Cost: {actDict["ap"]} AP)")
+        print(f"  {len(legalActs) + 1}. END TURN (Save remaining AP)")
+        print("===--------------------------===")
+
+        # AP loop
+        while True:
+            try:
+                choice = int(input(">>> "))
+                
+                if choice == len(legalActs) + 1:
+                    print(f"\nSAVING [{currAPL}] AP! EXITING...")
+                    return actionsTaken
+                
+                elif 1 <= choice <= len(legalActs):
+                        chosenDict = legalActs[choice - 1]
+                        chosenActCost = chosenDict["ap"]
+                        chosenAct = chosenDict["action"]
+
+                        currAPL -= chosenActCost
+                        actionsTaken.append(chosenDict)
+
+                        print(f"\n>>> YOU SELECTED: {chosenAct} (Cost: {chosenActCost} AP) <<<")
+                        print(f">>> {currAPL}/{opAPL} AP(s) remaining <<<")
+                        break
+                else:
+                    print(f"PLEASE INPUT A NUMBER FROM 1-{len(legalActs) + 1}")
+            except ValueError:
+                print(f"PLEASE INPUT A NUMBER FROM 1-{len(legalActs) + 1}!")
+
+    print("\n>>> ALL ACTION POINTS USED! TURN ENDS <<<")
+    return actionsTaken
+
+
+def hitRollScreen(
+    hRollRes: int, 
+    successRolls: int, 
+    critRolls: int, 
+    totalSuccessRolls: int, 
+    failedRolls: int,
+    atk: int,
+    hit: int
+):
+    print(f"ROLLED {atk} HIT ROLL! DICE BOX SHOWS: {hRollRes}; \nSUCCESSFULL ROLLS ARE ON A {hit}+;")
+    if successRolls != 0:
+        print(f"    YOU'VE SUCCESSFULLY ROLLED {successRolls} HITS!")
+
+    if critRolls != 0:
+        print(f"    YOU'VE SUCCESSFULLY ROLLED {critRolls} CRITIAL HITS!")
+
+    if failedRolls != 0:
+        print(f"    YOU'VE AUTO FAILED {failedRolls} (rolls = 1) ROLLS!")
+
+    if successRolls != 0 or critRolls != 0:
+        print(f">>> YOU'VE SUCCESSFULLY ROLLED {totalSuccessRolls} ROLLS IN TOTAL! <<<")
+    elif successRolls == 0 and critRolls == 0:
+        print(f">>> YOU'VE FAILLED ALL HITs ROLLS! <<<")
+
 def defenseScreen(
     svSuccessCtr: int,
     svCritCtr: int,
@@ -188,3 +274,5 @@ def damageAllocation(
     testOperativeHP = max(0, testOperativeHP)
 
     return testOperativeHP
+
+

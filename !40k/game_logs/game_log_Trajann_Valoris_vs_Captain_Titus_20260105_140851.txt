@@ -1,0 +1,308 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-05 14:07:38
+Matchup: Trajann Valoris vs Captain Titus
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Trajann Valoris
+   Profile: M6" T6 Sv2+ W7 Ld5+ OC2
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TRAJANN VALORIS
+   Weapons: Eagle's Scream, Watcher's Axe
+   Abilities: Moment Shackle
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+   Weapons: Master-Crafted Bolter, Boltpistol, Master-Crafted Chainsword
+   Abilities: Honor of Ultramar
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Trajann Valoris (1 models, 7W) vs Captain Titus (1 models, 6W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Trajann Valoris: +1 CP
+  • Captain Titus: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 15
+Distance Change: 14
+
+Movement Actions:
+  • Trajann Valoris_stationary: False
+  • Trajann Valoris_advanced: True
+  • distance_moved: 14
+
+Decisions Made:
+  • Trajann Valoris_movement_type: Advanced
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Trajann Valoris → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Eagle's Scream
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 2
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Captain Titus → Trajann Valoris
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[14:07:45] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[14:07:47] Cover Decision
+  • unit: Trajann Valoris
+  • has_cover: False
+
+[14:07:48] Charge Not Possible
+  • unit: Trajann Valoris
+  • reason: Out of range or no melee weapons
+
+[14:07:49] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Trajann Valoris (1 models, 7W) vs Captain Titus (1 models, 6W)
+Distance: 15
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: Trajann Valoris (1 models, 7W) vs Captain Titus (1 models, 6W)
+Distance: 15
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Trajann Valoris: +1 CP
+  • Captain Titus: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 3
+Distance Change: 12
+
+Movement Actions:
+  • Trajann Valoris_stationary: False
+  • Trajann Valoris_advanced: False
+  • distance_moved: 12
+
+Decisions Made:
+  • Trajann Valoris_movement_type: Normal
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Trajann Valoris → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Eagle's Scream
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 0
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Captain Titus → Trajann Valoris
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+⚔️ CHARGE PHASE
+--------------------------------------------------------------------------------
+Charger: Trajann Valoris
+Distance Before: 3
+Distance Needed: 2
+
+Charge Roll: 0
+Result: ✓ SUCCESS
+
+⚔️ FIGHT PHASE
+--------------------------------------------------------------------------------
+
+⚡ FIGHTS FIRST - Combat #1
+Fighter: Trajann Valoris → Target: Captain Titus
+----------------------------------------
+Weapon: Watcher's Axe
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 7
+  • Total Wounds: 6
+  • Failed Saves: 1
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+Combat #2
+Fighter: Captain Titus → Target: Trajann Valoris
+----------------------------------------
+Weapon: Master-Crafted Chainsword
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 7
+  • Total Wounds: 7
+  • Failed Saves: 2
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[14:08:00] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[14:08:04] Cover Decision
+  • unit: Trajann Valoris
+  • has_cover: False
+
+[14:08:07] Charge Declaration
+  • unit: Trajann Valoris
+  • declared: True
+  • distance: 3
+
+Turn End: Trajann Valoris (1 models, 5W) vs Captain Titus (1 models, 4W)
+Distance: 3
+
+================================================================================
+TURN 3
+================================================================================
+
+Turn Start: Trajann Valoris (1 models, 5W) vs Captain Titus (1 models, 4W)
+Distance: 3
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Trajann Valoris: +1 CP
+  • Captain Titus: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1
+Distance Change: 2
+
+Movement Actions:
+  • Trajann Valoris_stationary: False
+  • Trajann Valoris_advanced: False
+  • distance_moved: 2
+
+Decisions Made:
+  • Trajann Valoris_movement_type: Normal
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Captain Titus → Trajann Valoris
+--------------------------------------------------------------------------------
+Weapon Selected: Boltpistol
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+⚔️ CHARGE PHASE
+--------------------------------------------------------------------------------
+Charger: Trajann Valoris
+Distance Before: 1
+Distance Needed: 0
+
+Charge Roll: None
+Result: ✗ FAILED
+
+⚔️ FIGHT PHASE
+--------------------------------------------------------------------------------
+
+Combat #1
+Fighter: Captain Titus → Target: Trajann Valoris
+----------------------------------------
+Weapon: Master-Crafted Chainsword
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 4
+  • Total Wounds: 3
+  • Failed Saves: 2
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+Combat #2
+Fighter: Trajann Valoris → Target: Captain Titus
+----------------------------------------
+Weapon: Watcher's Axe
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 5
+  • Total Wounds: 4
+  • Failed Saves: 2
+  • Damage Dealt: 6
+  • Models Destroyed: 1
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[14:08:39] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[14:08:39] Unable to Shoot
+  • unit: Trajann Valoris
+  • reason: Out of range or no valid weapons
+
+[14:08:42] Cover Decision
+  • unit: Trajann Valoris
+  • has_cover: False
+
+[14:08:44] Charge Declaration
+  • unit: Trajann Valoris
+  • declared: True
+  • distance: 1
+
+Turn End: Trajann Valoris (1 models, 3W) vs Captain Titus (0 models, 6W)
+Distance: 1
+
+================================================================================
+GAME RESULT
+================================================================================

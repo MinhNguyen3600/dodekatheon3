@@ -1,0 +1,23 @@
+Pre-determined actions:
+- Opponent has success dice, this could either be:
+    + All Successes
+    + Some successes, some crits
+    + All Crits (albeit very unlikely)
+
+- Player has rolled 3 defense dice, this code either be:
+    + 3 Normals
+    + 2 Normals, 1 Crit
+    + 1 Normal, 2 Crits
+    + 3 Crits (more likely than opponent all crits, still unlikley)
+
+4 information is provided:
+- Opponent Hits
+- Opponent Crits
+- Player save success
+- Player save crits
+
+2 Information needs to be recorded:
+- Opponent Hits went through
+- Opponent Crits went through
+- remaining unused Success save dices
+- remaining unused Crit save dices

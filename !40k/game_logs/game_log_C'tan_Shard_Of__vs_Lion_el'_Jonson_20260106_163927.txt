@@ -1,0 +1,291 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-06 16:38:01
+Matchup: C'tan Shard Of The Nightbringer vs Lion el' Jonson
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 C'tan Shard Of The Nightbringer
+   Profile: M10" T11 Sv3+ W16 Ld6+ OC4
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: MONSTER, CHARACTER, EPIC HERO, FLY, C'TAN SHARD OF THE NIGHTBRINGER
+   Weapons: Gaze of Death, Scythe of the Nightbringer - strike, Scythe of the Nightbringer - sweep
+
+🔴 Lion el' Jonson
+   Profile: M8" T9 Sv2+ W10 Ld5+ OC4
+   Invulnerable Save: 3+
+   Models: 1
+   Keywords: MONSTER, CHARACTER, EPIC HERO, IMPERIUM, PRIMARCH, LION EL' JONSON
+   Weapons: Arma Luminis - plasma, Arma Luminis - bolt, Fealty - strike, Fealty - sweep
+   Abilities: Emperor's Shield
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: C'tan Shard Of The Nightbringer (1 models, 16W) vs Lion el' Jonson (1 models, 10W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • C'tan Shard Of The Nightbringer: +1 CP
+  • Lion el' Jonson: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 11
+Distance Change: 18
+
+Movement Actions:
+  • C'tan Shard Of The Nightbringer_stationary: False
+  • C'tan Shard Of The Nightbringer_advanced: False
+  • distance_moved: 18
+
+Decisions Made:
+  • C'tan Shard Of The Nightbringer_movement_type: Normal
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: C'tan Shard Of The Nightbringer → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Gaze of Death
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 3
+  • Total Wounds: 3
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → C'tan Shard Of The Nightbringer
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+⚔️ CHARGE PHASE
+--------------------------------------------------------------------------------
+Charger: C'tan Shard Of The Nightbringer
+Distance Before: 11
+Distance Needed: 10
+
+Charge Roll: None
+Result: ✗ FAILED
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[16:38:17] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[16:38:22] Cover Decision
+  • unit: C'tan Shard Of The Nightbringer
+  • has_cover: False
+
+[16:38:28] Charge Declaration
+  • unit: C'tan Shard Of The Nightbringer
+  • declared: True
+  • distance: 11
+
+[16:38:30] Fight Phase
+  • eligible_fighters: None
+
+Turn End: C'tan Shard Of The Nightbringer (1 models, 16W) vs Lion el' Jonson (1 models, 10W)
+Distance: 11
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: C'tan Shard Of The Nightbringer (1 models, 16W) vs Lion el' Jonson (1 models, 10W)
+Distance: 11
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • C'tan Shard Of The Nightbringer: +1 CP
+  • Lion el' Jonson: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1
+Distance Change: 10
+
+Movement Actions:
+  • C'tan Shard Of The Nightbringer_stationary: False
+  • C'tan Shard Of The Nightbringer_advanced: False
+  • distance_moved: 10
+
+Decisions Made:
+  • C'tan Shard Of The Nightbringer_movement_type: Normal
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Lion el' Jonson → C'tan Shard Of The Nightbringer
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 2
+  • Failed Saves: 1
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+⚔️ CHARGE PHASE
+--------------------------------------------------------------------------------
+Charger: C'tan Shard Of The Nightbringer
+Distance Before: 1
+Distance Needed: 0
+
+Charge Roll: None
+Result: ✗ FAILED
+
+⚔️ FIGHT PHASE
+--------------------------------------------------------------------------------
+
+⚡ FIGHTS FIRST - Combat #1
+Fighter: Lion el' Jonson → Target: C'tan Shard Of The Nightbringer
+----------------------------------------
+Weapon: Fealty - strike
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 7
+  • Total Wounds: 4
+  • Failed Saves: 3
+  • Damage Dealt: 12
+  • Models Destroyed: 0
+
+Combat #2
+Fighter: C'tan Shard Of The Nightbringer → Target: Lion el' Jonson
+----------------------------------------
+Weapon: Scythe of the Nightbringer - strike
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 6
+  • Total Wounds: 3
+  • Failed Saves: 1
+  • Damage Dealt: 6
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[16:38:44] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[16:38:44] Unable to Shoot
+  • unit: C'tan Shard Of The Nightbringer
+  • reason: Out of range or no valid weapons
+
+[16:38:47] Cover Decision
+  • unit: C'tan Shard Of The Nightbringer
+  • has_cover: False
+
+[16:38:50] Charge Declaration
+  • unit: C'tan Shard Of The Nightbringer
+  • declared: True
+  • distance: 1
+
+Turn End: C'tan Shard Of The Nightbringer (1 models, 2W) vs Lion el' Jonson (1 models, 4W)
+Distance: 1
+
+================================================================================
+TURN 3
+================================================================================
+
+Turn Start: C'tan Shard Of The Nightbringer (1 models, 2W) vs Lion el' Jonson (1 models, 4W)
+Distance: 1
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • C'tan Shard Of The Nightbringer: +1 CP
+  • Lion el' Jonson: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1
+
+Movement Actions:
+  • C'tan Shard Of The Nightbringer_stationary: False
+  • C'tan Shard Of The Nightbringer_advanced: False
+  • distance_moved: 0
+
+Decisions Made:
+  • C'tan Shard Of The Nightbringer_movement_type: Normal
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Lion el' Jonson → C'tan Shard Of The Nightbringer
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+--------------------------------------------------------------------------------
+
+⚡ FIGHTS FIRST - Combat #1
+Fighter: Lion el' Jonson → Target: C'tan Shard Of The Nightbringer
+----------------------------------------
+Weapon: Fealty - strike
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 7
+  • Total Wounds: 5
+  • Failed Saves: 2
+  • Damage Dealt: 16
+  • Models Destroyed: 1
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[16:39:19] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[16:39:19] Unable to Shoot
+  • unit: C'tan Shard Of The Nightbringer
+  • reason: Out of range or no valid weapons
+
+[16:39:22] Cover Decision
+  • unit: C'tan Shard Of The Nightbringer
+  • has_cover: False
+
+[16:39:25] Charge Declaration
+  • unit: C'tan Shard Of The Nightbringer
+  • declared: False
+  • distance: 1
+
+Turn End: C'tan Shard Of The Nightbringer (0 models, 16W) vs Lion el' Jonson (1 models, 4W)
+Distance: 1
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Lion el' Jonson
+📊 Total Turns: 3
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-06 16:39:27
+================================================================================

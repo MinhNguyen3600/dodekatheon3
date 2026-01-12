@@ -1,0 +1,458 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-05 19:47:04
+Matchup: Heavy Intercessor Squad vs Lion el' Jonson
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Heavy Intercessor Squad
+   Profile: M5" T6 Sv3+ W3 Ld6+ OC2
+   Models: 5
+   Keywords: INFANTRY, BATTLELINE, GRENADES, IMPERIUM, GRAVIS, HEAVY INTERCESSOR SQUAD
+   Weapons: Bolt pistol, Heavy bolt rifle, Close combat weapon
+
+🔴 Lion el' Jonson
+   Profile: M8" T9 Sv2+ W10 Ld5+ OC4
+   Invulnerable Save: 3+
+   Models: 1
+   Keywords: MONSTER, CHARACTER, EPIC HERO, IMPERIUM, PRIMARCH, LION EL' JONSON
+   Weapons: Arma Luminis - plasma, Arma Luminis - bolt, Fealty - strike, Fealty - sweep
+   Abilities: Emperor's Shield
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 10W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Heavy Intercessor Squad: +1 CP
+  • Lion el' Jonson: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Lion el' Jonson
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 21
+Distance Change: 8
+
+Movement Actions:
+  • Heavy Intercessor Squad_stationary: True
+  • Heavy Intercessor Squad_advanced: False
+  • distance_moved: 8
+
+Decisions Made:
+  • Heavy Intercessor Squad_movement_type: Stationary
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Heavy Intercessor Squad → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Heavy bolt rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 9
+  • Total Wounds: 2
+  • Failed Saves: 2
+  • Damage Dealt: 4
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → Heavy Intercessor Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - bolt
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 0
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[19:47:10] Oath of Moment Active
+  • shooter: Heavy Intercessor Squad
+  • target: Lion el' Jonson
+
+[19:47:11] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[19:47:15] Cover Decision
+  • unit: Heavy Intercessor Squad
+  • has_cover: False
+
+[19:47:20] Charge Not Possible
+  • unit: Heavy Intercessor Squad
+  • reason: Out of range or no melee weapons
+
+[19:47:20] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 6W)
+Distance: 21
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 6W)
+Distance: 21
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Heavy Intercessor Squad: +1 CP
+  • Lion el' Jonson: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Lion el' Jonson
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 13
+Distance Change: 8
+
+Movement Actions:
+  • Heavy Intercessor Squad_stationary: True
+  • Heavy Intercessor Squad_advanced: False
+  • distance_moved: 8
+
+Decisions Made:
+  • Heavy Intercessor Squad_movement_type: Stationary
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Heavy Intercessor Squad → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Heavy bolt rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 8
+  • Total Wounds: 1
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → Heavy Intercessor Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 0
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[19:47:25] Oath of Moment Active
+  • shooter: Heavy Intercessor Squad
+  • target: Lion el' Jonson
+
+[19:47:25] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[19:47:30] Cover Decision
+  • unit: Heavy Intercessor Squad
+  • has_cover: False
+
+[19:47:32] Charge Not Possible
+  • unit: Heavy Intercessor Squad
+  • reason: Out of range or no melee weapons
+
+[19:47:33] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 6W)
+Distance: 13
+
+================================================================================
+TURN 3
+================================================================================
+
+Turn Start: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 6W)
+Distance: 13
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Heavy Intercessor Squad: +1 CP
+  • Lion el' Jonson: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Lion el' Jonson
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 5
+Distance Change: 8
+
+Movement Actions:
+  • Heavy Intercessor Squad_stationary: True
+  • Heavy Intercessor Squad_advanced: False
+  • distance_moved: 8
+
+Decisions Made:
+  • Heavy Intercessor Squad_movement_type: Stationary
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Heavy Intercessor Squad → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Heavy bolt rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 8
+  • Total Wounds: 3
+  • Failed Saves: 1
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → Heavy Intercessor Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[19:47:40] Oath of Moment Active
+  • shooter: Heavy Intercessor Squad
+  • target: Lion el' Jonson
+
+[19:47:41] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[19:47:48] Cover Decision
+  • unit: Heavy Intercessor Squad
+  • has_cover: False
+
+[19:48:00] Charge Declaration
+  • unit: Heavy Intercessor Squad
+  • declared: False
+  • distance: 5
+
+[19:48:02] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 4W)
+Distance: 5
+
+================================================================================
+TURN 4
+================================================================================
+
+Turn Start: Heavy Intercessor Squad (5 models, 3W) vs Lion el' Jonson (1 models, 4W)
+Distance: 5
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Heavy Intercessor Squad: +1 CP
+  • Lion el' Jonson: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Lion el' Jonson
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1
+Distance Change: 4
+
+Movement Actions:
+  • Heavy Intercessor Squad_stationary: True
+  • Heavy Intercessor Squad_advanced: False
+  • distance_moved: 4
+
+Decisions Made:
+  • Heavy Intercessor Squad_movement_type: Stationary
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Heavy Intercessor Squad → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Bolt pistol
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → Heavy Intercessor Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 2
+  • Failed Saves: 2
+  • Damage Dealt: 3
+  • Models Destroyed: 1
+
+⚔️ FIGHT PHASE
+--------------------------------------------------------------------------------
+
+⚡ FIGHTS FIRST - Combat #1
+Fighter: Lion el' Jonson → Target: Heavy Intercessor Squad
+----------------------------------------
+Weapon: Fealty - sweep
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 13
+  • Total Wounds: 8
+  • Failed Saves: 7
+  • Damage Dealt: 8
+  • Models Destroyed: 3
+
+Combat #2
+Fighter: Heavy Intercessor Squad → Target: Lion el' Jonson
+----------------------------------------
+Weapon: Close combat weapon
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 1
+  • Total Wounds: 1
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[19:48:07] Oath of Moment Active
+  • shooter: Heavy Intercessor Squad
+  • target: Lion el' Jonson
+
+[19:48:09] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[19:48:17] Cover Decision
+  • unit: Heavy Intercessor Squad
+  • has_cover: False
+
+[19:48:22] Charge Declaration
+  • unit: Heavy Intercessor Squad
+  • declared: False
+  • distance: 1
+
+Turn End: Heavy Intercessor Squad (1 models, 1W) vs Lion el' Jonson (1 models, 4W)
+Distance: 1
+
+================================================================================
+TURN 5
+================================================================================
+
+Turn Start: Heavy Intercessor Squad (1 models, 1W) vs Lion el' Jonson (1 models, 4W)
+Distance: 1
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Heavy Intercessor Squad: +1 CP
+  • Lion el' Jonson: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Lion el' Jonson
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1
+
+Movement Actions:
+  • Heavy Intercessor Squad_stationary: True
+  • Heavy Intercessor Squad_advanced: False
+  • distance_moved: 0
+
+Decisions Made:
+  • Heavy Intercessor Squad_movement_type: Stationary
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Heavy Intercessor Squad → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Bolt pistol
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → Heavy Intercessor Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 2
+  • Failed Saves: 2
+  • Damage Dealt: 1
+  • Models Destroyed: 1
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[19:48:46] Oath of Moment Active
+  • shooter: Heavy Intercessor Squad
+  • target: Lion el' Jonson
+
+[19:48:47] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[19:48:50] Cover Decision
+  • unit: Heavy Intercessor Squad
+  • has_cover: False
+
+Turn End: Heavy Intercessor Squad (0 models, 3W) vs Lion el' Jonson (1 models, 4W)
+Distance: 1
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Lion el' Jonson
+📊 Total Turns: 5
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-05 19:48:51
+================================================================================

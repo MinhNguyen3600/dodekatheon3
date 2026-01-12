@@ -1,0 +1,78 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+================================================================================
+Date: 2026-01-09 17:20:30
+
+Unit 1: C'tan Shard Of The Nightbringer
+Unit 2: Angron
+
+
+================================================================================
+TURN 1
+================================================================================
+Turn Start: C'tan Shard Of The Nightbringer (1 models, 16W) vs Angron (1 models, 16W)
+Distance: 29"
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • C'tan Shard Of The Nightbringer: +1 CP
+  • Angron: +1 CP
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 13"
+Movement Actions:
+  • C'tan Shard Of The Nightbringer_stationary: True
+  • C'tan Shard Of The Nightbringer_advanced: False
+  • Angron_stationary: False
+  • Angron_advanced: True
+🔫 SHOOTING PHASE #1: C'tan Shard Of The Nightbringer → Angron
+--------------------------------------------------------------------------------
+Weapon Selected: Gaze of Death
+  Stats: Range 18", AD3 BS2+ S12 AP-3 DD6+3
+Attack Summary:
+  • Total Hits: 3
+  • Total Wounds: 2
+  • Failed Saves: 2
+  • Damage Dealt: 15
+  • Models Destroyed: 0
+Turn End: C'tan Shard Of The Nightbringer (1 models, 16W) vs Angron (1 models, 1W)
+Distance: 13"
+
+================================================================================
+TURN 2
+================================================================================
+Turn Start: C'tan Shard Of The Nightbringer (1 models, 16W) vs Angron (1 models, 1W)
+Distance: 13"
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • C'tan Shard Of The Nightbringer: +1 CP
+  • Angron: +1 CP
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 8"
+Movement Actions:
+  • C'tan Shard Of The Nightbringer_stationary: True
+  • C'tan Shard Of The Nightbringer_advanced: False
+  • Angron_stationary: False
+  • Angron_advanced: False
+🔫 SHOOTING PHASE #2: C'tan Shard Of The Nightbringer → Angron
+--------------------------------------------------------------------------------
+Weapon Selected: Gaze of Death
+  Stats: Range 18", AD3 BS2+ S12 AP-3 DD6+3
+Attack Summary:
+  • Total Hits: 3
+  • Total Wounds: 2
+  • Failed Saves: 1
+  • Damage Dealt: 1
+  • Models Destroyed: 1
+Turn End: C'tan Shard Of The Nightbringer (1 models, 16W) vs Angron (0 models, 16W)
+Distance: 8"
+
+================================================================================
+GAME END
+================================================================================
+Winner: C'tan Shard Of The Nightbringer
+Total Turns: 2
+Reason: Unit destroyed
+Game Duration: 0:00:19.944193

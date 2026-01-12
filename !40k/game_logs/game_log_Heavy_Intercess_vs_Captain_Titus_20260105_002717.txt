@@ -1,0 +1,92 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-05 00:27:08
+Matchup: Heavy Intercessor Squad vs Captain Titus
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Heavy Intercessor Squad
+   Profile: M5" T6 Sv3+ W3 Ld6+ OC2
+   Invulnerable Save: 0+
+   Models: 5
+   Keywords: INFANTRY, BATTLELINE, GRENADES, IMPERIUM, GRAVIS, HEAVY INTERCESSOR SQUAD
+   Weapons: Bolt pistol, Heavy bolt rifle, Close combat weapon
+   Abilities: Mark the Target
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+   Weapons: Master-Crafted Bolter, Boltpistol, Master-Crafted Chainsword
+   Abilities: Honor of Ultramar
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Heavy Intercessor Squad (5 models, 3W) vs Captain Titus (1 models, 6W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Heavy Intercessor Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 12
+Distance Change: 17
+
+Movement Actions:
+  • Heavy Intercessor Squad_stationary: False
+  • Heavy Intercessor Squad_advanced: True
+  • distance_moved: 17
+
+Decisions Made:
+  • Heavy Intercessor Squad_movement_type: Advanced
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Heavy Intercessor Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Heavy bolt rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 7
+  • Total Wounds: 6
+  • Failed Saves: 3
+  • Damage Dealt: 6
+  • Models Destroyed: 1
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[00:27:14] Oath of Moment Active
+  • shooter: Heavy Intercessor Squad
+  • target: Captain Titus
+
+[00:27:16] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+Turn End: Heavy Intercessor Squad (5 models, 3W) vs Captain Titus (0 models, 6W)
+Distance: 12
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Heavy Intercessor Squad
+📊 Total Turns: 1
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-05 00:27:17
+================================================================================

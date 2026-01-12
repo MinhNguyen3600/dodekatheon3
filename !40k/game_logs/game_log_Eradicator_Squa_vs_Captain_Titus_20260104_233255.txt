@@ -1,0 +1,87 @@
+======================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+======================================================================
+Date: 2026-01-04 23:32:26
+Matchup: Eradicator Squad vs Captain Titus
+======================================================================
+
+INITIAL STATE
+----------------------------------------------------------------------
+🔵 Eradicator Squad
+   Profile: M5" T6 Sv3+ W3 Ld6+ OC1
+   Models: 3
+   Keywords: INFANTRY, GRENADES, IMPERIUM, GRAVIS, ERADICATOR SQUAD
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+
+======================================================================
+TURN 1
+======================================================================
+
+Start: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 18"
+   • Eradicator Squad_stationary: False
+   • Eradicator Squad_advanced: False
+   • distance_moved: 11
+
+🔫 SHOOTING: Eradicator Squad → Captain Titus
+   Weapon: Melta rifle
+   • Hits: 5
+   • Wounds: 4
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Eradicator Squad
+   Weapon: Master-Crafted Bolter
+   • Hits: 1
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 2
+======================================================================
+
+Start: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 12"
+   • Eradicator Squad_stationary: True
+   • Eradicator Squad_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Eradicator Squad → Captain Titus
+   Weapon: Melta rifle
+   • Hits: 5
+   • Wounds: 5
+   • Failed Saves: 4
+   • Damage Dealt: 6
+   • Models Destroyed: 1
+   ✨ HEAVY: +1 to hit (stationary)
+
+End: Eradicator Squad (3 models, 3W) vs Captain Titus (0 models, 6W)
+
+======================================================================
+GAME RESULT
+======================================================================
+🏆 Winner: Eradicator Squad
+📊 Total Turns: 2
+📝 Victory Condition: Unit destroyed
+======================================================================

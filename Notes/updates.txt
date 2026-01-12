@@ -234,5 +234,43 @@ user to only select 1 weapon from BOTH categories
 	!!! NOTE !!! 
 	Player Profile and datasheets MUST BE A COPY OF THE ONE STORED INSIDE /data/datasheets.json, TO PREVENT INITIAL OPERATIVE INFORMATION FROM BEING LOST/MODIFIED
 
+----------------------------------------------
+
+15-12-2025 Plans
+- Current game loop:
+
+command (TBA) -> ((select Op -> OP CONTROL(Action: MOVE([Move] [Dash] [Charge] [Fallback (2AP)]) ATTACK([Shoot] [Fight])) -> repeat for new op))
+
+- Shoot:
+	+ Shoot weapon selection [ ]
+	+ Hit rolls [✓]
+	+ defense rolls [✓]
+	+ damage allocation [✓]
+
+- APL cost and usage system [~]
+	+ Implemented simple APL cost reduction system when choosing an actions
+	+ Still needs implementing a test phase action to see the whole APL system go through
+
+!!!!!!!!!!! ---------------------------------------------- !!!!!!!!!!!
+
+A MAJORITY OF CODE INSIDE "/!40k" folder has been written by CLAUDE, only some of the original code remain
+REASONING:
+- This is merely for 1 v 1 unit matchups, with only a 1D map to simulat distances 
+- Beneficial for later independent game-development:
+	+ Working on this allows the ideation of prompts and instructions for claude, which requires 1st principle of thinking to explain to claude how you would want a phase/ability/implementation to be used
+	+ Potential game execution methods and solutions to problems that may arise during actual game development
+=> This is why all files are prefixed by the "test_" in the name, this will NOT BE THE FINAL PRODUCT NOR INTENDED DODEKATHEON GAME, IT IS A TESTING MATCHUP BETWEEN 40K UNITS ONLY!!!!!!!!
+
+That being said:
+!!!!!!!!!!! ---------------------------------------------- !!!!!!!!!!!
+
+19-12-2025 documentation:
+- Everything should be implemented for a test game for now
+- Some empty/hollow function definitions inside /!40k/weaponAbilityDict.py:
+	+ applyExtraAttacks()
+	+ parseDamageModifier()
+	+ applyRangeModifier()
+	+ checkDisableRerolls()
+
 
 

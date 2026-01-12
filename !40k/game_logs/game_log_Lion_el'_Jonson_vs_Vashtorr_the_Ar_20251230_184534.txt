@@ -1,0 +1,188 @@
+======================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+======================================================================
+Date: 2025-12-30 18:43:42
+Matchup: Lion el' Jonson vs Vashtorr the Arkifane
+======================================================================
+
+INITIAL STATE
+----------------------------------------------------------------------
+🔵 Lion el' Jonson
+   Profile: M8" T9 Sv2+ W10 Ld5+ OC4
+   Models: 1
+   Keywords: MONSTER, CHARACTER, EPIC HERO, IMPERIUM, PRIMARCH, LION EL' JONSON
+
+🔴 Vashtorr the Arkifane
+   Profile: M12" T10 Sv2+ W13 Ld6+ OC3
+   Models: 1
+   Keywords: MONSTER, CHARACTER, EPIC HERO, FLY, CHAOS, DAEMON, VASHTORR THE ARKIFANE
+
+======================================================================
+TURN 1
+======================================================================
+
+Start: Lion el' Jonson (1 models, 10W) vs Vashtorr the Arkifane (1 models, 13W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 29"
+   • Lion el' Jonson_stationary: False
+   • Lion el' Jonson_advanced: False
+   • distance_moved: 20
+
+🔫 SHOOTING: Lion el' Jonson → Vashtorr the Arkifane
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Vashtorr the Arkifane → Lion el' Jonson
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Lion el' Jonson (1 models, 10W) vs Vashtorr the Arkifane (1 models, 13W)
+
+======================================================================
+TURN 2
+======================================================================
+
+Start: Lion el' Jonson (1 models, 10W) vs Vashtorr the Arkifane (1 models, 13W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 9"
+   • Lion el' Jonson_stationary: False
+   • Lion el' Jonson_advanced: False
+   • distance_moved: 20
+
+🔫 SHOOTING: Lion el' Jonson → Vashtorr the Arkifane
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Vashtorr the Arkifane → Lion el' Jonson
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Lion el' Jonson (1 models, 10W) vs Vashtorr the Arkifane (1 models, 13W)
+
+======================================================================
+TURN 3
+======================================================================
+
+Start: Lion el' Jonson (1 models, 10W) vs Vashtorr the Arkifane (1 models, 13W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 1"
+   • Lion el' Jonson_stationary: False
+   • Lion el' Jonson_advanced: False
+   • distance_moved: 8
+
+🔫 SHOOTING: Lion el' Jonson → Vashtorr the Arkifane
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Vashtorr the Arkifane → Lion el' Jonson
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+   ⚡ FIGHTS FIRST: Lion el' Jonson
+   Weapon: Melee Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+   Combat: Vashtorr the Arkifane → Lion el' Jonson
+   Weapon: Melee Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Lion el' Jonson (1 models, 4W) vs Vashtorr the Arkifane (1 models, 9W)
+
+======================================================================
+TURN 4
+======================================================================
+
+Start: Lion el' Jonson (1 models, 4W) vs Vashtorr the Arkifane (1 models, 9W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 1"
+   • Lion el' Jonson_stationary: False
+   • Lion el' Jonson_advanced: False
+   • distance_moved: 0
+
+🔫 SHOOTING: Lion el' Jonson → Vashtorr the Arkifane
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Vashtorr the Arkifane → Lion el' Jonson
+   Weapon: Ranged Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+   ⚡ FIGHTS FIRST: Lion el' Jonson
+   Weapon: Melee Weapons
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 13
+   • Models Destroyed: 1
+
+End: Lion el' Jonson (1 models, 10W) vs Vashtorr the Arkifane (0 models, 13W)
+
+======================================================================
+GAME RESULT
+======================================================================
+🏆 Winner: Lion el' Jonson
+📊 Total Turns: 4
+📝 Victory Condition: Unit destroyed
+======================================================================

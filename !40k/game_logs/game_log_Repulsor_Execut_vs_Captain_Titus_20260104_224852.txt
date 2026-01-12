@@ -1,0 +1,393 @@
+======================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+======================================================================
+Date: 2026-01-04 22:44:04
+Matchup: Repulsor Executioner vs Captain Titus
+======================================================================
+
+INITIAL STATE
+----------------------------------------------------------------------
+🔵 Repulsor Executioner
+   Profile: M10" T12 Sv3+ W16 Ld6+ OC5
+   Models: 1
+   Keywords: VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR EXECUTIONER
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+
+======================================================================
+TURN 1
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 43"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 1
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 2
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 37"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 1
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 3
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 31"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 4
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 25"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 5
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 19"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 6
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 13"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 7
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 7"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Bolter
+   • Hits: 2
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 8
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 1"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Boltpistol
+   • Hits: 1
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+   Combat: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Chainsword
+   • Hits: 8
+   • Wounds: 2
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+   Combat: Repulsor Executioner → Captain Titus
+   Weapon: Armored Hull
+   • Hits: 3
+   • Wounds: 3
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 9
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 1"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Boltpistol
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+   Combat: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Chainsword
+   • Hits: 5
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+   Combat: Repulsor Executioner → Captain Titus
+   Weapon: Armored Hull
+   • Hits: 0
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+======================================================================
+TURN 10
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+📋 COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+🏃 MOVEMENT PHASE
+   • Final Distance: 1"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 0
+
+🔫 SHOOTING: Captain Titus → Repulsor Executioner
+   Weapon: Boltpistol
+   • Hits: 1
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+   Combat: Captain Titus → Repulsor Executioner
+   Weapon: Master-Crafted Chainsword
+   • Hits: 7
+   • Wounds: 0
+   • Failed Saves: 0
+   • Damage Dealt: 0
+   • Models Destroyed: 0
+
+   Combat: Repulsor Executioner → Captain Titus
+   Weapon: Armored Hull
+   • Hits: 3
+   • Wounds: 3
+   • Failed Saves: 2
+   • Damage Dealt: 2
+   • Models Destroyed: 0
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 4W)
+
+======================================================================
+GAME RESULT
+======================================================================
+🏆 Winner: DRAW
+📊 Total Turns: 10
+📝 Victory Condition: Turn limit reached
+======================================================================

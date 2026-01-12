@@ -1,0 +1,57 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+================================================================================
+Date: 2026-01-09 17:21:27
+
+Unit 1: C'tan Shard Of The Nightbringer
+Unit 2: Angron
+
+
+================================================================================
+TURN 1
+================================================================================
+Turn Start: C'tan Shard Of The Nightbringer (1 models, 16W) vs Angron (1 models, 16W)
+Distance: 29"
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • C'tan Shard Of The Nightbringer: +1 CP
+  • Angron: +1 CP
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1"
+Movement Actions:
+  • C'tan Shard Of The Nightbringer_stationary: False
+  • C'tan Shard Of The Nightbringer_advanced: True
+  • Angron_stationary: False
+  • Angron_advanced: True
+⚔️ FIGHTS: C'tan Shard Of The Nightbringer → Angron
+--------------------------------------------------------------------------------
+Weapon Selected: Scythe of the Nightbringer - strike
+  Stats: Range Melee, A6 WS2+ S14 AP-4 DD6+2
+Combat Summary:
+  • Total Hits: 6
+  • Total Wounds: 2
+  • Failed Saves: 0
+  • Damage Dealt: 8
+  • Models Destroyed: 0
+⚔️ FIGHTS: Angron → C'tan Shard Of The Nightbringer
+--------------------------------------------------------------------------------
+Weapon Selected: Samni'arius and Spinegrinder - strike
+  Stats: Range Melee, A8 WS2+ S14 AP-3 DD6+2
+Combat Summary:
+  • Total Hits: 8
+  • Total Wounds: 7
+  • Failed Saves: 2
+  • Damage Dealt: 16
+  • Models Destroyed: 1
+Turn End: C'tan Shard Of The Nightbringer (0 models, 16W) vs Angron (1 models, 8W)
+Distance: 1"
+
+================================================================================
+GAME END
+================================================================================
+Winner: Angron
+Total Turns: 1
+Reason: Unit destroyed
+Game Duration: 0:00:20.396339

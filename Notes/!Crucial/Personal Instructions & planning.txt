@@ -1,0 +1,20 @@
+
+
+
+
+
+
+Here are my answers to your questions, simply assess my answers, no coding:
+* Are you creating custom abilities or trying to match 40K rules exactly?
+> Their rules exactly. Although since you're taking information from the internet, you may be getting outdated rules and information, I will provide them to you later.
+
+* How will you parse the "changes" field? Need a consistent format
+> I haven't thought of that yet, but there should be multiple types of changes
+
+* Do you want abilities that:
+   * Trigger once per turn?
+   * Are always active (passive)?
+   * Require activation (strategic reserves, etc.)?
+> Realistically, all of these should be implemented (as previously stated in my answer to the "changes" field) as abilities vary widely when they are triggered and how long they're active. 40k rules is also very detailed and explicit to when and how long the ability is activated as well.
+* Should abilities stack? (e.g., Oath + unit ability + warlord trait)
+

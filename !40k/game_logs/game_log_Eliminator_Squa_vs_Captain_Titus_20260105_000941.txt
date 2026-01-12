@@ -1,0 +1,342 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-05 00:08:31
+Matchup: Eliminator Squad vs Captain Titus
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Eliminator Squad
+   Profile: M6" T4 Sv3+ W2 Ld6+ OC1
+   Invulnerable Save: 0+
+   Models: 3
+   Keywords: INFANTRY, GRENADES, IMPERIUM, PHOBOS, ELIMINATOR SQUAD
+   Weapons: Bolt pistol, Las fusil, Bolt Sniper rifle, Close combat weapon
+   Abilities: Mark the Target
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+   Weapons: Master-Crafted Bolter, Boltpistol, Master-Crafted Chainsword
+   Abilities: Honor of Ultramar
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 6W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eliminator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 23
+Distance Change: 6
+
+Movement Actions:
+  • Eliminator Squad_stationary: True
+  • Eliminator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eliminator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eliminator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Bolt Sniper rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 1
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Captain Titus → Eliminator Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[00:08:35] Oath of Moment Active
+  • shooter: Eliminator Squad
+  • target: Captain Titus
+
+[00:08:37] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[00:08:44] Cover Decision
+  • unit: Eliminator Squad
+  • has_cover: False
+
+[00:08:45] Charge Not Possible
+  • unit: Eliminator Squad
+  • reason: Out of range or no melee weapons
+
+[00:08:46] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 6W)
+Distance: 23
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 6W)
+Distance: 23
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eliminator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 17
+Distance Change: 6
+
+Movement Actions:
+  • Eliminator Squad_stationary: True
+  • Eliminator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eliminator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eliminator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Bolt Sniper rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Captain Titus → Eliminator Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[00:08:54] Oath of Moment Active
+  • shooter: Eliminator Squad
+  • target: Captain Titus
+
+[00:08:57] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[00:09:04] Cover Decision
+  • unit: Eliminator Squad
+  • has_cover: False
+
+[00:09:05] Charge Not Possible
+  • unit: Eliminator Squad
+  • reason: Out of range or no melee weapons
+
+[00:09:06] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 6W)
+Distance: 17
+
+================================================================================
+TURN 3
+================================================================================
+
+Turn Start: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 6W)
+Distance: 17
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eliminator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 11
+Distance Change: 6
+
+Movement Actions:
+  • Eliminator Squad_stationary: True
+  • Eliminator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eliminator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eliminator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Bolt Sniper rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 1
+  • Failed Saves: 1
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Captain Titus → Eliminator Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 2
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[00:09:20] Oath of Moment Active
+  • shooter: Eliminator Squad
+  • target: Captain Titus
+
+[00:09:22] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[00:09:26] Cover Decision
+  • unit: Eliminator Squad
+  • has_cover: False
+
+[00:09:31] Charge Declaration
+  • unit: Eliminator Squad
+  • declared: False
+  • distance: 11
+
+[00:09:32] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 4W)
+Distance: 11
+
+================================================================================
+TURN 4
+================================================================================
+
+Turn Start: Eliminator Squad (3 models, 2W) vs Captain Titus (1 models, 4W)
+Distance: 11
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eliminator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 5
+Distance Change: 6
+
+Movement Actions:
+  • Eliminator Squad_stationary: True
+  • Eliminator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eliminator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eliminator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Bolt Sniper rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 3
+  • Total Wounds: 3
+  • Failed Saves: 3
+  • Damage Dealt: 4
+  • Models Destroyed: 1
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[00:09:37] Oath of Moment Active
+  • shooter: Eliminator Squad
+  • target: Captain Titus
+
+[00:09:39] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+Turn End: Eliminator Squad (3 models, 2W) vs Captain Titus (0 models, 6W)
+Distance: 5
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Eliminator Squad
+📊 Total Turns: 4
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-05 00:09:41
+================================================================================

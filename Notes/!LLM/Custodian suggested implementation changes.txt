@@ -1,0 +1,503 @@
+# Custodes Abilities Implementation Guide
+
+## 📋 Summary of Abilities
+
+### Trajann Valoris
+- **Moment Shackle**: Once per battle choice at start of Fight phase
+- **Feel No Pain 5+**: Already implemented via existing FNP system
+
+### Custodian Guard
+- **Stand Vigil**: Re-roll wound rolls of 1 (passive)
+- **Sentinel Storm**: Once per battle, shoot again after shooting (active)
+- **Martial Ka'tah**: Select stance when fighting (faction ability)
+
+---
+
+## 🔧 Implementation Steps
+
+### 1. Add to `characterAbilities.py`
+
+```python
+# ==================== MOMENT SHACKLE (TRAJANN) ====================
+
+def canActivateMomentShackle(unit: dict, game_state: dict) -> bool:
+    """Check if Moment Shackle can be activated"""
+    ability = unit.get("Ability", {})
+    
+    if ability.get("name") != "Moment Shackle":
+        return False
+    
+    unitName = unit["Name"]
+    momentShackleKey = f"{unitName}_moment_shackle_used"
+    
+    if game_state.get(momentShackleKey, False):
+        return False
+    
+    return True
+
+
+def activateMomentShackle(unit: dict, game_state: dict) -> dict:
+    """
+    Activate Moment Shackle - player chooses one option
+    
+    Returns: Modified game_state with choice recorded
+    """
+    unitName = unit["Name"]
+    
+    print(f"\n{'='*60}")
+    print(f"⚡ MOMENT SHACKLE - {unitName}")
+    print(f"{'='*60}")
+    print(f"Once per battle ability - Choose one option:")
+    print(f"  1. Attacks Overdrive: Watcher's Axe has 12 Attacks")
+    print(f"  2. Invulnerable Aegis: Model gains 2+ invulnerable save")
+    print(f"{'='*60}")
+    
+    while True:
+        choice = input("Select option (1 or 2): ").strip()
+        if choice in ["1", "2"]:
+            break
+        print("Invalid choice. Please enter 1 or 2.")
+    
+    # Mark as used
+    momentShackleKey = f"{unitName}_moment_shackle_used"
+    game_state[momentShackleKey] = True
+    
+    # Mark which option is active
+    momentShackleActiveKey = f"{unitName}_moment_shackle_active"
+    momentShackleChoiceKey = f"{unitName}_moment_shackle_choice"
+    
+    game_state[momentShackleActiveKey] = True
+    game_state[momentShackleChoiceKey] = "attacks" if choice == "1" else "invuln"
+    
+    if choice == "1":
+        print(f"\n⚔️ ATTACKS OVERDRIVE ACTIVATED!")
+        print(f"   Watcher's Axe: 6 → 12 Attacks")
+    else:
+        print(f"\n🛡️ INVULNERABLE AEGIS ACTIVATED!")
+        print(f"   Invulnerable Save: 4+ → 2+")
+    
+    print(f"   Duration: Until end of Fight phase")
+    print(f"{'='*60}\n")
+    
+    return game_state
+
+
+def applyMomentShackleWeaponBonus(weapon: dict, unit: dict, game_state: dict) -> dict:
+    """Apply Moment Shackle weapon bonus if active and attacks option chosen"""
+    unitName = unit["Name"]
+    momentShackleActiveKey = f"{unitName}_moment_shackle_active"
+    momentShackleChoiceKey = f"{unitName}_moment_shackle_choice"
+    
+    if not game_state.get(momentShackleActiveKey, False):
+        return weapon
+    
+    if game_state.get(momentShackleChoiceKey) != "attacks":
+        return weapon
+    
+    # Only apply to Watcher's Axe
+    if weapon.get("name") != "Watcher's Axe":
+        return weapon
+    
+    modifiedWeapon = weapon.copy()
+    modifiedWeapon["a"] = 12
+    
+    print(f"  [MOMENT SHACKLE] Watcher's Axe: Attacks 6 → 12")
+    
+    return modifiedWeapon
+
+
+def getMomentShackleInvulnBonus(unit: dict, game_state: dict) -> int:
+    """Get Moment Shackle invuln save bonus if active"""
+    unitName = unit["Name"]
+    momentShackleActiveKey = f"{unitName}_moment_shackle_active"
+    momentShackleChoiceKey = f"{unitName}_moment_shackle_choice"
+    
+    if not game_state.get(momentShackleActiveKey, False):
+        return 0  # No bonus
+    
+    if game_state.get(momentShackleChoiceKey) != "invuln":
+        return 0
+    
+    # Return 2+ invuln
+    return 2
+
+
+def deactivateMomentShackle(unit: dict, game_state: dict) -> dict:
+    """Deactivate Moment Shackle at end of Fight phase"""
+    unitName = unit["Name"]
+    momentShackleActiveKey = f"{unitName}_moment_shackle_active"
+    
+    if game_state.get(momentShackleActiveKey, False):
+        print(f"\n⚡ [MOMENT SHACKLE] Effect ends for {unitName}")
+        game_state[momentShackleActiveKey] = False
+    
+    return game_state
+
+
+# ==================== MARTIAL KA'TAH ====================
+
+def canSelectKatahStance(unit: dict) -> bool:
+    """Check if unit has Martial Ka'tah faction ability"""
+    factionAbility = unit.get("Faction Ability", "")
+    return factionAbility == "Martial Ka'tah"
+
+
+def selectKatahStance(unit: dict, game_state: dict) -> dict:
+    """
+    Prompt player to select Ka'tah Stance
+    Returns: Modified game_state with stance recorded
+    """
+    unitName = unit["Name"]
+    
+    print(f"\n{'='*60}")
+    print(f"⚔️ MARTIAL KA'TAH - {unitName}")
+    print(f"{'='*60}")
+    print(f"Select Ka'tah Stance:")
+    print(f"  1. Dacatarai Stance: Melee weapons gain [SUSTAINED HITS 1]")
+    print(f"  2. Rendax Stance: Melee weapons gain [LETHAL HITS]")
+    print(f"{'='*60}")
+    
+    while True:
+        choice = input("Select stance (1 or 2): ").strip()
+        if choice in ["1", "2"]:
+            break
+        print("Invalid choice. Please enter 1 or 2.")
+    
+    katahKey = f"{unitName}_katah_stance"
+    game_state[katahKey] = "dacatarai" if choice == "1" else "rendax"
+    
+    if choice == "1":
+        print(f"\n⚡ DACATARAI STANCE SELECTED!")
+        print(f"   Effect: Melee weapons gain [SUSTAINED HITS 1]")
+    else:
+        print(f"\n⚡ RENDAX STANCE SELECTED!")
+        print(f"   Effect: Melee weapons gain [LETHAL HITS]")
+    
+    print(f"{'='*60}\n")
+    
+    return game_state
+
+
+def applyKatahStance(weapon: dict, unit: dict, game_state: dict) -> dict:
+    """Apply active Ka'tah Stance to melee weapon"""
+    unitName = unit["Name"]
+    katahKey = f"{unitName}_katah_stance"
+    
+    stance = game_state.get(katahKey)
+    
+    if not stance:
+        return weapon
+    
+    # Only apply to melee weapons
+    if weapon.get("range") != "Melee":
+        return weapon
+    
+    modifiedWeapon = weapon.copy()
+    weaponAbilities = list(modifiedWeapon.get("weapon abilities", []))
+    
+    if stance == "dacatarai":
+        if "SUSTAINED HITS 1" not in weaponAbilities:
+            weaponAbilities.append("SUSTAINED HITS 1")
+            print(f"  [DACATARAI STANCE] {weapon['name']}: Gained [SUSTAINED HITS 1]")
+    elif stance == "rendax":
+        if "LETHAL HITS" not in weaponAbilities:
+            weaponAbilities.append("LETHAL HITS")
+            print(f"  [RENDAX STANCE] {weapon['name']}: Gained [LETHAL HITS]")
+    
+    modifiedWeapon["weapon abilities"] = weaponAbilities
+    
+    return modifiedWeapon
+
+
+def clearKatahStance(unit: dict, game_state: dict) -> dict:
+    """Clear Ka'tah Stance after unit finishes fighting"""
+    unitName = unit["Name"]
+    katahKey = f"{unitName}_katah_stance"
+    
+    if katahKey in game_state:
+        del game_state[katahKey]
+    
+    return game_state
+```
+
+---
+
+### 2. Add Stand Vigil to `weaponAbilityDict.py`
+
+```python
+def canRerollWoundOnes(unit: dict) -> bool:
+    """
+    Check if unit has Stand Vigil ability (Custodian Guard)
+    Allows re-rolling wound rolls of 1
+    """
+    ability = unit.get("Ability", {})
+    return ability.get("name") == "Stand Vigil"
+
+
+def applyStandVigilRerolls(woundRolls: list, unit: dict) -> list:
+    """
+    Apply Stand Vigil re-rolls to wound rolls
+    
+    For now, only re-rolls 1s
+    (Enhanced version near objectives would re-roll all - handle manually)
+    """
+    if not canRerollWoundOnes(unit):
+        return woundRolls
+    
+    rerollIndices = [i for i, roll in enumerate(woundRolls) if roll == 1]
+    
+    if not rerollIndices:
+        return woundRolls
+    
+    print(f"\n⚔️ [STAND VIGIL] Re-rolling {len(rerollIndices)} wound roll(s) of 1")
+    
+    reroll = input("Re-roll wounds of 1 with Stand Vigil? (y/n): ").lower()
+    
+    if reroll == 'y':
+        import rolls
+        rerollResults = rolls.rollBox(len(rerollIndices))
+        print(f"Re-roll results: {rerollResults}")
+        
+        modifiedRolls = woundRolls.copy()
+        for i, newRoll in zip(rerollIndices, rerollResults):
+            modifiedRolls[i] = newRoll
+        
+        return modifiedRolls
+    
+    return woundRolls
+```
+
+---
+
+### 3. Update `fightPhase.py`
+
+Add to `ftPhase()` function:
+
+```python
+def ftPhase(attackerWeapons: list, attackerProfile: dict, attackerUnit: dict,
+           targetProfile: dict, targetUnit: dict, attackerModelCount: int,
+           targetModelCount: int, targetCurrentWounds: int, distance: int,
+           attackerName: str, targetName: str, targetKeywords: list,
+           fightsFirst: bool = False, chargedThisTurn: bool = False,
+           game_state: dict = None) -> tuple:
+    """Execute the fight phase for a unit"""
+    
+    # ... existing code ...
+    
+    # ✅ ADD: Check for Martial Ka'tah selection
+    if game_state is not None and ca.canSelectKatahStance(attackerUnit):
+        game_state = ca.selectKatahStance(attackerUnit, game_state)
+    
+    # ✅ ADD: Check for Moment Shackle activation (Trajann)
+    if game_state is not None and ca.canActivateMomentShackle(attackerUnit, game_state):
+        activate = input(f"\n{attackerName} can use MOMENT SHACKLE! Activate? (y/n): ").lower()
+        if activate == 'y':
+            game_state = ca.activateMomentShackle(attackerUnit, game_state)
+    
+    # Get melee weapons
+    meleeWeapons = getMeleeWeapons(attackerWeapons)
+    
+    # ✅ APPLY FINEST HOUR (existing)
+    if game_state is not None:
+        modifiedWeapons = []
+        for weapon in meleeWeapons:
+            # Apply Finest Hour
+            modifiedWeapon = ca.applyFinestHourBonus(weapon, attackerUnit, game_state)
+            # ✅ ADD: Apply Martial Ka'tah
+            modifiedWeapon = ca.applyKatahStance(modifiedWeapon, attackerUnit, game_state)
+            # ✅ ADD: Apply Moment Shackle weapon bonus
+            modifiedWeapon = ca.applyMomentShackleWeaponBonus(modifiedWeapon, attackerUnit, game_state)
+            modifiedWeapons.append(modifiedWeapon)
+        meleeWeapons = modifiedWeapons
+    
+    # ... rest of function ...
+    
+    # In SAVE ROLLS section, before determining save to use:
+    invSave = targetProfile.get("inv-sv", 7)
+    
+    # ✅ ADD: Check for Moment Shackle invuln bonus
+    if game_state is not None:
+        momentShackleInvuln = ca.getMomentShackleInvulnBonus(targetUnit, game_state)
+        if momentShackleInvuln > 0:
+            invSave = min(invSave, momentShackleInvuln)
+            print(f"[MOMENT SHACKLE] Using 2+ invulnerable save")
+    
+    # ... continue with save rolls ...
+    
+    # At end of function, before return:
+    # ✅ ADD: Clear Ka'tah Stance after attacks complete
+    if game_state is not None:
+        game_state = ca.clearKatahStance(attackerUnit, game_state)
+    
+    return (modelsRemaining, currentWounds, combat_stats)
+```
+
+---
+
+### 4. Update `resolveMeleeAttacks()` in `fightPhase.py`
+
+In the WOUND ROLLS section:
+
+```python
+# Roll wounds
+woundRolls = rolls.rollBox(normalHits)
+print(f"Wound rolls: {woundRolls}")
+
+# ✅ ADD: Apply Stand Vigil re-rolls
+if attackerUnit:
+    woundRolls = wad.applyStandVigilRerolls(woundRolls, attackerUnit)
+
+normalWounds = 0
+criticalWounds = 0
+
+for roll in woundRolls:
+    # ... existing wound evaluation logic ...
+```
+
+---
+
+### 5. Update `testMain.py` Game State Initialization
+
+```python
+game_state = {
+    # ... existing keys ...
+    
+    # ✅ NEW: Trajann Moment Shackle tracking
+    f"{cuName}_moment_shackle_used": False,
+    f"{cuName}_moment_shackle_active": False,
+    f"{cuName}_moment_shackle_choice": None,
+    f"{tuName}_moment_shackle_used": False,
+    f"{tuName}_moment_shackle_active": False,
+    f"{tuName}_moment_shackle_choice": None,
+    
+    # ✅ NEW: Martial Ka'tah stance tracking
+    f"{cuName}_katah_stance": None,
+    f"{tuName}_katah_stance": None,
+}
+```
+
+---
+
+### 6. Update Fight Phase End in `testMain.py`
+
+```python
+# At END OF FIGHT PHASE, after all combats:
+
+# Deactivate Finest Hour (existing)
+game_state = ca.deactivateFinestHour(controlUnit, game_state)
+game_state = ca.deactivateFinestHour(targetUnit, game_state)
+
+# ✅ ADD: Deactivate Moment Shackle
+game_state = ca.deactivateMomentShackle(controlUnit, game_state)
+game_state = ca.deactivateMomentShackle(targetUnit, game_state)
+
+# Reset charge bonuses
+game_state["charged_this_turn"] = False
+```
+
+---
+
+### 7. Sentinel Storm Implementation (Optional - Manual Trigger)
+
+For Sentinel Storm, you need to handle it in the shooting phase. Add to `testMain.py` after Custodian Guard shoots:
+
+```python
+# After shooting phase for Custodian Guard
+if cuName == "Custodian Guard":
+    sentinelStormKey = f"{cuName}_sentinel_storm_used"
+    
+    if not game_state.get(sentinelStormKey, False):
+        use_sentinel = input(f"\n{cuName} can use SENTINEL STORM! Shoot again? (y/n): ").lower()
+        
+        if use_sentinel == 'y':
+            game_state[sentinelStormKey] = True
+            
+            print(f"\n{'='*60}")
+            print(f"⚡ SENTINEL STORM - {cuName} shoots again!")
+            print(f"{'='*60}")
+            
+            # Log the ability
+            logger.log_special_event("Sentinel Storm Activated", {
+                "unit": cuName,
+                "description": "Unit shoots again immediately"
+            })
+            
+            # REPEAT SHOOTING PHASE CODE HERE
+            # (copy the entire shooting sequence)
+```
+
+---
+
+## 🧪 Testing Order
+
+### Test 1: Trajann - Attacks Overdrive
+```python
+controlUnit = datasheets.trajann
+targetUnit = datasheets.terminator_squad
+```
+
+**Expected:**
+1. At start of Fight phase: Prompt for Moment Shackle
+2. Select option 1 (Attacks Overdrive)
+3. Watcher's Axe shows 12 attacks instead of 6
+4. Effect ends at end of Fight phase
+
+---
+
+### Test 2: Trajann - Invulnerable Aegis
+```python
+controlUnit = datasheets.terminator_squad  # Let them attack Trajann
+targetUnit = datasheets.trajann
+```
+
+**Expected:**
+1. When Trajann fights (after Terminators), prompt for Moment Shackle
+2. Select option 2 (Invulnerable Aegis)
+3. During save rolls, uses 2+ invuln instead of 4+
+4. Effect ends at end of Fight phase
+
+---
+
+### Test 3: Custodian Guard - Martial Ka'tah
+```python
+controlUnit = datasheets.cust_guard
+targetUnit = datasheets.terminator_squad
+```
+
+**Expected:**
+1. When Custodian Guard selected to fight: Prompt for Ka'tah Stance
+2. Select Dacatarai: Guardian spear gains [SUSTAINED HITS 1]
+3. Or select Rendax: Guardian spear gains [LETHAL HITS]
+4. Stance clears after attacks complete
+
+---
+
+### Test 4: Stand Vigil
+```python
+controlUnit = datasheets.cust_guard
+targetUnit = datasheets.repulsor_executioner  # High toughness target
+```
+
+**Expected:**
+1. When wounding (low S vs high T), some wounds roll 1s
+2. System prompts: "Re-roll wounds of 1 with Stand Vigil? (y/n)"
+3. If yes, re-rolls the 1s
+4. Continue normally
+
+---
+
+## 📝 Summary
+
+**Key Integration Points:**
+1. `characterAbilities.py` - All ability logic
+2. `fightPhase.py` - Check/apply abilities during fighting
+3. `weaponAbilityDict.py` - Stand Vigil wound re-roll
+4. `testMain.py` - Track ability states in game_state
+
+**Abilities Implemented:**
+- ✅ Moment Shackle (choice-based once per battle)
+- ✅ Martial Ka'tah (stance selection per fight)
+- ✅ Stand Vigil (passive wound re-roll)
+- ⚠️ Sentinel Storm (requires manual shooting phase duplication)
+
+The system maintains consistency with existing abilities like Finest Hour and Honor of Ultramar!

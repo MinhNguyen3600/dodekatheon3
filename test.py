@@ -36,32 +36,35 @@ sv = 3
 testOperativeHP = 15
 testOpponentDmg = 3
 testOpponentCrit = 4
+opDead = False
+apl = 3
 
 hRollRes, successRolls, critRolls, totalSuccessRolls, failedRolls = dicebox.hRoll(atk, hit)
-print(f"ROLLED {atk} HIT ROLL! DICE BOX SHOWS: {hRollRes}; \nSUCCESSFULL ROLLS ARE ON A {hit}+;")
-if successRolls != 0:
-    print(f"    YOU'VE SUCCESSFULLY ROLLED {successRolls} HITS!")
 
-if critRolls != 0:
-    print(f"    YOU'VE SUCCESSFULLY ROLLED {critRolls} CRITIAL HITS!")
+# Test game loop
+# while testOperativeHP != 0:
+    # testPhases.hitRollScreen(hRollRes, successRolls, critRolls, totalSuccessRolls, failedRolls, atk, hit)
 
-if failedRolls != 0:
-    print(f"    YOU'VE AUTO FAILED {failedRolls} (rolls = 1) ROLLS!")
+    # print("----------------------")
 
-if successRolls != 0 or critRolls != 0:
-    print(f">>> YOU'VE SUCCESSFULLY ROLLED {totalSuccessRolls} ROLLS IN TOTAL! <<<")
-elif successRolls == 0 and critRolls == 0:
-    print(f">>> YOU'VE FAILLED ALL HITs ROLLS! <<<")
+    # saveDiceBox, svSuccessCtr, svCritCtr, failedSvs = dicebox.saveRoll(sv)
+    # print("----------------------")
+    # hits, crits = testPhases.defenseScreen(svSuccessCtr, svCritCtr, failedSvs, successRolls, critRolls, totalSuccessRolls)
+    # print("----------------------")
+    # testOperativeRemainingHP = testPhases.damageAllocation(hits, crits, testOperativeHP, testOpponentDmg, testOpponentCrit)
+    
+    # if testOperativeHP != 0:
+    #     print(f"\n ----- OPERATIVE HAS {testOperativeRemainingHP} WOUNDS REMAINING! -----")
+    #     testOperativeHP = testOperativeRemainingHP # Save updated op wounds
+    #     print("----------------------")
+    # elif testOperativeHP <= 0:
+    #     print(f"!!! OPERATIVE IS DESTORYED !!!")
+    #     print("----------------------")
+    #     opDead = True
+    #     break
 
-print("----------------------")
+print(testPhases.actSelectScreen(apl))
 
-saveDiceBox, svSuccessCtr, svCritCtr, failedSvs = dicebox.saveRoll(sv)
-print("----------------------")
-hits, crits = testPhases.defenseScreen(svSuccessCtr, svCritCtr, failedSvs, successRolls, critRolls, totalSuccessRolls)
-print("----------------------")
-testOperativeRemainingHP = testPhases.damageAllocation(hits, crits, testOperativeHP, testOpponentDmg, testOpponentCrit)
-print(f"\n ----- OPERATIVE HAS {testOperativeRemainingHP} WOUNDS REMAINING! -----")
-print("----------------------")
 
 
 

@@ -1,0 +1,177 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-04 23:50:20
+Matchup: Repulsor Executioner vs Captain Titus
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Repulsor Executioner
+   Profile: M10" T12 Sv3+ W16 Ld6+ OC5
+   Models: 1
+   Keywords: VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR EXECUTIONER
+   Weapons: Heavy Laser Destroyer, Heavy onslaught gatling cannon, Icarus rocket pod, Ironhail heavy stubber, Twin heavy bolter, Twin Icarus ironhail heavy stubber, Armored Hull
+   Abilities: Executioner
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+   Weapons: Master-Crafted Bolter, Boltpistol, Master-Crafted Chainsword
+   Abilities: Honor of Ultramar
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Repulsor Executioner: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 23
+Distance Change: 6
+
+Movement Actions:
+  • Repulsor Executioner_stationary: True
+  • Repulsor Executioner_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Repulsor Executioner_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Repulsor Executioner → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: All weapons (6 total)
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 18
+  • Total Wounds: 12
+  • Failed Saves: 1
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Captain Titus → Repulsor Executioner
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 1
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[23:50:27] Oath of Moment Active
+  • shooter: Repulsor Executioner
+  • target: Captain Titus
+
+[23:50:29] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[23:50:37] Cover Decision
+  • unit: Repulsor Executioner
+  • has_cover: False
+
+[23:50:41] Charge Not Possible
+  • unit: Repulsor Executioner
+  • reason: Out of range or no melee weapons
+
+[23:50:42] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+Distance: 23
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+Distance: 23
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Repulsor Executioner: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 17
+Distance Change: 6
+
+Movement Actions:
+  • Repulsor Executioner_stationary: True
+  • Repulsor Executioner_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Repulsor Executioner_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Repulsor Executioner → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: All weapons (6 total)
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 19
+  • Total Wounds: 13
+  • Failed Saves: 5
+  • Damage Dealt: 6
+  • Models Destroyed: 1
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+  ✨ DEVASTATING WOUNDS: 1 mortal damage
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[23:50:50] Oath of Moment Active
+  • shooter: Repulsor Executioner
+  • target: Captain Titus
+
+[23:50:55] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+Turn End: Repulsor Executioner (1 models, 16W) vs Captain Titus (0 models, 6W)
+Distance: 17
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Repulsor Executioner
+📊 Total Turns: 2
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-04 23:50:55
+================================================================================

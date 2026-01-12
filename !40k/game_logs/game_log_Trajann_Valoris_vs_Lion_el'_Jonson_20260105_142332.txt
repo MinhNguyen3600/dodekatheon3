@@ -1,0 +1,194 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-05 14:22:40
+Matchup: Trajann Valoris vs Lion el' Jonson
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Trajann Valoris
+   Profile: M6" T6 Sv2+ W7 Ld5+ OC2
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TRAJANN VALORIS
+   Weapons: Eagle's Scream, Watcher's Axe
+   Abilities: Moment Shackle
+
+🔴 Lion el' Jonson
+   Profile: M8" T9 Sv2+ W10 Ld5+ OC4
+   Invulnerable Save: 3+
+   Models: 1
+   Keywords: MONSTER, CHARACTER, EPIC HERO, IMPERIUM, PRIMARCH, LION EL' JONSON
+   Weapons: Arma Luminis - plasma, Arma Luminis - bolt, Fealty - strike, Fealty - sweep
+   Abilities: Emperor's Shield
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Trajann Valoris (1 models, 7W) vs Lion el' Jonson (1 models, 10W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Trajann Valoris: +1 CP
+  • Lion el' Jonson: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 9
+Distance Change: 20
+
+Movement Actions:
+  • Trajann Valoris_stationary: False
+  • Trajann Valoris_advanced: True
+  • distance_moved: 20
+
+Decisions Made:
+  • Trajann Valoris_movement_type: Advanced
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Trajann Valoris → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Eagle's Scream
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Lion el' Jonson → Trajann Valoris
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 2
+  • Failed Saves: 2
+  • Damage Dealt: 3
+  • Models Destroyed: 0
+
+⚔️ CHARGE PHASE
+--------------------------------------------------------------------------------
+Charger: Trajann Valoris
+Distance Before: 9
+Distance Needed: 8
+
+Charge Roll: None
+Result: ✗ FAILED
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[14:22:53] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[14:22:58] Cover Decision
+  • unit: Trajann Valoris
+  • has_cover: False
+
+[14:23:04] Charge Declaration
+  • unit: Trajann Valoris
+  • declared: True
+  • distance: 9
+
+[14:23:06] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Trajann Valoris (1 models, 4W) vs Lion el' Jonson (1 models, 10W)
+Distance: 9
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: Trajann Valoris (1 models, 4W) vs Lion el' Jonson (1 models, 10W)
+Distance: 9
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Trajann Valoris: +1 CP
+  • Lion el' Jonson: +1 CP
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 1
+Distance Change: 8
+
+Movement Actions:
+  • Trajann Valoris_stationary: False
+  • Trajann Valoris_advanced: False
+  • distance_moved: 8
+
+Decisions Made:
+  • Trajann Valoris_movement_type: Normal
+  • Lion el' Jonson_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Lion el' Jonson → Trajann Valoris
+--------------------------------------------------------------------------------
+Weapon Selected: Arma Luminis - plasma
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 1
+  • Total Wounds: 1
+  • Failed Saves: 1
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+⚔️ FIGHT PHASE
+--------------------------------------------------------------------------------
+
+⚡ FIGHTS FIRST - Combat #1
+Fighter: Lion el' Jonson → Target: Trajann Valoris
+----------------------------------------
+Weapon: Fealty - strike
+  Stats: ANone WSNone+ SNone APNone DNone
+
+Combat Summary:
+  • Total Hits: 7
+  • Total Wounds: 5
+  • Failed Saves: 3
+  • Damage Dealt: 7
+  • Models Destroyed: 1
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[14:23:21] Cover Decision
+  • unit: Lion el' Jonson
+  • has_cover: False
+
+[14:23:21] Unable to Shoot
+  • unit: Trajann Valoris
+  • reason: Out of range or no valid weapons
+
+[14:23:24] Cover Decision
+  • unit: Trajann Valoris
+  • has_cover: False
+
+[14:23:28] Charge Declaration
+  • unit: Trajann Valoris
+  • declared: False
+  • distance: 1
+
+Turn End: Trajann Valoris (0 models, 7W) vs Lion el' Jonson (1 models, 10W)
+Distance: 1
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Lion el' Jonson
+📊 Total Turns: 2
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-05 14:23:32
+================================================================================

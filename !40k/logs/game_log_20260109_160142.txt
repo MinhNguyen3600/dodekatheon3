@@ -1,0 +1,67 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+================================================================================
+Date: 2026-01-09 15:59:28
+
+Unit 1: Lion el' Jonson
+Unit 2: C'tan Shard Of The Nightbringer
+
+
+================================================================================
+TURN 1
+================================================================================
+Turn Start: Lion el' Jonson (1 models, 10W) vs C'tan Shard Of The Nightbringer (1 models, 16W)
+Distance: 29
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Lion el' Jonson: +1 CP
+  • C'tan Shard Of The Nightbringer: +1 CP
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 8
+Movement Actions:
+  • Lion el' Jonson_stationary: False
+  • Lion el' Jonson_advanced: True
+  • C'tan Shard Of The Nightbringer_stationary: False
+  • C'tan Shard Of The Nightbringer_advanced: False
+🔫 SHOOTING PHASE #1: C'tan Shard Of The Nightbringer → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Gaze of Death
+  Stats: Range 18", AD3 BS2+ S12 AP-3 DD6+3
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 1
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+⚡ FIGHTS FIRST: Lion el' Jonson → C'tan Shard Of The Nightbringer
+--------------------------------------------------------------------------------
+Weapon Selected: Fealty - strike
+  Stats: Range Melee, A8 WS2+ S12 AP-4 D4
+Combat Summary:
+  • Total Hits: 7
+  • Total Wounds: 5
+  • Failed Saves: 2
+  • Damage Dealt: 6
+  • Models Destroyed: 0
+⚡ FIGHTS FIRST: C'tan Shard Of The Nightbringer → Lion el' Jonson
+--------------------------------------------------------------------------------
+Weapon Selected: Scythe of the Nightbringer - strike
+  Stats: Range Melee, A6 WS2+ S14 AP-4 DD6+2
+Combat Summary:
+  • Total Hits: 6
+  • Total Wounds: 5
+  • Failed Saves: 2
+  • Damage Dealt: 10
+  • Models Destroyed: 1
+Turn End: Lion el' Jonson (0 models, 10W) vs C'tan Shard Of The Nightbringer (1 models, 10W)
+Distance: 8
+
+================================================================================
+GAME END
+================================================================================
+Winner: C'tan Shard Of The Nightbringer
+Total Turns: 1
+Reason: Unit destroyed
+Game Duration: 0:02:13.677628

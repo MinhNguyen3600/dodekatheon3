@@ -1,0 +1,255 @@
+================================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - DETAILED GAME LOG
+================================================================================
+Date: 2026-01-04 23:51:47
+Matchup: Eradicator Squad vs Captain Titus
+================================================================================
+
+INITIAL STATE
+--------------------------------------------------------------------------------
+
+🔵 Eradicator Squad
+   Profile: M5" T6 Sv3+ W3 Ld6+ OC1
+   Invulnerable Save: 0+
+   Models: 3
+   Keywords: INFANTRY, GRENADES, IMPERIUM, GRAVIS, ERADICATOR SQUAD
+   Weapons: Bolt pistol, Melta rifle, Close combat weapon
+
+🔴 Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Invulnerable Save: 4+
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+   Weapons: Master-Crafted Bolter, Boltpistol, Master-Crafted Chainsword
+   Abilities: Honor of Ultramar
+
+Starting Distance: 29
+
+================================================================================
+TURN 1
+================================================================================
+
+Turn Start: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 6W)
+Distance: 29
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eradicator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 23
+Distance Change: 6
+
+Movement Actions:
+  • Eradicator Squad_stationary: True
+  • Eradicator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eradicator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eradicator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Melta rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 0
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🔫 SHOOTING PHASE #2: Captain Titus → Eradicator Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[23:51:52] Oath of Moment Active
+  • shooter: Eradicator Squad
+  • target: Captain Titus
+
+[23:51:54] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[23:51:58] Cover Decision
+  • unit: Eradicator Squad
+  • has_cover: False
+
+[23:52:00] Charge Not Possible
+  • unit: Eradicator Squad
+  • reason: Out of range or no melee weapons
+
+[23:52:01] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 6W)
+Distance: 23
+
+================================================================================
+TURN 2
+================================================================================
+
+Turn Start: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 6W)
+Distance: 23
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eradicator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 17
+Distance Change: 6
+
+Movement Actions:
+  • Eradicator Squad_stationary: True
+  • Eradicator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eradicator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eradicator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Melta rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 6
+  • Total Wounds: 5
+  • Failed Saves: 2
+  • Damage Dealt: 2
+  • Models Destroyed: 0
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🔫 SHOOTING PHASE #2: Captain Titus → Eradicator Squad
+--------------------------------------------------------------------------------
+Weapon Selected: Master-Crafted Bolter
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 2
+  • Total Wounds: 0
+  • Failed Saves: 0
+  • Damage Dealt: 0
+  • Models Destroyed: 0
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[23:52:07] Oath of Moment Active
+  • shooter: Eradicator Squad
+  • target: Captain Titus
+
+[23:52:09] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+[23:52:27] Cover Decision
+  • unit: Eradicator Squad
+  • has_cover: False
+
+[23:52:28] Charge Not Possible
+  • unit: Eradicator Squad
+  • reason: Out of range or no melee weapons
+
+[23:52:29] Fight Phase
+  • eligible_fighters: None
+
+Turn End: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 4W)
+Distance: 17
+
+================================================================================
+TURN 3
+================================================================================
+
+Turn Start: Eradicator Squad (3 models, 3W) vs Captain Titus (1 models, 4W)
+Distance: 17
+
+📋 COMMAND PHASE
+--------------------------------------------------------------------------------
+Command Points Gained:
+  • Eradicator Squad: +1 CP
+  • Captain Titus: +1 CP
+
+⚔️ Oath of Moment Declared
+  • Target: Captain Titus
+  • Effect: Re-roll hit rolls, +1 to wound rolls (excluding unmodified 6s)
+
+🏃 MOVEMENT PHASE
+--------------------------------------------------------------------------------
+Final Distance: 11
+Distance Change: 6
+
+Movement Actions:
+  • Eradicator Squad_stationary: True
+  • Eradicator Squad_advanced: False
+  • distance_moved: 6
+
+Decisions Made:
+  • Eradicator Squad_movement_type: Stationary
+  • Captain Titus_movement_type: Normal
+
+🔫 SHOOTING PHASE #1: Eradicator Squad → Captain Titus
+--------------------------------------------------------------------------------
+Weapon Selected: Melta rifle
+  Stats: Range None", ANone BSNone+ SNone APNone DNone
+
+Attack Summary:
+  • Total Hits: 7
+  • Total Wounds: 6
+  • Failed Saves: 2
+  • Damage Dealt: 4
+  • Models Destroyed: 1
+
+Special Effects:
+  ✨ HEAVY: +1 to hit (stationary)
+
+🎯 SPECIAL EVENTS
+--------------------------------------------------------------------------------
+[23:52:39] Oath of Moment Active
+  • shooter: Eradicator Squad
+  • target: Captain Titus
+
+[23:52:42] Cover Decision
+  • unit: Captain Titus
+  • has_cover: False
+
+Turn End: Eradicator Squad (3 models, 3W) vs Captain Titus (0 models, 6W)
+Distance: 11
+
+================================================================================
+GAME RESULT
+================================================================================
+🏆 Winner: Eradicator Squad
+📊 Total Turns: 3
+📝 Victory Condition: Unit destroyed
+⏰ Game Ended: 2026-01-04 23:52:45
+================================================================================

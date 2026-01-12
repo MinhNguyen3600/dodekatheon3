@@ -1,0 +1,53 @@
+======================================================================
+WARHAMMER 40,000 BATTLE SIMULATOR - GAME LOG
+======================================================================
+Date: 2026-01-04 23:21:40
+Matchup: Repulsor Executioner vs Captain Titus
+======================================================================
+
+INITIAL STATE
+----------------------------------------------------------------------
+Repulsor Executioner
+   Profile: M10" T12 Sv3+ W16 Ld6+ OC5
+   Models: 1
+   Keywords: VEHICLE, SMOKE, TRANSPORT, IMPERIUM, REPULSOR EXECUTIONER
+
+Captain Titus
+   Profile: M6" T4 Sv3+ W6 Ld6+ OC1
+   Models: 1
+   Keywords: INFANTRY, CHARACTER, EPIC HERO, IMPERIUM, TACTICUS, GRENADES, CAPTAIN, TITUS
+
+======================================================================
+TURN 1
+======================================================================
+
+Start: Repulsor Executioner (1 models, 16W) vs Captain Titus (1 models, 6W)
+
+COMMAND PHASE
+   • Both players gained 1 CP
+   • Oath of Moment declared
+
+MOVEMENT PHASE
+   • Final Distance: 43"
+   • Repulsor Executioner_stationary: True
+   • Repulsor Executioner_advanced: False
+   • distance_moved: 6
+
+SHOOTING: Repulsor Executioner → Captain Titus
+   Weapon: Heavy Laser Destroyer
+   • Hits: 2
+   • Wounds: 2
+   • Failed Saves: 2
+   • Damage Dealt: 6
+   • Models Destroyed: 1
+   HEAVY: +1 to hit (stationary)
+
+End: Repulsor Executioner (1 models, 16W) vs Captain Titus (0 models, 6W)
+
+======================================================================
+GAME RESULT
+======================================================================
+Winner: Repulsor Executioner
+Total Turns: 1
+Victory Condition: Unit destroyed
+======================================================================
